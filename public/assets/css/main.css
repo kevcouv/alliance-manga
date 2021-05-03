@@ -1,0 +1,62 @@
+/* CSS */
+
+/* HOME */
+
+#details-home, #univers-home, #products-home {
+    margin: 3% 5%;
+}
+
+#details-home, #univers-home div:first-child, #products-home, footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#details-home div {
+    font-size: 20px;
+}
+
+#details-home div, #univers-home div, #products-home div, #univers-home div:last-child, #products-home div div div:last-child, #univers-home h2, #products-home h2 {
+    text-align: center;
+    justify-content: center;
+}
+
+
+#univers-home h2, #products-home h2, #products-home div div div:last-child a {
+    text-transform: uppercase;
+}
+
+#univers-home div:last-child button {
+    padding: 1em;
+    color: white;
+    background-color: indianred;
+    border: none;
+}
+
+#products-home div div div:last-child {
+    padding: 1em;
+    background-color: indianred;
+}
+
+#products-home div div div:last-child a {
+    color: white;
+}
+
+#products-home div div {
+    margin-bottom: 0.5em;
+}
+
+/* FOOTER */
+
+footer {
+    height: 400px;
+    background-color: rgba(15, 19, 25, 0.95);
+    color: white;
+    justify-content: center;
+    text-align: justify;
+}
+
+footer div {
+    width: 15%;
+    margin: 1em;
+}
+

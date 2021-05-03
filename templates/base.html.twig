@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Alliance Manga{% endblock %}</title>
-    <link rel="stylesheet" href="{{ asset('asset/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/all.min.css') }}">
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" >
+    {% endblock %}
 </head>
 <body>
 {% include 'partials/header.html.twig' %}
@@ -14,13 +15,12 @@
 <!--message validation-->
 
 {% block body %}{% endblock %}
+
 {% include 'partials/footer.html.twig' %}
-
 {% block javascripts %}
-    <script src="{{ asset('asset/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('asset/js/all.min.js') }}"></script>
-
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/all.min.js') }}"></script>
 {% endblock %}
 </body>
 </html>

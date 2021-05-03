@@ -9,7 +9,8 @@ use Faker\Factory;
 
 class MangaFixtures extends Fixture
 {
-    private $licences = ['Attack On Titan', 'Berserk', 'Bleach', 'City Hunter', 'Demon Slayer', 'Dragon Ball Z', 'Fate Series', 'My Hero Academia', 'Full Metal Alchemist', 'The Rising of the Shield Hero'];
+    private $licences = ['Attack On Titan', 'Berserk', 'Bleach', 'City Hunter', 'Demon Slayer', 'Dragon Ball Z', 'Fate Series', 'Full Metal Alchemist','My Hero Academia', 'The Rising of the Shield Hero'];
+
 
     public function load(ObjectManager $manager)
     {

@@ -63,23 +63,22 @@ class Product
     private $material;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity=character::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $character;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=manga::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Manga::class, inversedBy="products")
      * @ORM\JoinColumn(nullable=false)
      */
     private $manga;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Personnage::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $personnage;
 
     public function getId(): ?int
     {
@@ -206,17 +205,6 @@ class Product
         return $this;
     }
 
-    public function getCharacter(): ?character
-    {
-        return $this->character;
-    }
-
-    public function setCharacter(?character $character): self
-    {
-        $this->character = $character;
-
-        return $this;
-    }
 
     public function getManga(): ?manga
     {
@@ -230,5 +218,15 @@ class Product
         return $this;
     }
 
+    public function getPersonnage(): ?Personnage
+    {
+        return $this->personnage;
+    }
 
+    public function setPersonnage(?Personnage $personnage): self
+    {
+        $this->personnage = $personnage;
+
+        return $this;
+    }
 }

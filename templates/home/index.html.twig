@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{{ parent() }}Home{% endblock %}
 
 {% block body %}
     <!-- Slider -->
@@ -13,13 +13,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ asset('asset/img/banner/banner_01.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/banner/banner_01.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('asset/img/banner/banner_02.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/banner/banner_02.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{{ asset('asset/img/banner/banner_03.png') }}" class="d-block w-100" alt="...">
+                    <img src="{{ asset('img/banner/banner_03.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,29 +34,61 @@
     </div>
     <!-- End Slider -->
 
-
-    <main class="container">
-        <!-- details -->
-        <section>
-            <div>
-
+    <!-- Manga Univers Products-->
+    <main>
+        <!-- Details-->
+        <section id="details-home">
+            <div class="col-md-4 col-md-2 ">
+                <i class="fa fa-star fa-2x"></i>
+                <p>Produits sous licence 100% officiels</p>
+            </div>
+            <div class="col-md-4 col-md-2 ">
+                <i class="fa fa-truck fa-2x"></i>
+                <p>Livraison en 48h et offerte dès 80&euro; d'achat</p>
+            </div>
+            <div class="col-md-4 col-md-2  ">
+                <i class="fa fa-credit-card fa-2x"></i>
+                <p>Paiment en 3 et 4x sans frais dès 100&euro;</p>
             </div>
         </section>
-        <!-- End details -->
 
-        <!-- Manga Univers Products-->
-        <section>
+
+        <!-- end details-->
+
+        <section id="univers-home">
+            <h2 class="my-5">Univers Manga</h2>
+            <div class="row">
+                {% for license in licenses %}
+                    <div class="col-lg-3 col-md-4 col-sm-5">
+                        <img src="{{ asset('img/manga/') ~ license.image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-title">{{ license.title }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
             <div>
-
+                <button>Tous les manga</button>
             </div>
         </section>
         <!-- End  Manga Univers Products -->
 
-
         <!-- latest Manga Products -->
-        <section>
-            <div>
-
+        <section id="products-home">
+                <h2 class="my-5">Nos dernières nouveautés</h2>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-md-3 col-sm-4 col-6">
+                        <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-title">{{ product.name }}</p>
+                            <p> {{ product.price }}</p>
+                        </div>
+                        <div>
+                            <a href="#">Ajouter au panier</a>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </section>
         <!-- End latest Manga Products -->
