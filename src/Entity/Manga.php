@@ -39,6 +39,12 @@ class Manga
      */
     private $products;
 
+
+    public function __toString()
+    {
+        return $this->title;
+    }
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -115,5 +121,4 @@ class Manga
 
         return $this;
     }
-
 }

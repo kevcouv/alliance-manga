@@ -20,7 +20,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $title;
 
     /**
      * @ORM\Column(type="text")
@@ -31,6 +31,12 @@ class Product
      * @ORM\Column(type="text")
      */
     private $full_description;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nameCharacter;
+
 
     /**
      * @ORM\Column(type="string", length=120)
@@ -74,25 +80,21 @@ class Product
      */
     private $manga;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Personnage::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $personnage;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getTitle(): ?string
     {
-        return $this->name;
+        return $this->title;
     }
 
-    public function setName(string $name): self
+    public function setTitle(string $title): self
     {
-        $this->name = $name;
+        $this->title = $title;
 
         return $this;
     }
@@ -218,14 +220,14 @@ class Product
         return $this;
     }
 
-    public function getPersonnage(): ?Personnage
+    public function getNameCharacter(): ?string
     {
-        return $this->personnage;
+        return $this->nameCharacter;
     }
 
-    public function setPersonnage(?Personnage $personnage): self
+    public function setNameCharacter(string $nameCharacter): self
     {
-        $this->personnage = $personnage;
+        $this->nameCharacter = $nameCharacter;
 
         return $this;
     }

@@ -4,7 +4,6 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use App\Entity\Manga;
-use App\Entity\Personnage;
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -18,14 +17,12 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
         $categories = $manager->getRepository(Category::class)->findAll();
         $licences = $manager->getRepository(Manga::class)->findAll();
-        $characters = $manager->getRepository(Personnage::class)->findAll();
 
-        //$productTypes = ['figurine', 'shirt','mug', 'porte_cle', 'peluche'];
-        for ($i = 1; $i <= 30; $i++){
+        for ($i = 1; $i <= 20; $i++){
             $product = new Product();
-            //$productType = $faker->randomElement($productTypes);
-            $product->setName($faker->words($faker->numberBetween(2, 4),true))
-                ->setImage('0'.$i.'figurine.png')
+            $product->setTitle($faker->words($faker->numberBetween(2, 4),true))
+                ->setNameCharacter($faker->words($faker->numberBetween(1, 4),true))
+                ->setImage('0'.$i.'.png')
                 ->setSmallDescription($faker->paragraph(3, true))
                 ->setFullDescription($faker->paragraphs($faker->numberBetween(2,4), true))
                 ->setPrice($faker->numberBetween(10, 120))
@@ -34,10 +31,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
                 ->setIsPublished(1)
                 ->setCategory($categories[$faker->numberBetween(0, count($categories) -1)])
-                ->setManga($licences[$faker->numberBetween(0, count($licences) -1)])
-                ->setPersonnage($characters[$faker->numberBetween(0, count($characters) -1)]);
+                ->setManga($licences[$faker->numberBetween(0, count($licences) -1)]);
             $manager->persist($product);
-
         }
         $manager->flush();
     }
@@ -47,7 +42,6 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
         return [
             CategoryFixtures::class,
             MangaFixtures::class,
-            PersonnageFixtures::class
         ];
     }
 
