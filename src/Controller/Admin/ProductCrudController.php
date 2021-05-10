@@ -12,7 +12,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProductCrudController extends AbstractCrudController
 {
@@ -26,7 +25,6 @@ class ProductCrudController extends AbstractCrudController
     {
         return $filters
             ->add(EntityFilter::new('manga'))
-            ->add(EntityFilter::new('category'))
             ;
     }
 
@@ -43,7 +41,6 @@ class ProductCrudController extends AbstractCrudController
         yield DateTimeField::new('createdAt');
 
         yield AssociationField::new('manga');
-        yield AssociationField::new('category');
         yield BooleanField::new('isPublished');
     }
 

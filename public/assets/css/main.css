@@ -1,44 +1,84 @@
 /* CSS */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(https://d2i67f08wyo552.cloudfront.net/fonts/ProximaNova-Regular.otf);
+;
+}
+
+main{
+    background-color: #f9f9f9;
+    padding: 0.1em;
+}
+
+body{
+    font-size: 14px;
+}
 
 /* HOME */
 
-#details-home, #univers-home, #products-home {
-    margin: 3% 5%;
+#details-home, #univers-home, #products-home, .products-h2 {
+    margin: 3% 4%;
 }
 
-#details-home, #univers-home div:first-child, #products-home, footer{
+#univers-home h2, .products-h2 h2, #products-home a:last-child {
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#details-home, #univers-home div:first-child, #products-home, footer {
     display: flex;
     flex-wrap: wrap;
 }
 
 #details-home div {
+    font-size: 15px;
+}
+
+#details-home div p {
     font-size: 20px;
 }
 
-#details-home div, #univers-home div, #products-home div, #univers-home div:last-child, #products-home div div div:last-child, #univers-home h2, #products-home h2 {
+#details-home div, #univers-home div, #univers-home h2, #products-home, .products-h2 h2 {
     text-align: center;
     justify-content: center;
 }
 
-
-#univers-home h2, #products-home h2, #products-home div div div:last-child a {
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child  {
     text-transform: uppercase;
 }
 
-#univers-home div:last-child button {
-    padding: 1em;
+#univers-home a, #products-home div div a {
+    text-decoration: none;
+    color: black;
+}
+
+#univers-home button, #products-home div div a:last-child div {
+    padding: 0.60em;
     color: white;
-    background-color: indianred;
+    background-color: #e46163;
     border: none;
 }
 
-#products-home div div div:last-child {
-    padding: 1em;
-    background-color: indianred;
+#univers-home button:hover, #products-home div div a:last-child div:hover {
+    background-color: #c64e50;
 }
 
-#products-home div div div:last-child a {
-    color: white;
+#products-home div div div{
+    background-color: white;
+}
+
+.product-content {
+    margin: 0.2em;
+}
+.product-content span:last-child{
+    text-align: left;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#products-home .card-title span{
+    letter-spacing: -1px;
+    font-size: 16px;
 }
 
 #products-home div div {
@@ -48,7 +88,7 @@
 /* FOOTER */
 
 footer {
-    height: 400px;
+    padding: 0.1em;
     background-color: rgba(15, 19, 25, 0.95);
     color: white;
     justify-content: center;

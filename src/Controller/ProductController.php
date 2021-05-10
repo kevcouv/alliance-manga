@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product", name="product")
+     * @Route("/products", name="products")
      */
     public function index(): Response
     {

@@ -68,11 +68,6 @@ class Product
      */
     private $material;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=Manga::class, inversedBy="products")
@@ -194,19 +189,6 @@ class Product
 
         return $this;
     }
-
-    public function getCategory(): ?category
-    {
-        return $this->category;
-    }
-
-    public function setCategory(?category $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
 
     public function getManga(): ?manga
     {

@@ -2,7 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
 use App\Entity\Manga;
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -12,10 +11,10 @@ use Faker\Factory;
 
 class ProductFixtures extends Fixture implements DependentFixtureInterface
 {
+
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
-        $categories = $manager->getRepository(Category::class)->findAll();
         $licences = $manager->getRepository(Manga::class)->findAll();
 
         for ($i = 1; $i <= 20; $i++){
@@ -30,7 +29,6 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setMaterial($faker->word())
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
                 ->setIsPublished(1)
-                ->setCategory($categories[$faker->numberBetween(0, count($categories) -1)])
                 ->setManga($licences[$faker->numberBetween(0, count($licences) -1)]);
             $manager->persist($product);
         }
@@ -40,7 +38,6 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return [
-            CategoryFixtures::class,
             MangaFixtures::class,
         ];
     }

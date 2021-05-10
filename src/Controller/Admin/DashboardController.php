@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
 use App\Entity\Manga;
 use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -35,7 +34,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToRoute('Back to the website', 'fas fa-home', 'home');
         yield MenuItem::linkToCrud('Products', 'fas fa-map-marker-alt', Product::class);
-        yield MenuItem::linkToCrud('Category', 'fas fa-map-marker-alt', Category::class);
         yield MenuItem::linkToCrud('Licences', 'fas fa-map-marker-alt', Manga::class);
     }
 }
