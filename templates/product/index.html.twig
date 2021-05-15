@@ -3,10 +3,12 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
+
     <main>
         <section id="product-detail">
             <div class="row">
-                <div class="mb-3 col-md-12" style="max-width: 1000px;">
+                <div class="mb
+                -3 col-md-12" style="max-width: 1000px;">
                     <div class="row g-0">
                         <div class="col-md-6">
                             <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
@@ -45,19 +47,53 @@
             </div>
         </section>
 
+
         <section id="product-description">
-                <div class="col-lg-4 col-md-4">
-                    <h2>Description</h2>
-                    <p>
-                        {{ product.fullDescription }}
-                    </p>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h2>Détails du produit</h2>
-                    <span>Matière :</span> {{ product.material }}<br>
-                    <span>Type :</span> Figurine <br>
-                    <span>Personnage :</span> {{ product.nameCharacter }}
-                </div>
+            <div class="col-lg-4 col-md-4">
+                <h2>Description</h2>
+                <p>
+                    {{ product.fullDescription }}
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <h2>Détails du produit</h2>
+                <span>Matière :</span> {{ product.material }}<br>
+                <span>Type :</span> {{ product.category.title }}<br>
+                <span>Personnage :</span> {{ product.nameCharacter }}
+            </div>
+        </section>
+
+        <div class="text-center" style="padding-top: 2em;">
+            <h4>Autres produits de la même catégorie: </h4>
+        </div>
+        <section id="products-home">
+            <div class="row">
+                {% for product in products %}
+                    {% if product.category == "Figurine" %}
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div style="min-width:150px;max-width: 250px">
+                                <a href="{{ path('product', {id:product.id}) }}">
+                                    <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                         alt="{{ product.image }}">
+                                    <div class="product-content">
+                                        <div>
+                                            <p class="card-title">
+                                                <span>{{ product.nameCharacter }}</span>
+                                                <br>
+                                                {{ product.manga.title }}
+                                            </p>
+                                        </div>
+                                        <span>{{ product.price }},00&euro;</span>
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div>Ajouter au panier</div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </section>
 
         <!-- COMMENTARY SECTION-->

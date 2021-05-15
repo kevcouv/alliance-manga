@@ -122,15 +122,19 @@ body {
     margin: 0.5em;
 }
 
-#product-description {
-    padding: 1em;
+#product-description{
+    padding: 2em;
     background-color: rgba(24, 123, 106, 0.14);
+}
+
+.same-product {
+    text-align: justify;
 }
 
 /* FOOTER */
 
 footer {
-    padding: 1em;
+    padding: 2em;
     background-color: rgba(15, 19, 25, 0.95);
     color: white;
     justify-content: center;

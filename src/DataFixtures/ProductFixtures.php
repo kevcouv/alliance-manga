@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\Manga;
 use App\Entity\Product;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -16,8 +17,10 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Factory::create('fr_FR');
         $licences = $manager->getRepository(Manga::class)->findAll();
+        $categories = $manager->getRepository(Category::class)->findAll();
 
-        for ($i = 1; $i <= 44; $i++){
+
+        for ($i = 1; $i <= 57; $i++){
             $product = new Product();
             $product->setTitle($faker->words($faker->numberBetween(2, 3),true))
                 ->setNameCharacter($faker->words($faker->numberBetween(1, 3),true))
@@ -29,7 +32,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
                 ->setUpdatedAt($faker->dateTimeBetween('now'))
                 ->setIsPublished(1)
-                ->setManga($licences[$faker->numberBetween(0, count($licences) -1)]);
+                ->setManga($licences[$faker->numberBetween(0, count($licences) -1)])
+                ->setCategory($categories[$faker->numberBetween(0, count($categories) -1)]);
             $manager->persist($product);
         }
         $manager->flush();
@@ -39,6 +43,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     {
         return [
             MangaFixtures::class,
+            CategoryFixtures::class
         ];
     }
 

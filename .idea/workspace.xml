@@ -2,32 +2,464 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/alliance_manga.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alliance_manga.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/banner_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/banner_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/banner/banner_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product/all_figurine.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/product/derived_product.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210505134925.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_01.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/banner/banner_01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_02.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/banner/banner_02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_03.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/banner/banner_03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/product/03figurine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/product/04figurine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210511095712.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwind.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwindcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tailwindcss.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/defaultConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/defaultTheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/base.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/components.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind-dark.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind-dark.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind-experimental.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind-experimental.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/tailwind.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/dist/utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/accessibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/alignContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/alignItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/alignSelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/animation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/appearance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundAttachment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundBlendMode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundClip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundRepeat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/backgroundSize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderCollapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderRadius.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/borderWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/boxDecorationBreak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/boxShadow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/boxSizing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/clear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/css/preflight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/cursor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/divideColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/divideOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/divideStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/divideWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/flex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/flexDirection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/flexGrow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/flexShrink.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/flexWrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/float.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontFamily.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontSize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontSmoothing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontVariantNumeric.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/fontWeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gradientColorStops.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridAutoColumns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridAutoFlow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridAutoRows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridColumn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridColumnEnd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridColumnStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridRowEnd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridRowStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridTemplateColumns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/gridTemplateRows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/height.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/inset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/isolation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/justifyContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/justifyItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/justifySelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/letterSpacing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/lineHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/listStylePosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/listStyleType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/margin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/maxHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/maxWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/minHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/minWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/mixBlendMode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/objectFit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/objectPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/opacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/outline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/overflow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/overscrollBehavior.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/padding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/placeContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/placeItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/placeSelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/placeholderColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/placeholderOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/pointerEvents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/position.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/preflight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/ringColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/ringOffsetColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/ringOffsetWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/ringOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/ringWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/rotate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/scale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/skew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/space.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/stroke.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/strokeWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/tableLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textAlign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textDecoration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textOverflow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/textTransform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transformOrigin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transitionDelay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transitionDuration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transitionProperty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/transitionTimingFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/translate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/userSelect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/verticalAlign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/visibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/whitespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/width.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/wordBreak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/corePlugins/zIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/collapseAdjacentRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/expandApplyAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/expandTailwindAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/generateRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/removeLayerAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/rewriteTailwindImports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/setupContext.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/sharedState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/pluginUtils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/apply.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/apply.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/apply.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/arbitrary-values.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/arbitrary-values.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/arbitrary-values.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/basic-usage.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/basic-usage.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/basic-usage.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/collapse-adjacent-rules.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/collapse-adjacent-rules.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/collapse-adjacent-rules.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/context-reuse.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/context-reuse.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/context-reuse.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-extractors.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-extractors.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-extractors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-separator.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-separator.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/custom-separator.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/import-syntax.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/import-syntax.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/import-syntax.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-boolean.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-boolean.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-boolean.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier-prefix.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier-prefix.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier-prefix.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-modifier.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-selector.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-selector.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/important-selector.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/kitchen-sink.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/kitchen-sink.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/kitchen-sink.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/modify-selectors.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/modify-selectors.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/modify-selectors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/mutable.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/mutable.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/mutable.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.fn.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.fn.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.fn.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/prefix.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/responsive-and-variants-atrules.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/responsive-and-variants-atrules.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/responsive-and-variants-atrules.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/svelte-syntax.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/svelte-syntax.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/svelte-syntax.test.svelte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/variants.test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/variants.test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/jit/tests/variants.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/commands/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/commands/help.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/commands/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/commands/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/compile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/emoji.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/cli/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/corePluginList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/corePlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/featureFlags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/index.postcss7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/applyImportantConfiguration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/convertLayerAtRulesToControlComments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/evaluateTailwindFunctions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/formatCSS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/getModuleDependencies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/purgeUnusedStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/registerConfigAsDependency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/substituteClassApplyAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/substituteResponsiveAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/substituteScreenAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/substituteTailwindAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/lib/substituteVariantsAtRules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/accessibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/alignContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/alignItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/alignSelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/animation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/appearance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropBlur.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropBrightness.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropContrast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropFilter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropGrayscale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropHueRotate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropInvert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropSaturate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backdropSepia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundAttachment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundBlendMode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundClip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundRepeat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/backgroundSize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/blur.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderCollapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderRadius.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/borderWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/boxDecorationBreak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/boxShadow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/boxSizing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/brightness.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/clear.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/container.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/contrast.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/css/preflight.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/cursor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/divideColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/divideOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/divideStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/divideWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/dropShadow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/flex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/flexDirection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/flexGrow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/flexShrink.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/flexWrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/float.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontFamily.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontSize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontSmoothing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontVariantNumeric.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/fontWeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gradientColorStops.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/grayscale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridAutoColumns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridAutoFlow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridAutoRows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridColumn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridColumnEnd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridColumnStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridRow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridRowEnd.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridRowStart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridTemplateColumns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/gridTemplateRows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/height.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/hueRotate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/inset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/invert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/isolation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/justifyContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/justifyItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/justifySelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/letterSpacing.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/lineHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/listStylePosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/listStyleType.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/margin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/maxHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/maxWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/minHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/minWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/mixBlendMode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/objectFit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/objectPosition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/opacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/order.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/outline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/overflow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/overscrollBehavior.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/padding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/placeContent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/placeItems.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/placeSelf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/placeholderColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/placeholderOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/pointerEvents.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/position.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/preflight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/ringColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/ringOffsetColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/ringOffsetWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/ringOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/ringWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/rotate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/saturate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/scale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/sepia.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/skew.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/space.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/stroke.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/strokeWidth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/tableLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textAlign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textDecoration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textOpacity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textOverflow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/textTransform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transformOrigin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transitionDelay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transitionDuration.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transitionProperty.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/transitionTimingFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/translate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/userSelect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/verticalAlign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/visibility.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/whitespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/width.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/wordBreak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/plugins/zIndex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/processTailwindFeatures.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/buildMediaQuery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/buildSelectorVariant.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/cloneNodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/configurePlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/createPlugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/createUtilityPlugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/disposables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/escapeClassName.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/flattenColorPalette.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/generateVariantFunction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/getAllConfigs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/increaseSpecificity.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/nameClass.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/negateValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/parseAnimationValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/parseObjectStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/prefixNegativeModifiers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/prefixSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/processPlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/resolveConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/responsive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/toColorValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/transformThemeValue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/useMemo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/usesCustomProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/withAlphaVariable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/lib/util/wrapWithVariants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/resolveConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/screens.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/compat.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/scripts/rebuildFixtures.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/defaultConfig.stub.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/defaultPostCssConfig.stub.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/stubs/simpleConfig.stub.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/tailwind.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tailwindcss/utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/all.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/banner/banner_03.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Manga.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Manga.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/licence/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/licence/products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
     </list>
@@ -85,10 +517,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+            <state relative-caret-position="331">
+              <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#2;n#main#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,14 +538,12 @@
       <list>
         <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" />
         <option value="$PROJECT_DIR$/src/Entity/Character.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/CharacterFixtures.php" />
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/public/asset/css/main.css" />
         <option value="$PROJECT_DIR$/src/DataFixtures/PersonnageFixtures.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Category.php" />
         <option value="$PROJECT_DIR$/src/Controller/Admin/DashboardController.php" />
         <option value="$PROJECT_DIR$/src/DataFixtures/CategorieFixtures.php" />
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
@@ -119,20 +552,26 @@
         <option value="$PROJECT_DIR$/src/Entity/Manga.php" />
         <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
         <option value="$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Product.php" />
-        <option value="$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php" />
         <option value="$PROJECT_DIR$/templates/partials/footer.html.twig" />
         <option value="$PROJECT_DIR$/templates/licence/index.html.twig" />
-        <option value="$PROJECT_DIR$/templates/partials/header.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/LicenceController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/ProductController.php" />
-        <option value="$PROJECT_DIR$/templates/licence/products.html.twig" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" />
+        <option value="$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Category.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" />
         <option value="$PROJECT_DIR$/public/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/ProductRepository.php" />
+        <option value="$PROJECT_DIR$/templates/partials/header.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/licence/products.html.twig" />
+        <option value="$PROJECT_DIR$/templates/product/all_figurine.html.twig" />
+        <option value="$PROJECT_DIR$/templates/product/derived_product.html.twig" />
       </list>
     </option>
   </component>
@@ -250,11 +689,11 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="141" />
-    <option name="y" value="83" />
-    <option name="width" value="1628" />
-    <option name="height" value="898" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="408" />
+    <option name="y" value="44" />
+    <option name="width" value="1777" />
+    <option name="height" value="930" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -272,13 +711,29 @@
             <path>
               <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
               <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
               <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
@@ -294,21 +749,24 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../learning" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Symfony\alliance_manga\public" />
+      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\img" />
+      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\assets" />
+      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\img\banner" />
+      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\asset\css" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Symfony\alliance_manga\templates" />
       <recent name="C:\wamp64\www\Symfony\alliance_manga\public\asset\js" />
-      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\asset\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\assets" />
-      <recent name="C:\wamp64\www\Symfony\alliance_manga\public" />
-      <recent name="C:\wamp64\www\Symfony\alliance_manga\public\img\banner" />
       <recent name="C:\wamp64\www\Symfony\alliance_manga\public\asset\css" />
     </key>
   </component>
@@ -407,16 +865,23 @@
       <workItem from="1620947644853" duration="22000" />
       <workItem from="1620948195519" duration="290000" />
       <workItem from="1620994426271" duration="630000" />
+      <workItem from="1621076206888" duration="9406000" />
+      <workItem from="1621086531771" duration="2036000" />
+      <workItem from="1621088608828" duration="10509000" />
+      <workItem from="1621099904884" duration="546000" />
+      <workItem from="1621100472661" duration="243000" />
+      <workItem from="1621103861780" duration="1190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159613000" />
+    <option name="totallyTimeSpent" value="183543000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="408" y="44" width="1777" height="930" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.114605546" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15958066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -429,7 +894,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49913645" visible="true" weight="0.23779854" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49913645" visible="true" weight="0.11919699" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50086355" side_tool="true" weight="0.36529127" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32917964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -438,7 +903,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.21108742" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11353944" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -451,7 +916,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49913645" visible="true" weight="0.23779854" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49913645" visible="true" weight="0.15264797" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50086355" side_tool="true" weight="0.36529127" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.32917964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -464,47 +929,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://3bd9ad21-c13b-47b7-8aa7-fb3f88c2c0ac/schema/alliance_manga/table/category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/PersonnageFixtures.php" />
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://3bd9ad21-c13b-47b7-8aa7-fb3f88c2c0ac/schema/alliance_manga/table/doctrine_migration_versions">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://8d5a382d-4cc0-447e-b3e9-8698a4231850/schema/alliance_manga/table/manga">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8d5a382d-4cc0-447e-b3e9-8698a4231850/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php" />
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" />
-    <entry file="file://$PROJECT_DIR$/public/img/manga/Attack On Titan.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" />
     <entry file="file://$PROJECT_DIR$/vendor/composer/package-versions-deprecated/src/PackageVersions/Versions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -526,25 +950,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/CategorieFixtures.php" />
-    <entry file="file://$PROJECT_DIR$/src/Repository/MangaRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ProductRepository.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/product/01figurine.png" />
     <entry file="file://$PROJECT_DIR$/public/img/product/02figurine.png" />
     <entry file="file://$PROJECT_DIR$/public/img/product/03figurine.png" />
     <entry file="file://$PROJECT_DIR$/public/img/product/04figurine.png" />
-    <entry file="file://$PROJECT_DIR$/public/img/product/05.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/product/012.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/product/011.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/product/05.png" />
+    <entry file="file://$PROJECT_DIR$/public/img/product/012.png" />
+    <entry file="file://$PROJECT_DIR$/public/img/product/011.png" />
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-80" />
@@ -556,16 +968,6 @@
     <entry file="file://$PROJECT_DIR$/config/bundles.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/easy_admin.yaml" />
     <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -574,61 +976,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Manga.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="e#30#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
-          <folding>
-            <element signature="e#40#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/all.min.css">
+    <entry file="file://$PROJECT_DIR$/public/css/all.min.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
-          <folding>
-            <element signature="e#36#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/banner/banner_02.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/banner/banner_03.png">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/partials/footer.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -637,8 +986,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/banner/banner_01.png">
+    <entry file="file://$PROJECT_DIR$/templates/category/index.html.twig" />
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1060">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mdb/index.html" />
+    <entry file="file://$PROJECT_DIR$/public/banner/banner_03.png">
       <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/banner/banner_01.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/banner/banner_02.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/product/08.png" />
+    <entry file="file://$PROJECT_DIR$/public/img/product/014.png" />
+    <entry file="file://$PROJECT_DIR$/public/img/product/03.png" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding>
+            <element signature="e#40#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Manga.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="60" selection-end-column="5" />
+          <folding>
+            <element signature="e#30#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ProductRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/MangaRepository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#36#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-952">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#30#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/ProductFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding>
+            <element signature="e#36#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <folding>
+            <element signature="e#36#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/licence/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
@@ -647,86 +1128,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/LicenceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#34#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        <state relative-caret-position="609">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding>
             <element signature="e#34#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
-          <folding>
-            <element signature="e#30#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/category/index.html.twig" />
-    <entry file="file://$PROJECT_DIR$/templates/licence/products.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="17" column="77" selection-start-line="17" selection-start-column="77" selection-end-line="17" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/partials/header.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" lean-forward="true" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="73" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/LicenceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="28" />
-          <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="331">
+          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
+            <element signature="e#34#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="125" column="14" selection-start-line="125" selection-start-column="14" selection-end-line="125" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
+        <state relative-caret-position="147">
+          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#2;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/licence/products.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/all_figurine.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/derived_product.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="59" lean-forward="true" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="77" column="59" selection-start-line="77" selection-start-column="59" selection-end-line="77" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#2;n#main#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

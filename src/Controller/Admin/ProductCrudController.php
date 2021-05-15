@@ -24,7 +24,9 @@ class ProductCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add(EntityFilter::new('manga'));
+            ->add(EntityFilter::new('manga'))
+            ->add(EntityFilter::new('category'))
+            ;
     }
 
     public function configureFields(string $pageName): iterable
@@ -38,12 +40,12 @@ class ProductCrudController extends AbstractCrudController
             TextField::new('title'),
             TextField::new('nameCharacter'),
             AssociationField::new('manga'),
+            AssociationField::new('category'),
             TextareaField::new('smallDescription')->onlyOnForms(),
             TextareaField::new('fullDescription')->onlyOnForms(),
             TextField::new('price'),
             TextField::new('material')->onlyOnForms(),
             DateTimeField::new('createdAt'),
-            DateTimeField::new('updatedAt'),
         ];
     }
 
