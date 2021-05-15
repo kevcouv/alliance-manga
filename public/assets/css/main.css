@@ -5,27 +5,28 @@
 ;
 }
 
-main{
-    background-color: #f9f9f9;
+main {
     padding: 0.1em;
+    background-color: white;
 }
 
-body{
-    font-size: 14px;
+body {
+    font-size: 13px;
 }
 
 /* HOME */
 
-#details-home, #univers-home, #products-home, .products-h2 {
+#details-home, #univers-home, #products-home, .products-h2, #product-detail{
     margin: 3% 4%;
 }
 
-#univers-home h2, .products-h2 h2, #products-home a:last-child {
+
+#univers-home h2, .products-h2 h2, #products-home a:last-child, #product-detail a div, #product-description h2, #product-description span {
     font-weight: bold;
     letter-spacing: -1px;
 }
 
-#details-home, #univers-home div:first-child, #products-home, footer {
+#details-home, #univers-home div:first-child, #products-home, #product-detail, .content-detail, #product-description, footer {
     display: flex;
     flex-wrap: wrap;
 }
@@ -38,57 +39,98 @@ body{
     font-size: 20px;
 }
 
-#details-home div, #univers-home div, #univers-home h2, #products-home, .products-h2 h2 {
+#details-home div, #univers-home div, #univers-home h2, #products-home, #product-detail, .products-h2 h2, #product-description {
     text-align: center;
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child  {
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, .content-detail div p, #product-description h2, #product-description span {
     text-transform: uppercase;
 }
 
-#univers-home a, #products-home div div a {
+#univers-home a, #products-home div div a, #product-detail a {
     text-decoration: none;
     color: black;
 }
 
-#univers-home button, #products-home div div a:last-child div {
+#univers-home button, #products-home div div a:last-child div, #product-detail a div {
     padding: 0.60em;
     color: white;
-    background-color: #e46163;
+    background-color: rgb(33, 174, 150);
     border: none;
 }
 
-#univers-home button:hover, #products-home div div a:last-child div:hover {
-    background-color: #c64e50;
-}
-
-#products-home div div div{
-    background-color: white;
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover {
+    background-color: rgb(26, 142, 125);
 }
 
 .product-content {
     margin: 0.2em;
 }
-.product-content span:last-child{
+
+.product-content span:last-child {
     text-align: left;
-    font-size: 20px;
-    font-weight: bolder;
+    font-size: 22px;
+    color: rgba(30, 30, 30, 0.93);
 }
 
-#products-home .card-title span{
+#products-home .card-title span {
     letter-spacing: -1px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #products-home div div {
     margin-bottom: 0.5em;
 }
 
+
+/* DETAIL PRODUCT PAGE */
+
+#product-detail, #product-description {
+    text-align: justify;
+}
+
+#product-detail h1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#product-detail h3 {
+    font-size: 30px;
+}
+
+#product-detail a div {
+    width: 60%;
+    text-align: center;
+}
+
+#product-detail div div div:last-child div:nth-child(3), .content-detail div, #product-detail div div div:last-child div:nth-child(5)  {
+    border: 1px solid rgba(96, 96, 96, 0.24);
+}
+
+#product-detail div div div:last-child div:nth-child(3), .content-detail div, #product-detail div div div:last-child div:nth-child(5)  {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.content-detail div {
+    margin-right: 0.5em;
+    width: 48%;
+}
+
+#product-detail div div div:last-child div:nth-child(3) p, .content-detail p,#product-detail div div div:last-child div:nth-child(5) p {
+    margin: 0.5em;
+}
+
+#product-description {
+    padding: 1em;
+    background-color: rgba(24, 123, 106, 0.14);
+}
+
 /* FOOTER */
 
 footer {
-    padding: 0.1em;
+    padding: 1em;
     background-color: rgba(15, 19, 25, 0.95);
     color: white;
     justify-content: center;
@@ -96,7 +138,8 @@ footer {
 }
 
 footer div {
-    width: 15%;
     margin: 1em;
 }
+
+
 

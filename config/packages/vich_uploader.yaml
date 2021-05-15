@@ -1,0 +1,22 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        manga_images:
+            uri_prefix: /img/manga
+            upload_destination: '%kernel.project_dir%/public/img/manga'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        product_images:
+            uri_prefix: /img/product
+            upload_destination: '%kernel.project_dir%/public/img/product'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+

@@ -1,20 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <main>
+        <section id="product-detail">
+            <div class="row">
+                <div class="mb-3 col-md-12" style="max-width: 1000px;">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                 alt="{{ product.image }}">
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <h1>{{ product.title }}</h1>
+                                <h3>{{ product.price }},00&euro;</h3>
+                                <p>{{ product.smallDescription }}</p>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <div>Ajouter au panier</div>
+                                </a>
+                            </div>
+                            <div>
+                                <p>En achetant ce produit vous gagnerez 0,80 € grâce à notre programme de fidélité.
+                                    Votre panier totalisera 2,80 € qui pourront être convertis en bon de réduction pour
+                                    un prochain achat.</p>
+                            </div>
+                            <div class="content-detail">
+                                <div>
+                                    <p><i class="fa fa-lock"></i>Paiement Sécurisé</p>
+                                </div>
+                                <div>
+                                    <p>Avis de nos clients</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Société Belge, expédition depuis la Belgique. Sans frais de Douane</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <section id="product-description">
+                <div class="col-lg-4 col-md-4">
+                    <h2>Description</h2>
+                    <p>
+                        {{ product.fullDescription }}
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h2>Détails du produit</h2>
+                    <span>Matière :</span> {{ product.material }}<br>
+                    <span>Type :</span> Figurine <br>
+                    <span>Personnage :</span> {{ product.nameCharacter }}
+                </div>
+        </section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Symfony/alliance_manga/src/Controller/ProductController.php'|file_link(0) }}">src/Controller/ProductController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/Symfony/alliance_manga/templates/product/index.html.twig'|file_link(0) }}">templates/product/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <!-- COMMENTARY SECTION-->
+        <section>
+            <div></div>
+        </section>
+        <!-- END COMMENTARY-->
+
+        <!-- SIMILARY PRODUCT SECTION-->
+
+        <!-- END SIMILARY PRODUCT SECTION-->
+    </main>
 {% endblock %}
+
+

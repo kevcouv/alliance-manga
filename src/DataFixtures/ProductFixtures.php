@@ -17,17 +17,17 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
         $licences = $manager->getRepository(Manga::class)->findAll();
 
-        for ($i = 1; $i <= 20; $i++){
+        for ($i = 1; $i <= 44; $i++){
             $product = new Product();
-            $product->setTitle($faker->words($faker->numberBetween(2, 4),true))
-                ->setNameCharacter($faker->words($faker->numberBetween(1, 4),true))
+            $product->setTitle($faker->words($faker->numberBetween(2, 3),true))
+                ->setNameCharacter($faker->words($faker->numberBetween(1, 3),true))
                 ->setImage('0'.$i.'.png')
                 ->setSmallDescription($faker->paragraph(3, true))
                 ->setFullDescription($faker->paragraphs($faker->numberBetween(2,4), true))
                 ->setPrice($faker->numberBetween(10, 120))
-                ->setSize($faker->numberBetween(5, 50))
                 ->setMaterial($faker->word())
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
+                ->setUpdatedAt($faker->dateTimeBetween('now'))
                 ->setIsPublished(1)
                 ->setManga($licences[$faker->numberBetween(0, count($licences) -1)]);
             $manager->persist($product);

@@ -22,6 +22,7 @@ class MangaFixtures extends Fixture
             $anime->setTitle($licence);
             $anime->setDescription($faker->text(300));
             $anime->setImage($licence.'.png');
+            $anime->setUpdatedAt($faker->dateTimeBetween('now'));
             $manager->persist($anime);
         }
         $manager->flush();
