@@ -26,7 +26,6 @@ class MangaCrudController extends AbstractCrudController
                 ->setRequired(false),
             TextField::new('title'),
             TextareaField::new('description')->onlyOnForms(),
-            DateTimeField::new('updatedAt'),
         ];
     }
 

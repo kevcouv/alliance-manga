@@ -3,14 +3,44 @@
 {% block title %}{{ parent() }}{% endblock %}
 
 {% block body %}
-    <main>
-        <section id="products-home">
-            <h2>Produits dérivés</h2>
-            <div class="row">
-                {% for product in products %}
-                    {% if product.category != "Figurine" %}
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div style="min-width:150px; max-width: 250x">
+    <main class="container">
+        <section id="products-home" class="border-top" style="padding-top: 1em">
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-12">
+                    <div class="border-right">
+                        <h5 class="text-left">Nouveautés </h5>
+                        <div class="products-figurine">
+                            {% for product in latestProducts %}
+                                {% if product.category != "Figurine" %}
+                                    <div class="col-lg-12 col-md-12 col-6" style=" width: 250px">
+                                        <a href="{{ path('product', {id:product.id}) }}">
+                                            <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                                 alt="{{ product.image }}">
+                                            <div class="product-content">
+                                                <div>
+                                                    <p class="card-title">
+                                                        <span>{{ product.nameCharacter }}</span>
+                                                        <br>
+                                                        {{ product.manga.title }}
+                                                    </p>
+                                                </div>
+                                                <span>{{ product.price }},00&euro;</span>
+                                            </div>
+                                        </a>
+                                        <a href="">
+                                            <div>Ajouter au panier</div>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" row col-md-8 col-12" style="margin-left: 1%">
+                    {% for product in products %}
+                        {% if product.category != "Figurine" %}
+                            <div class="col-lg-4 col-md-6 col-6" style=" max-width: 100%">
                                 <a href="{{ path('product', {id:product.id}) }}">
                                     <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                          alt="{{ product.image }}">
@@ -29,9 +59,12 @@
                                     <div>Ajouter au panier</div>
                                 </a>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="pagination">
+                    {{ knp_pagination_render(products) }}
+                </div>
             </div>
         </section>
     </main>

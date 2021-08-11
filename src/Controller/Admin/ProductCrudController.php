@@ -44,8 +44,9 @@ class ProductCrudController extends AbstractCrudController
             TextareaField::new('smallDescription')->onlyOnForms(),
             TextareaField::new('fullDescription')->onlyOnForms(),
             TextField::new('price'),
-            TextField::new('material')->onlyOnForms(),
+            TextField::new('material'),
             DateTimeField::new('createdAt'),
+            DateTimeField::new('updatedAt')->onlyOnForms(),
         ];
     }
 

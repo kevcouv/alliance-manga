@@ -45,11 +45,6 @@ class Manga
     private $imageFile;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updatedAt;
-
-    /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="manga")
      */
     private $products;
@@ -122,18 +117,6 @@ class Manga
     public function setImage($image)
     {
         $this->image = $image;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
     }
 
 

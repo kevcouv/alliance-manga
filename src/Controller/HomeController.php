@@ -19,6 +19,7 @@ class HomeController extends AbstractController
     public function index(MangaRepository $repository, ProductRepository $repositoryProd): Response
     {
 
+
         $licences = $repository->findBy(
             [],
             ['title' => 'DESC'], 6

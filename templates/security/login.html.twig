@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SecurityController!{% endblock %}
+
+{% block body %}
+    <main class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 ">
+            <h2 class="my-4">Se connecter</h2>
+
+            {% if error %}
+                <div class="alert alert-danger">Adresse E-mail ou mot de passe éronnés</div>
+            {% endif %}
+
+            <form action="{{ path('login') }}" method="post">
+                <div class="form-group">
+                    <label for="mail">Votre Email</label>
+                    <input type="email" class="form-control" required name="_username" id="mail" placeholder="Mail" value="{{ last_username }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">Votre mot de passe</label>
+                    <input type="password" class="form-control" required name="_password" placeholder="Mot de passe" id="pass">
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 offset-1 ">
+            <h3 class="my-4 ">Vous n'avez pas encore de compte actif sur notre site ? </h3>
+            <p>C'est rapide, gratuit, et vous permettra de réserver votre pseudo, afin que personne d'autre que vous ne puisse l'utiliser... </p>
+            <a href="{{ path('registration') }}"><button type="submit" class="btn btn-dark">Créer un compte</button></a>
+        </div>
+    </div>
+    </main>
+{% endblock %}

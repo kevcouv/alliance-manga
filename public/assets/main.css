@@ -1,0 +1,155 @@
+/* CSS */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url(https://d2i67f08wyo552.cloudfront.net/fonts/ProximaNova-Regular.otf);
+;
+}
+
+body {
+    font-size: 13px;
+}
+
+/* HOME */
+
+main {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+
+#univers-home h2, .products-h2 h2, #products-home a:last-child, #product-detail a div, #product-description h2, #product-description span {
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+
+#details-home, #product-detail{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#details-home div {
+    font-size: 15px;
+}
+
+#details-home div p {
+    font-size: 20px;
+}
+
+#details-home div, #univers-home div, #univers-home h2, #products-home, #product-detail, .products-h2 h2, #product-description {
+    text-align: center;
+    justify-content: center;
+}
+
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5 {
+    text-transform: uppercase;
+}
+
+#univers-home a, #products-home div div a, #product-detail a {
+    text-decoration: none;
+    color: black;
+}
+
+#univers-home button, #products-home div div a:last-child div, #product-detail a div {
+    padding: 0.60em;
+    color: white;
+    background-color: rgb(33, 174, 150);
+    border: none;
+}
+
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover {
+    background-color: rgb(26, 142, 125);
+}
+
+
+.product-content {
+    margin: 0.2em;
+}
+
+.product-content span:last-child {
+    text-align: left;
+    font-size: 22px;
+    color: rgba(30, 30, 30, 0.93);
+}
+
+
+#products-home .card-title span {
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+#products-home div div {
+    padding: 0.5em;
+}
+
+/* DETAIL PRODUCT PAGE */
+
+#product-detail, #product-description {
+    text-align: justify;
+}
+
+#product-detail h1 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#product-detail h3 {
+    font-size: 30px;
+}
+
+#product-detail a div {
+    width: 60%;
+    text-align: center;
+}
+
+#product-detail div div div:last-child div:nth-child(3), #product-detail div div div:last-child div:nth-child(5) {
+    border: 1px solid rgba(96, 96, 96, 0.24);
+}
+
+#product-detail div div div:last-child div:nth-child(3), #product-detail div div div:last-child div:nth-child(5) {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#product-detail div div div:last-child div:nth-child(3) p, .content-detail p, #product-detail div div div:last-child div:nth-child(5) p {
+    margin: 0.5em;
+}
+
+#product-description {
+    padding: 2em;
+    background-color: rgba(31, 123, 40, 0.14);
+}
+
+.same-product {
+    text-align: justify;
+}
+
+/* DERIVED PRODUCT PAGE */
+
+
+#products-home h5 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+
+}
+
+/* FOOTER */
+
+#footer {
+    padding: 0.5em;
+    background-color: rgba(15, 19, 25, 0.95);
+}
+
+footer {
+    color: white;
+    text-align: justify;
+}
+
+@media screen and (max-width: 769px) {
+
+    .products-figurine {
+        display: flex;
+    }
+}
+

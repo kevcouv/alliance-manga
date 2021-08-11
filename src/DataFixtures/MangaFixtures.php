@@ -9,7 +9,7 @@ use Faker\Factory;
 
 class MangaFixtures extends Fixture
 {
-    private $licences = ['Attack On Titan', 'Berserk', 'Bleach', 'City Hunter', 'Demon Slayer', 'Dragon Ball Z', 'Fate Series', 'Full Metal Alchemist','My Hero Academia', 'The Rising of the Shield Hero'];
+    private $licences = ['Attack On Titan', 'Berserk', 'Bleach', 'City Hunter', 'Demon Slayer', 'Dragon Ball Z', 'Fate Series', 'Full Metal Alchemist','My Hero Academia', 'One Piece', 'The Rising of the Shield Hero'];
 
 
     public function load(ObjectManager $manager)
@@ -22,7 +22,6 @@ class MangaFixtures extends Fixture
             $anime->setTitle($licence);
             $anime->setDescription($faker->text(300));
             $anime->setImage($licence.'.png');
-            $anime->setUpdatedAt($faker->dateTimeBetween('now'));
             $manager->persist($anime);
         }
         $manager->flush();

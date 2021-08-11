@@ -4,42 +4,58 @@
 
 {% block body %}
 
+    {# Rating Star #}
+    {% set comNumber = "0" %}
+    {% set evalGlob = "0" %}
+    {% set total = 0 %}
+    {% for comments in comment %}
+        {% set comNumber = loop.length %}
+        {% set total = total + comments.rating %}
+        {% set evalGlob = total / loop.length %}
+    {% endfor %}
+
     <main>
         <section id="product-detail">
-            <div class="row">
-                <div class="mb
-                -3 col-md-12" style="max-width: 1000px;">
-                    <div class="row g-0">
-                        <div class="col-md-6">
-                            <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
-                                 alt="{{ product.image }}">
-                        </div>
-                        <div class="col-md-6">
-                            <div>
-                                <h1>{{ product.title }}</h1>
-                                <h3>{{ product.price }},00&euro;</h3>
-                                <p>{{ product.smallDescription }}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="mb-3 col-md-12" style="max-width: 100%;">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                     alt="{{ product.image }}">
                             </div>
-                            <div>
-                                <a href="">
-                                    <div>Ajouter au panier</div>
-                                </a>
-                            </div>
-                            <div>
-                                <p>En achetant ce produit vous gagnerez 0,80 € grâce à notre programme de fidélité.
-                                    Votre panier totalisera 2,80 € qui pourront être convertis en bon de réduction pour
-                                    un prochain achat.</p>
-                            </div>
-                            <div class="content-detail">
+                            <div class="col-md-6">
                                 <div>
-                                    <p><i class="fa fa-lock"></i>Paiement Sécurisé</p>
+                                    <h1>{{ product.title }}</h1>
+                                    {% if comment is empty %}
+                                    {% else %}
+                                        {% for i in 1..5 %}
+                                            {% set starGlob = (evalGlob >= i ? "fas fa-star fa" : "far fa-star fa") %}
+                                            <a href="#comment"><i class="{{ starGlob }}" style="color: gold"></i>
+                                        {% endfor %} {{ comNumber }} avis</a>
+                                    {% endif %}
+                                    <h3>{{ product.price }},00&euro;</h3>
+                                    <p>{{ product.smallDescription }}</p>
                                 </div>
                                 <div>
-                                    <p>Avis de nos clients</p>
+                                    <a href="">
+                                        <div>Ajouter au panier</div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div>
-                                <p>Société Belge, expédition depuis la Belgique. Sans frais de Douane</p>
+                                <div>
+                                    <p>En achetant ce produit vous gagnerez 0,80 € grâce à notre programme de fidélité.
+                                        Votre panier totalisera 2,80 € qui pourront être convertis en bon de réduction
+                                        pour
+                                        un prochain achat.</p>
+                                </div>
+                                <div class="content-detail">
+                                    <div>
+                                        <p><i class="fa fa-lock"></i>Paiement Sécurisé</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>Société Belge, expédition depuis la Belgique. Sans frais de Douane</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,29 +65,90 @@
 
 
         <section id="product-description">
-            <div class="col-lg-4 col-md-4">
-                <h2>Description</h2>
-                <p>
-                    {{ product.fullDescription }}
-                </p>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <h2>Détails du produit</h2>
-                <span>Matière :</span> {{ product.material }}<br>
-                <span>Type :</span> {{ product.category.title }}<br>
-                <span>Personnage :</span> {{ product.nameCharacter }}
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-6">
+                        <h2>Description</h2>
+                        <p>
+                            {{ product.fullDescription }}
+                        </p>
+                    </div>
+                    <div class=" col-md-6">
+                        <h2>Détails du produit</h2>
+                        <span>Matière :</span> {{ product.material }}<br>
+                        <span>Type :</span> {{ product.category.title }}<br>
+                        <span>Personnage :</span> {{ product.nameCharacter }}
+                    </div>
+                </div>
+
+
+                {% if comment is empty %}
+
+                {% else %}
+                    <!-- COMMENTARY SECTION-->
+                    <div id="comment" class="text-center" style="background-color: white; padding-top: 1em; margin-top: 1em">
+                        <div>
+                            <h3>Avis Vérifiés</h3>
+                            <div class="col">
+                                {% for i in 1..5 %}
+                                {% set starGlob = (evalGlob >= i ? "fas fa-star fa-2x" : "far fa-star fa-2x") %}
+                                <i class="{{ starGlob }}" style="color: gold"></i>
+                                {% endfor %}<br>
+                                Calculée à partir de {{ comNumber }} client(s)
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            {% for comments in comment %}
+                                {% if comments.isPublished == 1 %}
+                                    <div style="border-bottom: 3px solid rgba(24, 123, 106, 0.14); padding:1em">
+                                        <p>
+                                            <span>
+                                                {{ comments.user.firstName }} {{ comments.user.lastName }} ,
+                                            </span>
+                                            publié le {{ comments.user.createdAt|date('d/m/Y') }} <br>
+                                            {% for i in 1..5 %}
+                                                {% set starClass = (comments.rating >= i ? "fas fa-star" : "far fa-star") %}
+                                                <i class="{{ starClass }}" style="color:gold;"></i>
+                                            {% endfor %}
+                                        </p>
+                                        <p>{{ comments.message }}</p>
+                                    </div>
+                                {% else %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <!-- END COMMENTARY SECTION-->
+                {% endif %}
+
+                <!-- ADD COMMENTARY -->
+                {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
+                    <div class="row justify-content-center" style="margin-top:1em">
+                        <div class="col-md-6 text-center">
+                            <h3>Votre avis est
+                                <br>important!
+                            </h3>
+                        </div>
+                        <div class="col-md-6">
+                            {{ form(form) }}
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- END COMMENTARY -->
             </div>
         </section>
+
 
         <div class="text-center" style="padding-top: 2em;">
             <h4>Autres produits de la même catégorie: </h4>
         </div>
         <section id="products-home">
-            <div class="row">
-                {% for product in products %}
-                    {% if product.category == "Figurine" %}
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div style="min-width:150px;max-width: 250px">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    {% for product in products %}
+                        {% if product.category == "Figurine" %}
+                            <div class=" col-lg-3 col-md-4 col-6" style="max-width: 100%">
                                 <a href="{{ path('product', {id:product.id}) }}">
                                     <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                          alt="{{ product.image }}">
@@ -90,17 +167,11 @@
                                     <div>Ajouter au panier</div>
                                 </a>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </section>
-
-        <!-- COMMENTARY SECTION-->
-        <section>
-            <div></div>
-        </section>
-        <!-- END COMMENTARY-->
 
         <!-- SIMILARY PRODUCT SECTION-->
 

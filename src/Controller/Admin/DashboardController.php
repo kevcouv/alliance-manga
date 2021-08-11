@@ -2,8 +2,10 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Comment;
 use App\Entity\Manga;
 use App\Entity\Product;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -32,8 +34,10 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Back to the website', 'fas fa-home', 'home');
-        yield MenuItem::linkToCrud('Products', 'fas fa-map-marker-alt', Product::class);
+        yield MenuItem::linkToRoute('Retour sur le site', 'fas fa-home', 'home');
+        yield MenuItem::linkToCrud('Produits', 'fas fa-map-marker-alt', Product::class);
         yield MenuItem::linkToCrud('Licences', 'fas fa-map-marker-alt', Manga::class);
+        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-map-marker-alt', User::class);
+        yield MenuItem::linkToCrud('Commentaires', 'fas fa-map-marker-alt', Comment::class);
     }
 }
