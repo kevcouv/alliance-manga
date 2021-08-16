@@ -24,10 +24,10 @@
                                                     {{ product.manga.title }}
                                                 </p>
                                             </div>
-                                            <span>{{ product.price }},00&euro;</span>
+                                            <span>{{ product.price }}.00&euro;</span>
                                         </div>
                                     </a>
-                                    <a href="">
+                                    <a href="{{ path('panier_add', {'id':product.id}) }}">
                                         <div>Ajouter au panier</div>
                                     </a>
                                 </div>
@@ -52,10 +52,10 @@
                                                 {{ product.manga.title }}
                                             </p>
                                         </div>
-                                        <span>{{ product.price }},00&euro;</span>
+                                        <span>{{ product.price }}.00&euro;</span>
                                     </div>
                                 </a>
-                                <a href="">
+                                <a href="{{ path('panier_add', {'id':product.id}) }}">
                                     <div>Ajouter au panier</div>
                                 </a>
                             </div>

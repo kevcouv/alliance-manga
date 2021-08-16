@@ -29,7 +29,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setImage('0'.$i.'.png')
                 ->setSmallDescription($faker->paragraph(3, true))
                 ->setFullDescription($faker->paragraphs($faker->numberBetween(2,4), true))
-                ->setPrice($faker->numberBetween(10, 120))
+                ->setPrice($faker->numberBetween(10, 150))
                 ->setMaterial($faker->word())
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
                 ->setUpdatedAt($faker->dateTimeBetween('now'))

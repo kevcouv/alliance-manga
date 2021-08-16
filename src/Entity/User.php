@@ -14,7 +14,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity (
  * "email",
- *  message= "Cette adresse email est indisponible."
+ *  message= "Cet Email est déjà utilisé"
+ * )
+ * @UniqueEntity(
+ * fields={"userName"},
+ * message="Cet identifiant est déja utilisé"
  * )
  */
 class User implements UserInterface
@@ -51,13 +55,13 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      * min = 4,
-     * minMessage = "Votre mot de passe doit contenir au moins 4 caracteres",
+     * minMessage = "Le mot de passe doit contenir au moins 4 caractères",
      * )
      */
     private $password;
 
     /**
-     * @Assert\EqualTo(propertyPath="password", message = "Votre mot de passe doit être identique")
+     * @Assert\EqualTo(propertyPath="password", message = "Le mot de passe doit être identique")
      */
     public $confirmPassword;
 

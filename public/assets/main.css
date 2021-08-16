@@ -41,23 +41,23 @@ main {
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5 {
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #cart table:last-child tfoot:last-child tr a {
     text-transform: uppercase;
 }
 
-#univers-home a, #products-home div div a, #product-detail a {
+#univers-home a, #products-home div div a, #product-detail a, #cart table:last-child tfoot:last-child tr a{
     text-decoration: none;
     color: black;
 }
 
-#univers-home button, #products-home div div a:last-child div, #product-detail a div {
+#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr {
     padding: 0.60em;
     color: white;
     background-color: rgb(33, 174, 150);
     border: none;
 }
 
-#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover {
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover, #cart table:last-child tfoot:last-child tr:hover {
     background-color: rgb(26, 142, 125);
 }
 
@@ -117,7 +117,7 @@ main {
 
 #product-description {
     padding: 2em;
-    background-color: rgba(31, 123, 40, 0.14);
+    background-color: rgba(129, 174, 150, 0.24);
 }
 
 .same-product {
@@ -134,17 +134,33 @@ main {
 
 }
 
-/* FOOTER */
+/* CART*/
 
-#footer {
-    padding: 0.5em;
-    background-color: rgba(15, 19, 25, 0.95);
+.fa-trash {
+    color: steelblue;
 }
 
-footer {
+.fa-trash:hover {
+    color: midnightblue;
+}
+
+.trashCart a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#id div:last-child a {
+    color: rgb(33, 174, 150);
+}
+
+#cart table:last-child tfoot:last-child tr a {
     color: white;
-    text-align: justify;
+    font-size: 20px;
 }
+
+/* FOOTER */
 
 @media screen and (max-width: 769px) {
 

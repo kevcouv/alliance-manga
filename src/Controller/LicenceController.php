@@ -37,6 +37,8 @@ class LicenceController extends AbstractController
             ->find($id)
             ->getProducts();
 
+
+
         return $this->render('licence/products.html.twig', [
             'licence' => $licence,
             'products' => $products
