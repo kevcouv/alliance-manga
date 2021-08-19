@@ -13,6 +13,13 @@
 {% include 'partials/header.html.twig' %}
 
 <!--message validation-->
+{% block message %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}
 
 {% block body %}{% endblock %}
 
@@ -20,7 +27,6 @@
 
 {% block javascripts %}
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.filterizr.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/all.min.js') }}"></script>
 {% endblock %}

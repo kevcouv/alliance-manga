@@ -6,7 +6,11 @@
 }
 
 body {
-    font-size: 13px;
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
 }
 
 /* HOME */
@@ -41,7 +45,7 @@ main {
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #cart table:last-child tfoot:last-child tr a {
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5{
     text-transform: uppercase;
 }
 
@@ -161,6 +165,10 @@ main {
 }
 
 /* FOOTER */
+
+footer {
+
+}
 
 @media screen and (max-width: 769px) {
 

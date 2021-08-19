@@ -32,21 +32,19 @@ class ProductCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            BooleanField::new('isPublished'),
+            BooleanField::new('isPublished', 'Publication'),
             ImageField::new('image', 'Image')
                 ->setBasePath('img/product/')
                 ->setUploadDir('public/img/product')
                 ->setRequired(false),
-            TextField::new('title'),
-            TextField::new('nameCharacter'),
-            AssociationField::new('manga'),
-            AssociationField::new('category'),
-            TextareaField::new('smallDescription')->onlyOnForms(),
-            TextareaField::new('fullDescription')->onlyOnForms(),
-            TextField::new('price'),
-            TextField::new('material'),
-            DateTimeField::new('createdAt'),
-            DateTimeField::new('updatedAt')->onlyOnForms(),
+            TextField::new('title', 'Titre'),
+            TextField::new('nameCharacter','Personnage'),
+            AssociationField::new('manga','Manga'),
+            AssociationField::new('category','Catégorie'),
+            TextareaField::new('smallDescription', 'Petite description')->onlyOnForms(),
+            TextareaField::new('fullDescription','Grosse description')->onlyOnForms(),
+            TextField::new('price', 'Prix'),
+            DateTimeField::new('createdAt', 'Date de création')->hideOnForm(),
         ];
     }
 

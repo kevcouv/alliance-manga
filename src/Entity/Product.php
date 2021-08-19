@@ -29,7 +29,7 @@ class Product
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
     private $small_description;
 
@@ -66,14 +66,14 @@ class Product
     private $created_at;
 
     /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
      * @ORM\Column(type="boolean")
      */
     private $is_published;
-
-    /**
-     * @ORM\Column(type="string", length=120)
-     */
-    private $material;
 
 
     /**
@@ -81,11 +81,6 @@ class Product
      * @ORM\JoinColumn(nullable=false)
      */
     private $manga;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updatedAt;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
@@ -104,16 +99,19 @@ class Product
      */
     private $comments;
 
+    // Récupère automatiquemenet la date de création/update et les commentaires du produit
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTimeImmutable('now');
+        $this->updatedAt = new \DateTimeImmutable();
+        $this->comments = new ArrayCollection();
+    }
+
     public function __toString()
     {
         return $this->title;
     }
-
-    public function __construct()
-    {
-        $this->comments = new ArrayCollection();
-    }
-
 
 
     public function getId(): ?int
@@ -211,18 +209,6 @@ class Product
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
     public function getIsPublished(): ?bool
     {
         return $this->is_published;
@@ -231,18 +217,6 @@ class Product
     public function setIsPublished(bool $is_published): self
     {
         $this->is_published = $is_published;
-
-        return $this;
-    }
-
-    public function getMaterial(): ?string
-    {
-        return $this->material;
-    }
-
-    public function setMaterial(string $material): self
-    {
-        $this->material = $material;
 
         return $this;
     }

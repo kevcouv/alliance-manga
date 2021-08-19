@@ -43,16 +43,29 @@ class Comment
     private $isPublished;
 
     /**
-     * @ORM\ManyToOne(targetEntity=product::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="comments")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+
+    // Récupère automatiquemenet la date lorsque le commentaire est créé
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable('now');
+    }
+
+    public function __toString()
+    {
+        return $this->message;
+    }
 
 
     public function getId(): ?int
@@ -108,24 +121,24 @@ class Comment
         return $this;
     }
 
-    public function getProduct(): ?product
+    public function getProduct(): ?Product
     {
         return $this->product;
     }
 
-    public function setProduct(?product $product): self
+    public function setProduct(?Product $product): self
     {
         $this->product = $product;
 
         return $this;
     }
 
-    public function getUser(): ?user
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(?user $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 

@@ -99,13 +99,14 @@ class User implements UserInterface
     {
         $this->products = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable('now');
+        $this->updatedAt = new \DateTimeImmutable('now');
     }
 
     public function __toString()
     {
-        return $this->userName;
+        return $this->email;
     }
-
 
     public function getId(): ?int
     {

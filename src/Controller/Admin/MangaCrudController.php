@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class MangaCrudController extends AbstractCrudController
 {
@@ -20,12 +21,13 @@ class MangaCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            ImageField::new('image', 'Image')
+
+            ImageField::new('image')
                 ->setBasePath('img/manga/')
                 ->setUploadDir('public/img/manga')
                 ->setRequired(false),
-            TextField::new('title'),
-            TextareaField::new('description')->onlyOnForms(),
+            TextField::new('title', 'Nom'),
+            TextareaField::new('description', 'Description')->onlyOnForms(),
         ];
     }
 

@@ -45,6 +45,11 @@ class Manga
     private $imageFile;
 
     /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="manga")
      */
     private $products;
@@ -58,6 +63,7 @@ class Manga
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
 

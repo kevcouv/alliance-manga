@@ -19,6 +19,8 @@ class CommentCrudController extends AbstractCrudController
         return Comment::class;
     }
 
+
+
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
@@ -30,12 +32,12 @@ class CommentCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            BooleanField::new('isPublished'),
-            AssociationField::new('user'),
-            TextareaField::new('message'),
-            AssociationField::new('product'),
-            IntegerField::new('rating'),
-            DateTimeField::new('createdAt'),
+            BooleanField::new('isPublished', 'Publication'),
+            AssociationField::new('user', 'Utilisateur')->hideOnForm(),
+            TextareaField::new('message', 'Commentaire'),
+            AssociationField::new('product', 'Article'),
+            IntegerField::new('rating', 'Evaluation'),
+            DateTimeField::new('createdAt','Date de création')->hideOnForm()
         ];
     }
 
