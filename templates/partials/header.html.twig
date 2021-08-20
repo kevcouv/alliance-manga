@@ -1,61 +1,56 @@
 <!-- Navigation -->
 {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark" style="text-transform: uppercase; letter-spacing: -1px; ">
         <div class="container">
-        <a class="navbar-brand" href="{{ path('home') }}">Alliance Manga</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="">Mon compte</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('panier') }}">Mon panier</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('licences') }}">Les Licences</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('figurines') }}">Figurines</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('derived') }}">Produits Dérivés</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Nouveautés</a>
-                </li>
+            <a class="navbar-brand" href="{{ path('home') }}">Alliance Manga</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+                    aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('licences') }}">Les Licences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('figurines') }}">Figurines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('derived') }}">Produits Dérivés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nouveautés</a>
+                    </li>
+                </ul>
 
-                <li class="nav-item">
-                    {% if not app.user %}
-                        <a href="{{ path('login') }}">
-                            Mon compte </a>
-                    {% else %}
-
-                        <div class="dropdown">
-                            <button  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ app.user.firstName }}
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="">Mon Profil</a>
-                                <a class="dropdown-item" href="">Modifier le mot de passe</a>
-
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <a class="dropdown-item" href="{{ path('admin') }}">Administration</a>
-                                {% endif %}
-                                <a class="dropdown-item" href="">Mon Panier</a>
-                                <a class="dropdown-item" href="{{ path('logout') }}">Déconnexion</a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        {% if not app.user %}
+                            <a class="nav-link" href="{{ path('login') }}">
+                                <span><i class="fas fa-user fa-2x"></i>Mon compte</span>
+                            </a>
+                        {% else %}
+                            <a class="nav-link" href="{{ path('account') }}">
+                                <span>
+                                    <i class="fas fa-user fa-2x"></i>
+                                    Mon compte <br>
+                                <a  href="{{ path('logout') }}" style="text-transform: none; font-size: 10px">Déconnexion</a> <a href="{{ path('account') }}" style="text-transform: none; font-size: 10px">{{ app.user.firstName }}{{ app.user.lastName }}</a>
+                                    </span>
+                            </a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('panier') }}">
+                            <span><i class="fas fa-shopping-cart fa-2x"></i>Mon panier</span>
+                        </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </nav>
 {% endblock %}

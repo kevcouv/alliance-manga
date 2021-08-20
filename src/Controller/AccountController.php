@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\ResetPasswordType;
 use App\Entity\ChangePassword;
+use App\Form\UpdateAccountType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,14 +20,35 @@ class AccountController extends AbstractController
      */
     public function index(): Response
     {
-        $user = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->findAll();
+        return $this->render('account/index.html.twig');
+    }
 
-        return $this->render('account/index.html.twig', [
-            'user' => $user
+
+    /**
+     * @Route("/accountDetails-{id}", name="accountDetails")
+     */
+    public function accountDetails(Request $request, User $user): Response
+    {
+        $form = $this->createForm(UpdateAccountType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $user->setUpdatedAt(new \DateTime('now'));
+            $em->persist($user);
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Vos informations ont bien été modifié'
+            );
+            return $this->redirectToRoute('account');
+        }
+        return $this->render('account/details.html.twig', [
+            'user' => $user,
+            'form' => $form->createView()
         ]);
     }
+
 
     /**
      * @Route("/passwordUpdate", name="passwordUpdate")

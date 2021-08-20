@@ -45,7 +45,7 @@ main {
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5{
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #account-page .card-title{
     text-transform: uppercase;
 }
 
@@ -162,12 +162,6 @@ main {
 #cart table:last-child tfoot:last-child tr a {
     color: white;
     font-size: 20px;
-}
-
-/* FOOTER */
-
-footer {
-
 }
 
 @media screen and (max-width: 769px) {
