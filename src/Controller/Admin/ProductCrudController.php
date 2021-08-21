@@ -24,8 +24,8 @@ class ProductCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add(EntityFilter::new('manga'))
-            ->add(EntityFilter::new('category'))
+            ->add(EntityFilter::new('manga', 'Manga'))
+            ->add(EntityFilter::new('category', 'Catégorie'))
             ;
     }
 

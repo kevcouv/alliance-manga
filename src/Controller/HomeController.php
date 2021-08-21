@@ -19,7 +19,6 @@ class HomeController extends AbstractController
     public function index(MangaRepository $repository, ProductRepository $repositoryProd): Response
     {
 
-
         $licences = $repository->findBy(
             [],
             ['title' => 'DESC'], 6
@@ -32,7 +31,7 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'licences' => $licences,
-            'products' => $products,
+            'products' => $products
         ]);
     }
 }

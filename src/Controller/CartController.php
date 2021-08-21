@@ -39,7 +39,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute("panier");
     }
 
-    // SUPPRIMER UN ARTICLE DANS LE PANIER
+    // SUPPRIMER TOUT L'ELEMENT DANS LE PANIER
 
     /**
      * @Route("/remove-{id}", name="panier_remove")
@@ -49,6 +49,20 @@ class CartController extends AbstractController
     public function remove($id, CartService $cartService){
 
         $cartService->remove($id);
+
+        return $this->redirectToRoute("panier");
+    }
+
+    // SUPPRIMER UN ARTICLE DANS LE PANIER
+
+    /**
+     * @Route("/removeOne-{id}", name="panier_removeOne")
+     *  @IsGranted("ROLE_USER")
+     */
+
+    public function removeOne($id, CartService $cartService){
+
+        $cartService->removeOne($id);
 
         return $this->redirectToRoute("panier");
     }

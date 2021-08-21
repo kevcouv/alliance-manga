@@ -33,7 +33,23 @@ class CartService
         $this->session->set('panier', $panier);
     }
 
-    // SSUPPRIMER UN ARTICLE DANS LE PANIER
+    //  RETIRER UN ARTICLE DANS LE PANIER
+
+    public function removeOne(int $id)
+    {
+        $panier = $this->session->get('panier', []);
+
+        if (!empty($panier[$id])) {
+            if ($panier[$id] > 1) {
+                $panier[$id]--;
+            } else {
+                unset($panier[$id]);
+            }
+        }
+        $this->session->set('panier', $panier);
+    }
+
+    // SSUPPRIMER TOUT L'ELEMENT DANS LE PANIER
 
     public function remove(int $id)
     {

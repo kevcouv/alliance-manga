@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Address;
 use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Manga;
+use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -39,7 +41,9 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Produits', 'fas fa-map-marker-alt', Product::class);
         yield MenuItem::linkToCrud('Licences', 'fas fa-map-marker-alt', Manga::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-map-marker-alt', Category::class);
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-map-marker-alt', User::class);
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-map-marker-alt', Comment::class);
+        yield MenuItem::linkToCrud('Clients', 'fas fa-map-marker-alt', User::class);
+        yield MenuItem::linkToCrud('Adresses', 'fas fa-map-marker-alt', Address::class);
+        yield MenuItem::linkToCrud('Commandes', 'fas fa-map-marker-alt', Order::class);
     }
 }

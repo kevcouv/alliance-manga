@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adresse{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <section id="adresse">
+            <h4 class="text-uppercase">Vos adresses</h4>
+            <div class="justify-content-center row">
+                {% for addresses in address %}
+                    <div class="card col-md-5" style="max-width: 100%; margin: 1em">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom  font-weight-bold ">Mon adresse</h5>
+                            <p class="card-text">{{ addresses.society }}<br>
+                                {{ app.user.firstName }} {{ app.user.lastName }}<br>
+                                {{ addresses.address }}<br>
+                                {{ addresses.subAddress }}<br>
+                                {{ addresses.postalCode }}<br>
+                                {{ addresses.country }}<br>
+                                {{ addresses.phoneNumber }}<br>
+                                {{ addresses.vat }}</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="card-link float-left"><i class="fas fa-pen"></i> Mettre à jour</a>
+                            <a href="{{ path('deleteAddress', {id:addresses.id}) }}" class="card-link float-right "><i class="fas fa-trash"></i> Supprimer</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center" style="margin: 1em">
+                <a href="{{ path('newAddress') }}" class="btn btn-outline-info">
+                    <i class="fas fa-plus"></i> Créer une nouvelle adresse</a>
+            </div>
+        </section>
+    </main>
+{% endblock %}

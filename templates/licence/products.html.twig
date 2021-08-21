@@ -18,7 +18,7 @@
                         <div class="products-figurine">
                             {% for product in products |sort((a, b) => b.createdat <=> a.createdat)|slice(0, 2) %}
                                 <div class="col-lg-12 col-md-12 col-6" style=" width: 250px">
-                                    <a href="{{ path('product', {id:product.id}) }}">
+                                    <a  class="card" href="{{ path('product', {id:product.id}) }}">
                                         <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                              alt="{{ product.image }}">
                                         <div class="product-content">
@@ -44,7 +44,7 @@
                 <div class=" row col-md-8 col-12" style="margin-left: 1%">
                     {% for product in products %}
                             <div class="col-lg-4 col-md-6 col-6" style=" max-width: 100%">
-                                <a href="{{ path('product', {id:product.id}) }}">
+                                <a  class="card" href="{{ path('product', {id:product.id}) }}">
                                     <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                          alt="{{ product.image }}">
                                     <div class="product-content">

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Address;
 use App\Entity\User;
+use App\Form\AddressType;
 use App\Form\ResetPasswordType;
 use App\Entity\ChangePassword;
 use App\Form\UpdateAccountType;
@@ -32,7 +34,7 @@ class AccountController extends AbstractController
         $form = $this->createForm(UpdateAccountType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $user->setUpdatedAt(new \DateTime('now'));
             $em->persist($user);
@@ -79,5 +81,80 @@ class AccountController extends AbstractController
             'user' => $user
         ));
     }
+
+    /**
+     * @Route("/address-{id}", name="address")
+     */
+    public function address($id): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $address = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($id)
+            ->getAddresses();
+
+        return $this->render('account/adresse.html.twig', [
+            'address' => $address,
+        ]);
+    }
+
+
+    /**
+     * @Route("/newAddress", name="newAddress")
+     */
+    public function newAddress(Request $request): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        // Ajout adresse
+
+        $addAddress = new Address();
+
+        $form = $this->createForm(AddressType::class, $addAddress);
+        $form->handleRequest($request);
+        $user = $this->getUser();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $user->addAddress($addAddress);
+            $addAddress->setUser($this->getUser());
+            $em->persist($addAddress);
+            $em->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre adresse a bien été ajouter'
+            );
+            return $this->redirectToRoute('account');
+        }
+
+
+        return $this->render('account/addAddress.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/deleteAddress-{id}", name="deleteAddress")
+     */
+    public function deleteAddress($id): Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $em = $this->getDoctrine()->getManager();
+        $address = $this->getDoctrine()
+            ->getRepository(Address::class)
+            ->find($id);
+        $em->remove($address);
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre adresse a bien été supprimer!'
+        );
+        return $this->redirectToRoute('account');
+    }
+
 
 }

@@ -148,7 +148,7 @@
                     {% for product in products %}
                         {% if product.category == "Figurine" %}
                             <div class=" col-lg-3 col-md-4 col-6" style="max-width: 100%">
-                                <a href="{{ path('product', {id:product.id}) }}">
+                                <a class="card" href="{{ path('product', {id:product.id}) }}">
                                     <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                          alt="{{ product.image }}">
                                     <div class="product-content">
