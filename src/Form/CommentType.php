@@ -17,9 +17,12 @@ class CommentType extends AbstractType
         $builder
             ->add('message', TextareaType::class, ['label' => 'Votrez commentaire'])
             ->add('rating', IntegerType::class, ['label' => 'Evaluation'])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Poster votre commentaire'
-            ]);
+            ->add('submit', SubmitType::class, array(
+                'attr' => array(
+                    'class' => 'btn btn-info'
+                ),
+                'label' => 'Votre commentaire'
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

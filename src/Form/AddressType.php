@@ -15,14 +15,20 @@ class AddressType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('society', TextType::class)
-            ->add('vat', TextType::class)
+            ->add('society', TextType::class, ['label' => 'Société'])
+            ->add('vat', TextType::class, ['label' => 'Numéro de TVA'])
             ->add('address', TextType::class, ['label' => 'Adresse'] )
             ->add('subAddress', TextType::class, ['label' => 'Complément d\'adresse'])
             ->add('postalCode', TextType::class, ['label' => 'Code Postal'])
             ->add('country', CountryType::class, ['label' => 'Pays'])
             ->add('phoneNumber', TextType::class, ['label' => 'Téléphone'])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer']);
+            ->add('submit', SubmitType::class, array(
+                'attr' => array(
+                    'class' => 'btn btn-info ',
+                ),
+
+                'label' => 'Enregistrer'
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

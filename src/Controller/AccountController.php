@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Address;
 use App\Entity\User;
 use App\Form\AddressType;
+use App\Form\RegistrationType;
 use App\Form\ResetPasswordType;
 use App\Entity\ChangePassword;
 use App\Form\UpdateAccountType;
@@ -22,6 +23,7 @@ class AccountController extends AbstractController
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('account/index.html.twig');
     }
 
@@ -29,8 +31,9 @@ class AccountController extends AbstractController
     /**
      * @Route("/accountDetails-{id}", name="accountDetails")
      */
-    public function accountDetails(Request $request, User $user): Response
+    public function accountDetails(Request $request, User $user, $id): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $form = $this->createForm(UpdateAccountType::class, $user);
         $form->handleRequest($request);
 
@@ -43,7 +46,7 @@ class AccountController extends AbstractController
                 'success',
                 'Vos informations ont bien été modifié'
             );
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('accountDetails', ['id' => $id]);
         }
         return $this->render('account/details.html.twig', [
             'user' => $user,
@@ -72,9 +75,9 @@ class AccountController extends AbstractController
             $user->setPassword($newEncodedPassword);
 
             $em->flush();
-            $this->addFlash('success', 'Votre mot de passe a bien été changé !');
+            $this->addFlash('success', 'Votre mot de passe a bien été changer !');
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('account');
         }
         return $this->render('account/resetPassword.html.twig', array(
             'form' => $form->createView(),
@@ -101,11 +104,14 @@ class AccountController extends AbstractController
 
 
     /**
-     * @Route("/newAddress", name="newAddress")
+     * @Route("/newAddress-{id}", name="newAddress")
      */
-    public function newAddress(Request $request): Response
+    public function newAddress(Request $request, $id): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
+        $address = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($id);
 
         // Ajout adresse
 
@@ -126,14 +132,45 @@ class AccountController extends AbstractController
                 'success',
                 'Votre adresse a bien été ajouter'
             );
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('address', ['id' => $id]);
         }
 
 
         return $this->render('account/addAddress.html.twig', [
+            'form' => $form->createView(),
+            'address' => $address,
+        ]);
+    }
+
+    // Modifier adresse
+
+    /**
+     * @Route("/updateAddress-{id}", name="updateAddress")
+     */
+    public function UpdateAddress(Request $request, Address $address) : Response
+    {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+
+        $form = $this->createForm(AddressType::class, $address);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();;
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Votre adresse a été modifier'
+            );
+            return $this->redirectToRoute('account');
+        }
+        return $this->render('account/updateAddress.html.twig', [
+            'address' => $address,
             'form' => $form->createView()
         ]);
     }
+
+    //supprimer adresse
 
     /**
      * @Route("/deleteAddress-{id}", name="deleteAddress")
@@ -141,6 +178,7 @@ class AccountController extends AbstractController
     public function deleteAddress($id): Response
     {
         $this->denyAccessUnlessGranted('ROLE_USER');
+
 
         $em = $this->getDoctrine()->getManager();
         $address = $this->getDoctrine()

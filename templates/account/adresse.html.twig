@@ -4,11 +4,11 @@
 
 {% block body %}
     <main class="container">
-        <section id="adresse">
-            <h4 class="text-uppercase">Vos adresses</h4>
+        <section id="adresse" class="card">
+            <h4 class="text-uppercase card-header">Vos adresses</h4>
             <div class="justify-content-center row">
                 {% for addresses in address %}
-                    <div class="card col-md-5" style="max-width: 100%; margin: 1em">
+                    <div class="card col-md-5 col-10" style="max-width: 100%;">
                         <div class="card-body">
                             <h5 class="card-title border-bottom  font-weight-bold ">Mon adresse</h5>
                             <p class="card-text">{{ addresses.society }}<br>
@@ -21,16 +21,21 @@
                                 {{ addresses.vat }}</p>
                         </div>
                         <div class="card-body">
-                            <a href="#" class="card-link float-left"><i class="fas fa-pen"></i> Mettre à jour</a>
+                            <a href="{{ path('updateAddress', {id:addresses.id}) }}" class="card-link float-left"><i class="fas fa-pen"></i> Mettre à jour</a>
                             <a href="{{ path('deleteAddress', {id:addresses.id}) }}" class="card-link float-right "><i class="fas fa-trash"></i> Supprimer</a>
                         </div>
                     </div>
                 {% endfor %}
             </div>
-            <div class="text-center" style="margin: 1em">
-                <a href="{{ path('newAddress') }}" class="btn btn-outline-info">
+            <div class="text-center">
+                <a href="{{ path('newAddress', {id:app.user.id}) }}" class="btn btn-outline-info">
                     <i class="fas fa-plus"></i> Créer une nouvelle adresse</a>
             </div>
         </section>
+        <div class="card-footer">
+            <span>
+                <a href="{{ path('account') }}">< Retour à votre compte </a> <a href="{{ path('home') }}"> <i style="font-size: 17px" class="fas fa-home"></i> Accueil</a>
+            </span>
+        </div>
     </main>
 {% endblock %}

@@ -22,7 +22,12 @@ class RegistrationType extends AbstractType
             ->add('email', EmailType::class, ['label' => 'Email'])
             ->add('password', PasswordType::class, ['label' => 'Mot de Passe'])
             ->add('confirmPassword', PasswordType::class, ['label'=> 'Confirmation du mot de passe'])
-            ->add('submit', SubmitType::class, ['label' => 'Inscription']);
+            ->add('submit', SubmitType::class, array(
+                'attr' => array(
+                    'class' => 'btn btn-info'
+                ),
+                'label' => 'S\'enregistrer'
+            ));
         ;
     }
 

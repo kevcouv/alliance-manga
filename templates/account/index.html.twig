@@ -5,65 +5,54 @@
 {% block body %}
     <main class="container">
         <section id="account-page">
-            <h3>Votre compte</h3>
+            <h4>Votre compte</h4>
             <div class="row text-center justify-content-center">
-                <div class=" col-md-4 col-11 card"
-                     style="max-width: 100%; margin: 1em">
-                    <a style="text-decoration: none" href="{{ path('accountDetails',{id:app.user.id}) }}">
+                <div class=" col-md-3 col-11 card" style="min-width: 350px;  max-width: 100%;">
+                    <a href="{{ path('accountDetails',{id:app.user.id}) }}">
                         <div class="card-body">
                             <p>
-                                <i style="color:rgb(33, 174, 150)" class="fas fa-user-circle fa-3x"></i>
+                                <i class="fas fa-user-circle fa-3x"></i>
                             </p>
                             <div>
-                                <h6 class="card-title"
-                                    style="text-transform: uppercase; font-weight: bold; color: rgb(33, 174, 150)">
-                                    Informations</h6>
+                                <h6 class="card-title">Informations</h6>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class=" col-md-4 col-11 card"
-                     style="max-width: 100%; margin: 1em">
+                <div class=" col-md-3 col-11 card" style="min-width: 350px; max-width: 100%;">
                     <a style="text-decoration: none" href="{{ path('address', {id:app.user.id}) }}">
                         <div class="card-body">
                             <p>
-                                <i style="color: rgb(33, 174, 150)" class="fas fa-map-marker fa-3x"></i>
+                                <i class="fas fa-map-marker fa-3x"></i>
                             </p>
                             <div>
-                                <h6 class="card-title"
-                                    style="text-transform: uppercase; font-weight: bold; color: rgb(33, 174, 150)">
-                                    Adresses</h6>
+                                <h6 class="card-title">Adresses</h6>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class=" col-md-4 col-11 card"
-                     style="max-width: 100%; margin: 1em">
-                    <a style="text-decoration: none" href="">
+                <div class=" col-md-3 col-11 card" style="min-width: 350px; max-width: 100%;">
+                    <a  href="">
                         <div class="card-body">
                             <p>
-                                <i style="color: rgb(33, 174, 150)" class="fas fa-calendar fa-3x"></i>
+                                <i class="fas fa-calendar fa-3x"></i>
                             </p>
                             <div>
-                                <h6 class="card-title"
-                                    style="text-transform: uppercase; font-weight: bold; color: rgb(33, 174, 150)">
-                                    Historique et détails de mes commandes</h6>
+                                <h6 class="card-title">Historique et détails de mes commandes</h6>
                             </div>
                         </div>
                     </a>
                 </div>
                 {% if is_granted('ROLE_ADMIN') %}
-                    <div class=" col-md-4 col-11 card"
-                         style="max-width: 100%;  margin: 1em">
-                        <a style="text-decoration: none" href="{{ path('admin') }}">
+                    <div class=" col-md-3 col-11 card"
+                         style="min-width: 350px; max-width: 100%;">
+                        <a href="{{ path('admin') }}">
                             <div class="card-body">
                                 <p>
-                                    <i style="color: rgb(33, 174, 150)" class="fas fa-user-secret fa-3x"></i>
+                                    <i  class="fas fa-user-secret fa-3x"></i>
                                 </p>
                                 <div>
-                                    <h6 class="card-title"
-                                        style="text-transform: uppercase; font-weight: bold; color: rgb(33, 174, 150)">
-                                        Administration</h6>
+                                    <h6 class="card-title">Administration</h6>
                                 </div>
                             </div>
                         </a>
