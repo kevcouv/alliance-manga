@@ -44,7 +44,7 @@ main {
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #account-page .card-title, #adresse h4, #account-details h4, #account-page h4, #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6{
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #account-page .card-title, #adresse h4, #account-details h4, #account-page h4, #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6, #products-home .card-body span:first-child {
     text-transform: uppercase;
 }
 
@@ -64,21 +64,17 @@ main {
     background-color: rgb(21, 122, 109);
 }
 
-
-.product-content {
-    margin: 0.2em;
-}
-
-.product-content span:last-child {
-    text-align: left;
-    font-size: 22px;
-    color: rgba(30, 30, 30, 0.93);
-}
-
-
-#products-home .card-title span {
+#products-home .card-body {
     letter-spacing: -1px;
-    font-size: 14px;
+
+}
+
+#products-home .card-body span:first-child{
+    font-size: 17px;
+}
+
+#products-home .card-body span:last-child {
+    font-size: 22px;
 }
 
 #products-home div div {

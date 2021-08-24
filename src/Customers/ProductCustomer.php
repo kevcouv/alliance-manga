@@ -4,7 +4,6 @@ namespace App\Customers;
 
 use App\Entity\Address;
 use App\Entity\Comment;
-use App\Entity\Order;
 use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
@@ -36,7 +35,7 @@ class ProductCustomer implements EventSubscriberInterface
     public function setUser(BeforeEntityPersistedEvent $event)
     {
         $entity = $event->getEntityInstance();
-        if ($entity instanceof Product || $entity instanceof Comment || $entity instanceof Order  ||  $entity instanceof Address ){
+        if ($entity instanceof Product || $entity instanceof Comment ||  $entity instanceof Address ){
         $entity->setUser($this->security->getUser());
         $this->security->getUser();
         }

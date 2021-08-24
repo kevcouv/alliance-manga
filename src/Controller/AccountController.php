@@ -23,7 +23,7 @@ class AccountController extends AbstractController
      */
     public function index(): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
+
         return $this->render('account/index.html.twig');
     }
 
@@ -33,7 +33,6 @@ class AccountController extends AbstractController
      */
     public function accountDetails(Request $request, User $user, $id): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
         $form = $this->createForm(UpdateAccountType::class, $user);
         $form->handleRequest($request);
 
@@ -61,7 +60,6 @@ class AccountController extends AbstractController
     public function resetPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder)
 
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();
         $changePassword = new ChangePassword();
@@ -90,8 +88,6 @@ class AccountController extends AbstractController
      */
     public function address($id): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-
         $address = $this->getDoctrine()
             ->getRepository(User::class)
             ->find($id)
@@ -108,7 +104,6 @@ class AccountController extends AbstractController
      */
     public function newAddress(Request $request, $id): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
         $address = $this->getDoctrine()
             ->getRepository(User::class)
             ->find($id);
@@ -149,8 +144,6 @@ class AccountController extends AbstractController
      */
     public function UpdateAddress(Request $request, Address $address) : Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-
 
         $form = $this->createForm(AddressType::class, $address);
         $form->handleRequest($request);
@@ -177,8 +170,6 @@ class AccountController extends AbstractController
      */
     public function deleteAddress($id): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_USER');
-
 
         $em = $this->getDoctrine()->getManager();
         $address = $this->getDoctrine()

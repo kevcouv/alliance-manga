@@ -96,14 +96,15 @@ class User implements UserInterface
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="user")
-     */
-    private $orders;
-
-    /**
      * @ORM\OneToMany(targetEntity=Address::class, mappedBy="user")
      */
     private $addresses;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Purchase::class, mappedBy="user")
+     */
+    private $purchases;
+
 
     public function __construct()
     {
@@ -111,8 +112,8 @@ class User implements UserInterface
         $this->comments = new ArrayCollection();
         $this->createdAt = new \DateTimeImmutable('now');
         $this->updatedAt = new \DateTimeImmutable('now');
-        $this->orders = new ArrayCollection();
         $this->addresses = new ArrayCollection();
+        $this->purchases = new ArrayCollection();
     }
 
     public function __toString()
@@ -335,36 +336,6 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Order[]
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Order $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrder(Order $order): self
-    {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getUser() === $this) {
-                $order->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Address[]
      */
     public function getAddresses(): Collection
@@ -394,5 +365,33 @@ class User implements UserInterface
         return $this;
     }
 
+    /**
+     * @return Collection|Purchase[]
+     */
+    public function getPurchases(): Collection
+    {
+        return $this->purchases;
+    }
 
+    public function addPurchase(Purchase $purchase): self
+    {
+        if (!$this->purchases->contains($purchase)) {
+            $this->purchases[] = $purchase;
+            $purchase->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePurchase(Purchase $purchase): self
+    {
+        if ($this->purchases->removeElement($purchase)) {
+            // set the owning side to null (unless already changed)
+            if ($purchase->getUser() === $this) {
+                $purchase->setUser(null);
+            }
+        }
+
+        return $this;
+    }
 }

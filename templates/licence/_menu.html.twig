@@ -1,0 +1,16 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="{{ path('licences') }}" id="navbarDropdown" role="button"
+       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span style="font-size: 17px">Les Licences</span>
+        <br>
+        <span class="text-lowercase">Liste des mangas</span>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {% for licence in licences %}
+            <a class="dropdown-item" href="{{ path('licence', {id:licence.id}) }}"> <img
+                        src="{{ asset('img/manga/') ~ licence.image }}" style="width: 40px;"
+                        alt="{{ licence.image }}"> {{ licence.title }}</a>
+            <div class="dropdown-divider"></div>
+        {% endfor %}
+    </div>
+</li>

@@ -100,9 +100,10 @@ class Product
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="product")
+     * @ORM\OneToMany(targetEntity=PurchaseItem::class, mappedBy="product")
      */
-    private $orders;
+    private $purchaseItems;
+
 
     // Récupère automatiquemenet la date de création/update et les commentaires du produit
 
@@ -111,7 +112,7 @@ class Product
         $this->created_at = new \DateTimeImmutable();
         $this->updatedAt = new \DateTimeImmutable();
         $this->comments = new ArrayCollection();
-        $this->orders = new ArrayCollection();
+        $this->purchaseItems = new ArrayCollection();
     }
 
     public function __toString()
@@ -305,34 +306,41 @@ class Product
     }
 
     /**
-     * @return Collection|Order[]
+     * @return Collection|Purchase[]
      */
-    public function getOrders(): Collection
+    public function getPurchases(): Collection
     {
-        return $this->orders;
+        return $this->purchases;
     }
 
-    public function addOrder(Order $order): self
+    /**
+     * @return Collection|PurchaseItem[]
+     */
+    public function getPurchaseItems(): Collection
     {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setProduct($this);
+        return $this->purchaseItems;
+    }
+
+    public function addPurchaseItem(PurchaseItem $purchaseItem): self
+    {
+        if (!$this->purchaseItems->contains($purchaseItem)) {
+            $this->purchaseItems[] = $purchaseItem;
+            $purchaseItem->setProduct($this);
         }
 
         return $this;
     }
 
-    public function removeOrder(Order $order): self
+    public function removePurchaseItem(PurchaseItem $purchaseItem): self
     {
-        if ($this->orders->removeElement($order)) {
+        if ($this->purchaseItems->removeElement($purchaseItem)) {
             // set the owning side to null (unless already changed)
-            if ($order->getProduct() === $this) {
-                $order->setProduct(null);
+            if ($purchaseItem->getProduct() === $this) {
+                $purchaseItem->setProduct(null);
             }
         }
 
         return $this;
     }
-
 
 }

@@ -8,6 +8,7 @@ use App\Entity\Comment;
 use App\Entity\Manga;
 use App\Entity\Order;
 use App\Entity\Product;
+use App\Entity\Purchase;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -44,6 +45,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-map-marker-alt', Comment::class);
         yield MenuItem::linkToCrud('Clients', 'fas fa-map-marker-alt', User::class);
         yield MenuItem::linkToCrud('Adresses', 'fas fa-map-marker-alt', Address::class);
-        yield MenuItem::linkToCrud('Commandes', 'fas fa-map-marker-alt', Order::class);
+        yield MenuItem::linkToCrud('Commandes', 'fas fa-map-marker-alt', Purchase::class);
     }
 }

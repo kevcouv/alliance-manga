@@ -16,15 +16,13 @@
                                         <a class="card" href="{{ path('product', {id:product.id}) }}">
                                             <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                                  alt="{{ product.image }}">
-                                            <div class="product-content">
-                                                <div>
-                                                    <p class="card-title">
-                                                        <span>{{ product.nameCharacter }}</span>
-                                                        <br>
-                                                        {{ product.manga.title }}
-                                                    </p>
-                                                </div>
-                                                <span>{{ product.price }}.00&euro;</span>
+                                            <div class="card-body">
+
+                                                <span >{{ product.nameCharacter }}</span><br>
+
+                                                <span>{{ product.manga.title }}</span><br>
+
+                                                <span class="float-right font-weight-bold">{{ product.price }}.00 &euro;</span>
                                             </div>
                                         </a>
                                         <a href="{{ path('panier_add', {'id':product.id}) }}">
@@ -44,15 +42,13 @@
                                 <a class="card" href="{{ path('product', {id:product.id}) }}">
                                     <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                          alt="{{ product.image }}">
-                                    <div class="product-content">
-                                        <div>
-                                            <p class="card-title">
-                                                <span>{{ product.nameCharacter }}</span>
-                                                <br>
-                                                {{ product.manga.title }}
-                                            </p>
-                                        </div>
-                                        <span>{{ product.price }}.00&euro;</span>
+                                    <div class="card-body">
+
+                                        <span >{{ product.nameCharacter }}</span><br>
+
+                                        <span>{{ product.manga.title }}</span><br>
+
+                                        <span class="float-right font-weight-bold">{{ product.price }}.00 &euro;</span>
                                     </div>
                                 </a>
                                 <a href="{{ path('panier_add', {'id':product.id}) }}">

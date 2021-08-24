@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <section id="orders">
+            <div class="row justify-content-center">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Numéro</th>
+                        <th>Adresse</th>
+                        <th> Date de commande</th>
+                        <th>Produits</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for p in purchases %}
+                        <tr>
+                            <td>{{ p.id }}</td>
+                            <td>{{ p.billingAddress }}<br>{{ p.postalCodeBilling }}, {{ p.city }}</td>
+                            <td>{{ p.purchasedAt | date('d/m/Y H:i') }}</td>
+                            <td>
+                                <ul>
+                                    {% for item in p.purchaseItems %}
+                                        <li>{{ item.quantity }}x {{ item.productName }} {{ item.productPrice }}.00&euro;</li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>{{ p.totalphp }}.00 &euro;</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

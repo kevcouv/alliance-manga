@@ -3,12 +3,34 @@
 namespace App\Controller;
 
 use App\Entity\Manga;
+use App\Repository\MangaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class LicenceController extends AbstractController
 {
+
+    protected $mangaRepository;
+
+    public function __construct(MangaRepository $mangaRepository)
+    {
+        $this->mangaRepository = $mangaRepository;
+    }
+
+
+    public function renderMenuList() : Response
+    {
+        $licences = $this->getDoctrine()
+            ->getRepository(Manga::class)
+            ->findAll();
+
+        return $this->render('licence/_menu.html.twig', [
+            'licences' => $licences,
+        ]);
+    }
+
+
     /**
      * @Route("/licences", name="licences")
      */
