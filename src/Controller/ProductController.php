@@ -65,6 +65,7 @@ class ProductController extends AbstractController
         ]);
     }
 
+
     /**
      * @Route("/figurines", name="figurines")
      */

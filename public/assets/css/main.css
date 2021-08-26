@@ -53,14 +53,14 @@ main {
     color: black;
 }
 
-#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr{
+#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr, #cart table:last-child tfoot:last-child tr button{
     padding: 0.60em;
     color: white;
     background-color:  rgb(33, 174, 150);
     border: none;
 }
 
-#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover, #cart table:last-child tfoot:last-child tr:hover {
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover{
     background-color: rgb(21, 122, 109);
 }
 
@@ -150,9 +150,9 @@ main {
     font-size: 15px;
 }
 
-#cart table:last-child tfoot:last-child tr a {
+#cart table:last-child tfoot:last-child tr span {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 #cart table {

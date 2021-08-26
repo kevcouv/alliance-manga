@@ -45,6 +45,18 @@ class Manga
     private $imageFile;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $logo;
+
+    /**
+     * @Vich\UploadableField(mapping="manga_logo", fileNameProperty="logo")
+     * @var File|null
+     */
+    private $logoFile;
+
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $updatedAt;
@@ -53,6 +65,7 @@ class Manga
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="manga")
      */
     private $products;
+
 
 
     public function __toString()
@@ -114,6 +127,7 @@ class Manga
         return $this->imageFile;
     }
 
+
     public function getImage()
     {
         return $this->image;
@@ -125,6 +139,34 @@ class Manga
         $this->image = $image;
     }
 
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+    }
+
+    public function getLogoFile(): ?File
+    {
+        return $this->logoFile;
+    }
+
+
+    public function setLogoFile(File $logo = null)
+    {
+        $this->logoFile = $logo;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($logo) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
 
     /**
      * @return Collection|Product[]
@@ -155,4 +197,5 @@ class Manga
 
         return $this;
     }
+
 }

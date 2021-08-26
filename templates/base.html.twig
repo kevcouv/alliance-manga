@@ -19,6 +19,12 @@
             {{ message }}
         </div>
     {% endfor %}
+    {% for message in app.flashes('warning') %}
+    <div class="alert alert-warning">
+        {{ message }}
+    </div>
+{% endfor %}
+
 {% endblock %}
 
 {% block body %}{% endblock %}

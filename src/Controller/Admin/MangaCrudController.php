@@ -22,7 +22,12 @@ class MangaCrudController extends AbstractCrudController
     {
         return [
 
-            ImageField::new('image')
+            ImageField::new('logo', 'Logo')
+                ->setBasePath('img/manga/logo/')
+                ->setUploadDir('public/img/manga/logo')
+                ->setRequired(false),
+
+            ImageField::new('image', 'Image')
                 ->setBasePath('img/manga/')
                 ->setUploadDir('public/img/manga')
                 ->setRequired(false),

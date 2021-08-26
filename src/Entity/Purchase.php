@@ -71,6 +71,7 @@ class Purchase
     public function __construct()
     {
         $this->purchaseItems = new ArrayCollection();
+        $this->purchasedAt = new \DateTimeImmutable();
     }
 
 

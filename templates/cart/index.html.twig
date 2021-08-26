@@ -5,6 +5,19 @@
 {% block body %}
 
     <main class="container">
+        {% if app.user %}
+        <section id="cart-billingAddress" class="card">
+            <h4 class="card-header">Votre commande de livraison</h4>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-11">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                </div>
+            </div>
+            <div class="card-footer">
+            </div>
+        </section>
+            <hr>
         <section id="cart">
             <div class=" row justify-content-center">
                 <div class="col-md-9 col-11">
@@ -29,7 +42,7 @@
                                     <div class="col-md-8 col-6 trashCart">
                                         <a href="{{ path('product', {id:item.product.id}) }}">{{ item.product.title }} </a>
                                         <br>
-                                        {{ item.product.price }}.00&euro;
+                                        {{ item.product.price / 100 }}&euro;
                                     </div>
                                     </div>
                                 </td>
@@ -38,7 +51,7 @@
                                     {{ item.quantity }}
                                     <a style="margin: 0.5em;" href="{{ path('panier_removeOne', {'id': item.product.id}) }}"><i class="fas fa-minus-square btn-outline-info"></i></a>
                                 </td>
-                                <td class="font-weight-bold">{{ item.product.price * item.quantity }}.00&euro;</td>
+                                <td class="font-weight-bold">{{ item.product.price * item.quantity /100 }}&euro;</td>
                                 <td>
                                     <a href="{{ path('panier_remove', {'id': item.product.id}) }}">
                                         <i class="fas fa-trash"></i>
@@ -63,7 +76,7 @@
                         <tbody>
                         <tr>
                             <td>{{ totalQuantity }} articles</td>
-                            <td class="float-right">{{ total }}.00&euro;</td>
+                            <td class="float-right">{{ total /100 }}&euro;</td>
                         </tr>
                         <tr>
                             <td>Livraison</td>
@@ -71,15 +84,14 @@
                         </tr>
                         <tr style="background-color: lightgrey" class="font-weight-bold">
                             <td>TOTAL TTC</td>
-                            <td class="float-right">{{ total }}.00&euro;</td>
+                            <td class="float-right">{{ total /100 }}&euro;</td>
                         </tr>
                         </tbody>
                         <tfoot>
                         <tr class="text-center">
                             <td colspan="2">
-                                <a href="{{ path('checkout') }}">
-                                    Commander
-                                </a>
+                                <button style="border: none" type="submit"><span>Commander</span></button>
+                                {{ form_end(form) }}
                             </td>
                         </tr>
                         </tfoot>
@@ -87,5 +99,10 @@
                 </div>
             </div>
         </section>
+        {% else %}
+            <h2>Vous devez être connecté pour confirmer votre commande</h2>
+            <a href="{{ path('login') }}" class="btn btn-success">Connexion</a>
+            <hr>
+        {% endif %}
     </main>
 {% endblock %}

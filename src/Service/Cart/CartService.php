@@ -18,26 +18,42 @@ class CartService
         $this->productRepository = $productRepository;
     }
 
+    protected function getCart():array
+    {
+        return $this->session->get('panier', []);
+    }
+
+    protected function saveCart(array $panier)
+    {
+        $this->session->set('panier', $panier);
+
+    }
+
+    public function empty()
+    {
+        $this->saveCart([]);
+    }
+
+
     //  AJOUTER UNE ARTICLE DANS LE PANIER
 
     public function add(int $id)
     {
-        $panier = $this->session->get('panier', []);
+        $panier = $this->getCart();
 
         if (!empty($panier[$id])) {
             $panier[$id]++;
         } else {
             $panier[$id] = 1;
         }
-
-        $this->session->set('panier', $panier);
+        $this->saveCart($panier);
     }
 
     //  RETIRER UN ARTICLE DANS LE PANIER
 
     public function removeOne(int $id)
     {
-        $panier = $this->session->get('panier', []);
+        $panier = $this->getCart();
 
         if (!empty($panier[$id])) {
             if ($panier[$id] > 1) {
@@ -46,38 +62,42 @@ class CartService
                 unset($panier[$id]);
             }
         }
-        $this->session->set('panier', $panier);
+        $this->saveCart($panier);
     }
 
     // SSUPPRIMER TOUT L'ELEMENT DANS LE PANIER
 
     public function remove(int $id)
     {
-        $panier = $this->session->get('panier', []);
+        $panier = $this->getCart();
 
         if (!empty($panier[$id])) {
             unset($panier[$id]);
         }
 
-        $this->session->set('panier', $panier);
+        $this->saveCart($panier);
     }
 
-    // RECUP L'ID DES ARTICLES
+    // RECUP L'ID DES ARTICLES*/
+
+    /**
+     * @return CartItem[]
+     */
 
     public function getFullCart(): array
     {
-        $panier = $this->session->get('panier', []);
+        $panier = $this->getCart();
 
-        $panierWithData = [];
+        $detailedCart = [];
 
         foreach ($panier as $id => $quantity) {
-            $panierWithData[] = [
-                'product' => $this->productRepository->find($id),
-                'quantity' => $quantity
-            ];
+
+            $product = $this->productRepository->find($id);
+
+            $detailedCart[] = new CartItem($product, $quantity);
         }
 
-        return $panierWithData;
+        return $detailedCart;
     }
 
     // TOTAL DU PRIX DES ARTICLES
@@ -87,9 +107,10 @@ class CartService
 
         $total = 0;
 
-        foreach ($this->getFullCart() as $item) {
-            $totalItem = $item['product']->getPrice() * $item['quantity'];
-            $total += $totalItem;
+        foreach ($this->getCart() as $id => $quantity) {
+            $product = $this->productRepository->find($id);
+
+            $total += $product->getPrice() * $quantity;
         }
 
         return $total;
@@ -99,13 +120,13 @@ class CartService
 
     public function getTotalQuantity(): float
     {
-        $totalQuantity = 0;
+        $total = 0;
 
-        foreach ($this->getFullCart() as $item) {
-            $totalQuant = $item['quantity'];
-            $totalQuantity += $totalQuant;
+        foreach ($this->getCart() as $id => $quantity) {
+            $product = $this->productRepository->find($id);
+            $total += $quantity;
         }
 
-        return $totalQuantity;
+        return $total;
     }
 }

@@ -20,16 +20,16 @@
                     {% for p in purchases %}
                         <tr>
                             <td>{{ p.id }}</td>
-                            <td>{{ p.billingAddress }}<br>{{ p.postalCodeBilling }}, {{ p.city }}</td>
+                            <td>{{ p.billingAddress }}<br>{{ p.postalCodeBilling }} {{ p.city }}</td>
                             <td>{{ p.purchasedAt | date('d/m/Y H:i') }}</td>
                             <td>
                                 <ul>
                                     {% for item in p.purchaseItems %}
-                                        <li>{{ item.quantity }}x {{ item.productName }} {{ item.productPrice }}.00&euro;</li>
+                                        <li>{{ item.quantity }}x {{ item.productName }} {{ item.productPrice / 100 }}&euro;</li>
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>{{ p.totalphp }}.00 &euro;</td>
+                            <td>{{ p.total / 100}} &euro;</td>
                         </tr>
                     {% endfor %}
                     </tbody>

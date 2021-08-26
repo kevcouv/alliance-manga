@@ -31,7 +31,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
                 ->setImage('0'.$i.'.png')
                 ->setSmallDescription($faker->paragraph(2, true))
                 ->setFullDescription($faker->text(500))
-                ->setPrice($faker->numberBetween(10, 150))
+                ->setPrice($faker->numberBetween(1999, 15999))
                 ->setCreatedAt($faker->dateTimeThisYear('now'))
                 ->setIsPublished(1)
                 ->setManga($licences[$faker->numberBetween(0, count($licences) -1)])
@@ -54,7 +54,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
             $purchase->setPostalCodeBilling($faker->postcode);
             $purchase->setCity($faker->city);
             $purchase->setUser($users[$faker->numberBetween(0, count($users) -1)]);
-            $purchase->setTotal($faker->numberBetween(20, 500));
+            $purchase->setTotal($faker->NumberBetween(2999, 50999));
             $purchase->setPurchasedAt($faker->dateTimeBetween('-6 months', 'now'));
 
             $selectedProducts = $faker->randomElements($products, mt_rand(3,5));
