@@ -23,11 +23,12 @@ class CartService
         return $this->session->get('panier', []);
     }
 
-    protected function saveCart(array $panier)
+    protected function saveCart($panier)
     {
-        $this->session->set('panier', $panier);
-
+        return $this->session->set('panier', $panier);
     }
+
+
 
     public function empty()
     {
@@ -123,7 +124,6 @@ class CartService
         $total = 0;
 
         foreach ($this->getCart() as $id => $quantity) {
-            $product = $this->productRepository->find($id);
             $total += $quantity;
         }
 

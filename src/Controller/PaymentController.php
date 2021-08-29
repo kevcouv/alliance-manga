@@ -2,31 +2,76 @@
 
 namespace App\Controller;
 
-use App\Entity\Product;
 use App\Entity\Purchase;
-use App\Repository\ProductRepository;
-use App\Repository\PurchaseItemRepository;
+use App\Event\PurchaseSuccessEvent;
+use App\Form\CartConfirmationType;
 use App\Repository\PurchaseRepository;
 use App\Service\Cart\CartService;
+use App\Service\Purchase\PurchasePersister;
+use Doctrine\ORM\EntityManagerInterface;
 use Stripe\Checkout\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class PaymentController extends AbstractController
 {
+
+    protected $em;
+
+    protected $persister;
+
+    public function __construct(EntityManagerInterface $em, PurchasePersister $persister)
+    {
+        $this->em = $em;
+        $this->persister = $persister;
+    }
+
+    /**
+     * @Route("/addressForm", name="addressForm")
+     */
+    public function addressForm(Request $request, CartService $cartService): Response
+    {
+
+        //Récupérer le formulaire de l'adresse de livraison
+        $form = $this->createForm(CartConfirmationType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            // Validation des données de la commande
+            /**
+             * @var Purchase
+             */
+            $purchase = $form->getData();
+
+            $this->persister->storePurchase($purchase);
+
+            // Redirection vers l'insfrastructure de paiement STRIPE
+            return $this->redirectToRoute('checkout', [
+                'id' => $purchase->getId()
+            ]);
+        }
+        return $this->render('payment/index.html.twig', [
+            'form' => $form->createView(),
+            'items' => $cartService->getFullCart(),
+            'total' => $cartService->getTotal(),
+            'totalQuantity' => $cartService->getTotalQuantity(),
+        ]);
+    }
+
+
     /**
      * @Route("/checkout-{id}", name="checkout")
      */
-    public function checkout($id, PurchaseRepository $purchaseRepository, ProductRepository $productRepository, PurchaseItemRepository $purchaseItemRepository, CartService $cartService): Response
+    public function checkout($id, PurchaseRepository $purchaseRepository): Response
     {
         $purchase = $purchaseRepository->find($id);
-        $product = $productRepository->find($id);
-        $itemPurchase = $purchaseItemRepository->find($id);
-        if (!$purchase){
+
+        if (!$purchase) {
             return $this->redirectToRoute('panier');
         }
 
@@ -46,8 +91,8 @@ class PaymentController extends AbstractController
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' =>  $this->generateUrl('success_url' ,['id' => $id], UrlGeneratorInterface::ABSOLUTE_URL),
-            'cancel_url' =>  $this->generateUrl('cancel_url' ,[], UrlGeneratorInterface::ABSOLUTE_URL),
+            'success_url' => $this->generateUrl('success_url', ['id' => $id], UrlGeneratorInterface::ABSOLUTE_URL),
+            'cancel_url' => $this->generateUrl('cancel_url', [], UrlGeneratorInterface::ABSOLUTE_URL),
         ]);
 
         return $this->redirect($session->url, 303);
@@ -57,13 +102,23 @@ class PaymentController extends AbstractController
     /**
      * @Route("/success-url-{id}", name="success_url")
      */
-    public function successUrl($id, CartService $cartService, PurchaseRepository $purchaseRepository): Response
+    public function successUrl($id, CartService $cartService, PurchaseRepository $purchaseRepository, EventDispatcherInterface $dispatcher): Response
     {
         $purchase = $purchaseRepository->find($id);
 
-        $cartService->empty();
+
+        //Statut du paiement en "PAYEE" (PAID)
         $purchase->setStatus(Purchase::STATUS_PAID);
 
+        // je vide l le panier
+        $cartService->empty();
+
+        // Lancer un évènement qui permette aux autres développeurs de réagir à la prise d'une commande
+        $purchaseEvent = new PurchaseSuccessEvent($purchase);
+        $dispatcher->dispatch($purchaseEvent, 'purchase.success');
+
+        // Je redirige avec un flash du succès du paiement
+        $this->addFlash('success', "La commande a été payée et confirmée !");
         return $this->redirectToRoute("account");
     }
 
@@ -72,6 +127,8 @@ class PaymentController extends AbstractController
      */
     public function cancelUrl(): Response
     {
+
+        $this->addFlash('warning', "Paiement invalide!");
         return $this->render('payment/cancel.html.twig', []);
     }
 

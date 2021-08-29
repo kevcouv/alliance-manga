@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-
+use Serializable;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity (
@@ -21,7 +21,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * message="Cet identifiant est déja utilisé"
  * )
  */
-class User implements UserInterface
+class User implements UserInterface, Serializable
 {
     /**
      * @ORM\Id
@@ -95,10 +95,6 @@ class User implements UserInterface
      */
     private $comments;
 
-    /**
-     * @ORM\OneToMany(targetEntity=Address::class, mappedBy="user")
-     */
-    private $addresses;
 
     /**
      * @ORM\OneToMany(targetEntity=Purchase::class, mappedBy="user")
@@ -112,7 +108,6 @@ class User implements UserInterface
         $this->comments = new ArrayCollection();
         $this->createdAt = new \DateTimeImmutable('now');
         $this->updatedAt = new \DateTimeImmutable('now');
-        $this->addresses = new ArrayCollection();
         $this->purchases = new ArrayCollection();
     }
 
@@ -335,35 +330,6 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|Address[]
-     */
-    public function getAddresses(): Collection
-    {
-        return $this->addresses;
-    }
-
-    public function addAddress(Address $address): self
-    {
-        if (!$this->addresses->contains($address)) {
-            $this->addresses[] = $address;
-            $address->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAddress(Address $address): self
-    {
-        if ($this->addresses->removeElement($address)) {
-            // set the owning side to null (unless already changed)
-            if ($address->getUser() === $this) {
-                $address->setUser(null);
-            }
-        }
-
-        return $this;
-    }
 
     /**
      * @return Collection|Purchase[]
@@ -393,5 +359,42 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * String representation of object
+     * @link https://php.net/manual/en/serializable.serialize.php
+     * @return string the string representation of the object or null
+     * @since 5.1.0
+     */
+
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->userName,
+            $this->email,
+            $this->password,
+        ));
+    }
+
+    /**
+     * Constructs the object
+     * @link https://php.net/manual/en/serializable.unserialize.php
+     * @param string $serialized <p>
+     * The string representation of the object.
+     * </p>
+     * @return void
+     * @since 5.1.0
+     */
+
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->userName,
+            $this->email,
+            $this->password,
+            ) = unserialize($serialized, array('allowed_classes' => false));
     }
 }

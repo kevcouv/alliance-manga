@@ -12,6 +12,27 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+/* HEADER */
+
+
+nav form button {
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-right: 1em;
+    padding-left: 1em;
+    background-color: rgb(21, 122, 109);
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color: rgba(6, 6, 6, 0.77);
+}
+
+nav form button:hover {
+    background-color: rgb(33, 174, 150);
+    border: none;
+    color: white;
+}
+
+
 /* HOME */
 
 main {
@@ -20,13 +41,13 @@ main {
 }
 
 
-#univers-home h2, .products-h2 h2, #products-home a:last-child, #product-detail a div, #product-description h2, #product-description span, #adresse h4, #account-details h4, #account-page h4 , #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6{
+#univers-home h2, .products-h2 h2, #products-home a:last-child, #product-detail a div, #product-description h2, #product-description span, #adresse h4, #account-details h4, #account-page h4, #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6, #addressPayement h4 {
     font-weight: bold;
     letter-spacing: -1px;
 }
 
 
-#details-home, #product-detail{
+#details-home, #product-detail {
     display: flex;
     flex-wrap: wrap;
 }
@@ -44,7 +65,7 @@ main {
     justify-content: center;
 }
 
-#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #account-page .card-title, #adresse h4, #account-details h4, #account-page h4, #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6, #products-home .card-body span:first-child {
+#univers-home h2, .products-h2 h2, #univers-home .card-title, #products-home .card-title span, #products-home a:last-child, #product-detail a, #product-description h2, #product-description span, #products-home h5, #account-page .card-title, #adresse h4, #account-details h4, #account-page h4, #resetPassword h4, #login h4, #account-registration h4, #add-address h4, #account-page h6, #products-home .card-body span:first-child, #addressPayement h4 {
     text-transform: uppercase;
 }
 
@@ -53,14 +74,14 @@ main {
     color: black;
 }
 
-#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr, #cart table:last-child tfoot:last-child tr button{
+#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr td {
     padding: 0.60em;
     color: white;
-    background-color:  rgb(33, 174, 150);
+    background-color: rgb(33, 174, 150);
     border: none;
 }
 
-#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover{
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover, #cart table:last-child tfoot:last-child tr td:hover {
     background-color: rgb(21, 122, 109);
 }
 
@@ -69,12 +90,12 @@ main {
 
 }
 
-#products-home .card-body span:first-child{
-    font-size: 17px;
+#products-home .card-body span:first-child {
+    font-size: 15px;
 }
 
 #products-home .card-body span:last-child {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 #products-home div div {
@@ -165,11 +186,11 @@ main {
     font-size: 15px;
 }
 
-#login form , #account-page .card, #account-details .row .col-md-7, #adresse .card, #adresse .text-center, #resetPassword form{
+#login form, #account-page .card, #account-details .row .col-md-7, #adresse .card, #adresse .text-center, #resetPassword form {
     margin: 1em;
 }
 
-#account-page .card-title, #account-page .card-body p   {
+#account-page .card-title, #account-page .card-body p {
     color: rgb(33, 174, 150);
 }
 

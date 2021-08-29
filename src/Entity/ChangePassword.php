@@ -8,7 +8,7 @@ class ChangePassword
 {
     /**
      * @Assert\UserPassword(
-     *     message = "Mot de passe incorect"
+     *     message = "Mot de passe incorrect"
      * )
      */
     protected $oldPassword;

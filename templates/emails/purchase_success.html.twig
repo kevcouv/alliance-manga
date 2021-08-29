@@ -1,0 +1,37 @@
+
+{% block title %}Email de commande{% endblock %}
+{% block body %}
+    <main class="container">
+        <section id="orders">
+            <div class="justify-content-center">
+                <h4>Commande n°{{ purchase.id }} de {{ user.userName }}</h4>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                       <th>Produit</th>
+                       <th>Quantité</th>
+                       <th>prix</th>
+                       <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in purchase.purchaseItems %}
+                        <tr>
+                            <td>{{ item.productName }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.productPrice /100 }}&euro;</td>
+                            <td>{{ item.total / 100 }}&euro;</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                    <td colspan="3">Total :</td>
+                    <td colspan="3">{{ purchase.total / 100 }}&euro;</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+{% endblock %}

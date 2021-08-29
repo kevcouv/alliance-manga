@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
+use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -104,6 +105,11 @@ class Product
      */
     private $purchaseItems;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
 
     // Récupère automatiquemenet la date de création/update et les commentaires du produit
 
@@ -137,6 +143,19 @@ class Product
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return (new Slugify())->slugify($this->title);
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
 
     public function getSmallDescription(): ?string
     {

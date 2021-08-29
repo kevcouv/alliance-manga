@@ -6,99 +6,93 @@
 
     <main class="container">
         {% if app.user %}
-        <section id="cart-billingAddress" class="card">
-            <h4 class="card-header">Votre commande de livraison</h4>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-11">
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                </div>
-            </div>
-            <div class="card-footer">
-            </div>
-        </section>
-            <hr>
-        <section id="cart">
-            <div class=" row justify-content-center">
-                <div class="col-md-9 col-11">
-                    <table class="table table-borderless">
-                        <thead class="thead-dark">
-                        <tr>
-                            <th><h3>Panier</h3></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in items %}
-                            <tr class="border-top">
-                                <td class="justify-content-center">
-                                    <div class="row">
-                                    <div class="col-md-4 col-6">
-                                        <img style="width: 100px;"
-                                             src="{{ asset('img/product/')~ item.product.image }}" alt="">
-                                    </div>
-                                    <div class="col-md-8 col-6 trashCart">
-                                        <a href="{{ path('product', {id:item.product.id}) }}">{{ item.product.title }} </a>
-                                        <br>
-                                        {{ item.product.price / 100 }}&euro;
-                                    </div>
-                                    </div>
-                                </td>
-                                <td class="font-weight-bold">
-                                    <a style="margin: 0.5em;" href="{{ path('panier_add', {'id':item.product.id}) }}"><i class="fas fa-plus-square btn-outline-info"></i></a>
-                                    {{ item.quantity }}
-                                    <a style="margin: 0.5em;" href="{{ path('panier_removeOne', {'id': item.product.id}) }}"><i class="fas fa-minus-square btn-outline-info"></i></a>
-                                </td>
-                                <td class="font-weight-bold">{{ item.product.price * item.quantity /100 }}&euro;</td>
-                                <td>
-                                    <a href="{{ path('panier_remove', {'id': item.product.id}) }}">
-                                        <i class="fas fa-trash"></i>
+            <section id="cart">
+                <div class=" row justify-content-center">
+                    <div class="col-md-9 col-11">
+                        <table class="table table-borderless">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th><h3>Panier</h3></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for item in items %}
+                                <tr class="border-top">
+                                    <td class="justify-content-center">
+                                        <div class="row">
+                                            <div class="col-md-4 col-6">
+                                                <img style="width: 100px;"
+                                                     src="{{ asset('img/product/')~ item.product.image }}" alt="">
+                                            </div>
+                                            <div class="col-md-8 col-6 trashCart">
+                                                <a href="{{ path('product', {id:item.product.id, slug:item.product.slug}) }}">{{ item.product.title }} </a>
+                                                <br>
+                                                {{ item.product.price / 100 }}&euro;
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="font-weight-bold">
+                                        <a style="margin: 0.5em;"
+                                           href="{{ path('panier_add', {'id':item.product.id}) }}"><i
+                                                    class="fas fa-plus-square btn-outline-info"></i></a>
+                                        {{ item.quantity }}
+                                        <a style="margin: 0.5em;"
+                                           href="{{ path('panier_removeOne', {'id': item.product.id}) }}"><i
+                                                    class="fas fa-minus-square btn-outline-info"></i></a>
+                                    </td>
+                                    <td class="font-weight-bold">{{ item.product.price * item.quantity /100 }}&euro;
+                                    </td>
+                                    <td>
+                                        <a href="{{ path('panier_remove', {'id': item.product.id}) }}">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                        <div style="margin: 1em">
+                            <a href="{{ path('licences') }}" class="btn btn-outline-info"><i class="fas fa-chevron-left"></i>
+                                Continuer
+                                mes achats</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-11">
+                        <table class="table table-borderless">
+                            <thead></thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ totalQuantity }} article(s)</td>
+                                <td class="float-right">{{ total /100 }}&euro;</td>
+                            </tr>
+                            <tr>
+                                <td>Livraison</td>
+                                <td class="float-right">gratuit</td>
+                            </tr>
+                            <tr style="background-color: lightgrey" class="font-weight-bold">
+                                <td>TOTAL TTC</td>
+                                <td class="float-right">{{ total /100 }}&euro;</td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr class="text-center">
+                                <td colspan="2">
+                                    <a href="{{ path('addressForm') }}">
+                                        <span>Commander</span>
                                     </a>
                                 </td>
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                        <tfoot>
-                        </tfoot>
-                    </table>
-                    <div  style="margin: 1em">
-                        <a  href="{{ path('licences') }}" class="btn btn-outline-info"><
-                            Continuer
-                            mes achats</a>
+                            </tfoot>
+                        </table>
                     </div>
                 </div>
-
-                <div class="col-md-3 col-11">
-                    <table class="table table-borderless">
-                        <thead></thead>
-                        <tbody>
-                        <tr>
-                            <td>{{ totalQuantity }} articles</td>
-                            <td class="float-right">{{ total /100 }}&euro;</td>
-                        </tr>
-                        <tr>
-                            <td>Livraison</td>
-                            <td class="float-right">gratuit</td>
-                        </tr>
-                        <tr style="background-color: lightgrey" class="font-weight-bold">
-                            <td>TOTAL TTC</td>
-                            <td class="float-right">{{ total /100 }}&euro;</td>
-                        </tr>
-                        </tbody>
-                        <tfoot>
-                        <tr class="text-center">
-                            <td colspan="2">
-                                <button style="border: none" type="submit"><span>Commander</span></button>
-                                {{ form_end(form) }}
-                            </td>
-                        </tr>
-                        </tfoot>
-                    </table>
-                </div>
-            </div>
-        </section>
+            </section>
         {% else %}
             <h2>Vous devez être connecté pour confirmer votre commande</h2>
             <a href="{{ path('login') }}" class="btn btn-success">Connexion</a>

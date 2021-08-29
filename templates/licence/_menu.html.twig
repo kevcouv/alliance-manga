@@ -7,7 +7,7 @@
     </a>
     <div  style="line-height: 40px" class="dropdown-menu" aria-labelledby="navbarDropdown">
         {% for licence in licences %}
-            <a  class="dropdown-item" href="{{ path('licence', {id:licence.id}) }}"> <img
+            <a  class="dropdown-item" href="{{ path('licence', {id:licence.id, slug:licence.slug}) }}"> <img
                         src="{{ asset('img/manga/logo/') ~ licence.logo }}" style="width: 40px; margin: 0.3em"
                         alt="{{ licence.logo }}"> <span class="font-weight-bold ">{{ licence.title }}</span></a>
             <div class="dropdown-divider"></div>

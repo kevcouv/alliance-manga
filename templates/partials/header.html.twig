@@ -1,9 +1,9 @@
 <!-- Navigation -->
 {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark text-center  text-uppercase"
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center  text-uppercase"
          style="letter-spacing: -1px; ">
         <div class="container">
-            <a class="navbar-brand" href="{{ path('home') }}">Alliance Manga</a>
+            <a class="navbar-brand" href="{{ path('home') }}">  <img  style="min-width: 50px; max-width: 150px; " src="{{ asset('img/logo/alliance_manga_logo.png') }}" alt="..."></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                     aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -11,6 +11,9 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     {{ render(controller('App\\Controller\\LicenceController::RenderMenuList')) }}
+                </ul>
+
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('figurines') }}">Figurines</a>
                     </li>
@@ -23,33 +26,35 @@
                 </ul>
 
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        {% if not app.user %}
-                            <a class="nav-link" href="{{ path('login') }}">
-                                <span><i class="fas fa-user fa-2x"></i>Mon compte</span>
+                    {% if not app.user %}
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ path('login') }}">
+                            <span><i class="fas fa-user fa-2x"></i>Mon compte</span></a>
+
+                    {% else %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle font-weight-bold" href="" id="navbarDropdown"
+                               role="button"
+                               data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">{{ app.user.firstName }} {{ app.user.lastName }}
+
                             </a>
-                        {% else %}
-                            <a class="nav-link" href="{{ path('account') }}">
-                                <span>
-                                    <i class="fas fa-user fa-2x"></i>
-                                    Mon compte <br>
-                                <a href="{{ path('logout') }}"
-                                   style="text-transform: none; font-size: 10px">Déconnexion</a> <a
-                                            href="{{ path('account') }}"
-                                            style="text-transform: none; font-size: 10px">{{ app.user.firstName }}{{ app.user.lastName }}</a>
-                                    </span>
-                            </a>
-                        {% endif %}
-                    </li>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ path('account') }}">Mon compte</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ path('logout') }}">Déconnexion</a>
+                            </div>
+                        </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('panier') }}">
-                            <span><i class="fas fa-shopping-cart fa-2x"></i>Mon panier</span>
+                            <span><i class="fas fa-shopping-cart fa-2x"></i>({{ cartService.totalQuantity }})</span>
                         </a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>
+                    <button class=" my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>
                     </button>
                 </form>
             </div>

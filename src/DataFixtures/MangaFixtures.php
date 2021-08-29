@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Manga;
+use Cocur\Slugify\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
@@ -14,12 +15,13 @@ class MangaFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-
         $faker = Factory::create('fr_FR');
+        $slugify = new Slugify();
 
         foreach ($this->licences as $licence){
             $anime = new Manga();
             $anime->setTitle($licence);
+            $anime->setSlug($slugify->slugify($anime->getTitle()));
             $anime->setDescription($faker->text(300));
             $anime->setImage($licence.'.png');
             $anime->setLogo($licence.'.png');

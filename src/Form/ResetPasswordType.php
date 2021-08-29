@@ -27,8 +27,7 @@ class ResetPasswordType extends AbstractType
                 'options' => array(
                     'attr' => array(
                         'class' => 'password-field'
-                    )
-                    ,
+                    ),
                 ),
                 'required' => true,
             ))

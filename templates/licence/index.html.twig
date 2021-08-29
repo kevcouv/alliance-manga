@@ -8,7 +8,7 @@
             <div class="row justify-content-center">
                 {% for licence in licences %}
                     <div class="col-lg-4 col-md-5  col-6" style="max-width: 100%;">
-                        <a href="{{ path('licence', {id:licence.id}) }}">
+                        <a href="{{ path('licence', {id:licence.id, slug:licence.slug}) }}">
                         <img src="{{ asset('img/manga/') ~ licence.image }}" class="card-img-top" alt="{{ licence.image }}">
                         <div class="card-body">
                             <p class="card-title">{{ licence.title }}</p>

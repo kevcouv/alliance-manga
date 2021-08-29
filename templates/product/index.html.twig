@@ -85,7 +85,8 @@
 
                 {% else %}
                     <!-- COMMENTARY SECTION-->
-                    <div id="comment" class="text-center" style="background-color: rgba(252,252,252,1); padding-top: 1em; margin-top: 1em">
+                    <div id="comment" class="text-center"
+                         style="background-color: rgba(252,252,252,1); padding-top: 1em; margin-top: 1em">
                         <div>
                             <h3>Avis Vérifiés</h3>
                             <div class="col">
@@ -112,7 +113,6 @@
                                         </p>
                                         <p>{{ comments.message }}</p>
                                     </div>
-                                {% else %}
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -147,23 +147,25 @@
 
                     {% for product in products %}
                         {% if product.category == "Figurine" %}
-                            <div class=" col-lg-3 col-md-4 col-6" style="max-width: 100%">
-                                <a class="card" href="{{ path('product', {id:product.id}) }}">
-                                    <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
-                                         alt="{{ product.image }}">
-                                    <div class="card-body">
+                            {% if product.isPublished == 1 %}
+                                <div class=" col-lg-3 col-md-4 col-6" style="max-width: 100%">
+                                    <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
+                                        <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                             alt="{{ product.image }}">
+                                        <div class="card-body">
 
-                                        <span >{{ product.nameCharacter }}</span><br>
+                                            <span>{{ product.nameCharacter }}</span><br>
 
-                                        <span>{{ product.manga.title }}</span><br>
+                                            <span>{{ product.manga.title }}</span><br>
 
-                                        <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
-                                    </div>
-                                </a>
-                                <a href="{{ path('panier_add', {'id':product.id}) }}">
-                                    <div>Ajouter au panier</div>
-                                </a>
-                            </div>
+                                            <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                        </div>
+                                    </a>
+                                    <a href="{{ path('panier_add', {'id':product.id}) }}">
+                                        <div>Ajouter au panier</div>
+                                    </a>
+                                </div>
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>

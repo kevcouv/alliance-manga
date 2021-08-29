@@ -16,29 +16,13 @@ class CartConfirmationType extends AbstractType
     {
         $builder
             ->add('fullName', TextType::class, [
-                'label' => 'Nom complet',
-                'attr' => [
-                    'placeholder' => 'Nom complet pour la livraison'
-                ]
-            ])
+                'label' => 'Nom complet',])
             ->add('billingAddress', TextareaType::class, [
-                'label' => 'Adresse complète',
-                'attr' => [
-                    'placeholder' => 'Adresse complète pour la livraison'
-                ]
-            ])
-            ->add('postalCodeBilling', TextareaType::class, [
-                'label' => 'Code Postal',
-                'attr' => [
-                    'placeholder' => 'Code postal pour la livraison'
-                ]
-            ])
-            ->add('city', TextareaType::class, [
-                'label' => 'Ville',
-                'attr' => [
-                    'placeholder' => 'Ville pour la livraison'
-                ]
-            ])
+                'label' => 'Adresse'])
+            ->add('postalCodeBilling', TextType::class, [
+                'label' => 'Code Postal'])
+            ->add('city', TextType::class, [
+                'label' => 'Ville'])
         ;
     }
 

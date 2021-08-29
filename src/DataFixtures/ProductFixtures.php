@@ -8,6 +8,7 @@ use App\Entity\Product;
 use App\Entity\Purchase;
 use App\Entity\PurchaseItem;
 use App\Entity\User;
+use Cocur\Slugify\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -19,6 +20,8 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
+        $slugify = new Slugify();
+
         $licences = $manager->getRepository(Manga::class)->findAll();
         $categories = $manager->getRepository(Category::class)->findAll();
         $users = $manager->getRepository(User::class)->findAll();
@@ -27,6 +30,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 1; $i <= 61; $i++){
             $product = new Product();
             $product->setTitle($faker->words($faker->numberBetween(2, 3),true))
+                ->setSlug($slugify->slugify($product->getTitle()))
                 ->setNameCharacter($faker->words($faker->numberBetween(1, 3),true))
                 ->setImage('0'.$i.'.png')
                 ->setSmallDescription($faker->paragraph(2, true))
