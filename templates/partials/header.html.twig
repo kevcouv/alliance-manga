@@ -3,7 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center  text-uppercase"
          style="letter-spacing: -1px; ">
         <div class="container">
-            <a class="navbar-brand" href="{{ path('home') }}">  <img  style="min-width: 50px; max-width: 150px; " src="{{ asset('img/logo/alliance_manga_logo.png') }}" alt="..."></a>
+            <a class="navbar-brand" href="{{ path('home') }}"><img style="min-width: 50px; width: 140px; "
+                                                                   src="{{ asset('img/logo/alliance_manga_logo.png') }}"
+                                                                   alt="{{ asset('img/logo/alliance_manga_logo.png') }}"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                     aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -21,7 +23,7 @@
                         <a class="nav-link" href="{{ path('derived') }}">Produits Dérivés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nouveautés</a>
+                        <a class="nav-link" href="{{ path('newProduct') }}">Nouveautés</a>
                     </li>
                 </ul>
 
@@ -53,7 +55,7 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
                     <button class=" my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>
                     </button>
                 </form>

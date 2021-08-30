@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }}{% endblock %}
+{% block title %}Details{% endblock %}
 
 {% block body %}
 
@@ -31,7 +31,7 @@
                                     {% else %}
                                         {% for i in 1..5 %}
                                             {% set starGlob = (evalGlob >= i ? "fas fa-star " : "far fa-star ") %}
-                                            <i class="{{ starGlob }}" style="color: gold"></i>
+                                            <a href="#comment"><i class="{{ starGlob }}" style="color: gold"></i>
                                         {% endfor %}{{ comNumber }} avis</a>
                                     {% endif %}
                                     <h3>{{ product.price / 100 }}&euro;</h3>
@@ -48,13 +48,18 @@
                                         pour
                                         un prochain achat.</p>
                                 </div>
-                                <div class="content-detail">
-                                    <div>
-                                        <p><i class="fa fa-lock"></i>Paiement Sécurisé</p>
+                                {% if comment is empty %}
+                                {% else %}
+                                    <div class="content-detail">
+                                        <div class="col-7 text-center">
+                                            <a href="#comment"><img style="width:175px;"
+                                                                    src="{{ asset('img/logo/logo_comment2.png') }}"
+                                                                    alt="logo_comment.png"></a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <p>Société Belge, expédition depuis la Belgique. Sans frais de Douane</p>
+                                {% endif %}
+                                <div class="douane">
+                                    Société Belge, expédition depuis la Belgique. Sans frais de Douane
                                 </div>
                             </div>
                         </div>
@@ -82,13 +87,16 @@
 
 
                 {% if comment is empty %}
-
                 {% else %}
                     <!-- COMMENTARY SECTION-->
                     <div id="comment" class="text-center"
                          style="background-color: rgba(252,252,252,1); padding-top: 1em; margin-top: 1em">
-                        <div>
-                            <h3>Avis Vérifiés</h3>
+                        <div style="margin-bottom: 2em">
+                            <div>
+                                <img style="width: 250px;"
+                                     src="{{ asset('img/logo/logo_comment2.png') }}"
+                                     alt="logo_comment.png">
+                            </div>
                             <div class="col">
                                 {% for i in 1..5 %}
                                 {% set starGlob = (evalGlob >= i ? "fas fa-star fa-2x" : "far fa-star fa-2x") %}
@@ -121,30 +129,24 @@
                 {% endif %}
 
                 <!-- ADD COMMENTARY -->
-                {% if is_granted('ROLE_USER', 'ROLE_ADMIN') %}
-                    <div class="row justify-content-center" style="margin-top:1em">
-                        <div class="col-md-6 text-center">
-                            <h3>Votre avis est
-                                <br>important!
-                            </h3>
-                        </div>
-                        <div class="col-md-6">
-                            {{ form(form) }}
-                        </div>
+                {% if is_granted('ROLE_USER') or is_granted('ROLE_ADMIN') %}
+                <div class="row justify-content-center" style="margin-top:1em">
+                    <div class="col-md-6 text-center">
+                        {{ form(form) }}
                     </div>
-                {% endif %}
-                <!-- END COMMENTARY -->
+                    {% endif %}
+                    <!-- END COMMENTARY -->
+                </div>
             </div>
         </section>
 
 
         <div class="text-center" style="padding-top: 2em;">
-            <h4>Autres produits de la même catégorie: </h4>
+            <h4>Autres produits populaire </h4>
         </div>
         <section id="products-home">
             <div class="container">
                 <div class="row justify-content-center">
-
                     {% for product in products %}
                         {% if product.category == "Figurine" %}
                             {% if product.isPublished == 1 %}

@@ -29,7 +29,7 @@ class ProductFixtures extends Fixture implements DependentFixtureInterface
 
         for ($i = 1; $i <= 61; $i++){
             $product = new Product();
-            $product->setTitle($faker->words($faker->numberBetween(2, 3),true))
+            $product->setTitle($faker->words($faker->numberBetween(1, 2),true))
                 ->setSlug($slugify->slugify($product->getTitle()))
                 ->setNameCharacter($faker->words($faker->numberBetween(1, 3),true))
                 ->setImage('0'.$i.'.png')

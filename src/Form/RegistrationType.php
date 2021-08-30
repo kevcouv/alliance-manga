@@ -24,7 +24,7 @@ class RegistrationType extends AbstractType
             ->add('confirmPassword', PasswordType::class, ['label'=> 'Confirmation du mot de passe'])
             ->add('submit', SubmitType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-info'
+                    'class' => 'btn btn-outline-info'
                 ),
                 'label' => 'S\'enregistrer'
             ));

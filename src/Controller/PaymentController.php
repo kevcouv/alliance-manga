@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class PaymentController extends AbstractController
 {
@@ -32,6 +33,7 @@ class PaymentController extends AbstractController
 
     /**
      * @Route("/addressForm", name="addressForm")
+     * @Security("is_granted('ROLE_USER') or is_granted('ROLE_ADMIN')")
      */
     public function addressForm(Request $request, CartService $cartService): Response
     {
@@ -75,7 +77,6 @@ class PaymentController extends AbstractController
             return $this->redirectToRoute('panier');
         }
 
-
         \Stripe\Stripe::setApiKey('sk_test_51JQd5JC9AE7tivzxKcYFk08uXLpLd1e8vJ7W1HfeBVwxRqBqPIflGFZiXsIoGGIHbWL1mwGEoH158SodM8L3XodF00WR384uE3');
 
         $session = \Stripe\Checkout\Session::create([
@@ -109,8 +110,10 @@ class PaymentController extends AbstractController
 
         //Statut du paiement en "PAYEE" (PAID)
         $purchase->setStatus(Purchase::STATUS_PAID);
+        $this->em->persist($purchase);
+        $this->em->flush();
 
-        // je vide l le panier
+        // je vide le panier
         $cartService->empty();
 
         // Lancer un évènement qui permette aux autres développeurs de réagir à la prise d'une commande
@@ -118,7 +121,7 @@ class PaymentController extends AbstractController
         $dispatcher->dispatch($purchaseEvent, 'purchase.success');
 
         // Je redirige avec un flash du succès du paiement
-        $this->addFlash('success', "La commande a été payée et confirmée !");
+        $this->addFlash('success', "Votre commande a bien été payée !");
         return $this->redirectToRoute("account");
     }
 
@@ -129,7 +132,7 @@ class PaymentController extends AbstractController
     {
 
         $this->addFlash('warning', "Paiement invalide!");
-        return $this->render('payment/cancel.html.twig', []);
+        return $this->redirectToRoute("panier");
     }
 
 

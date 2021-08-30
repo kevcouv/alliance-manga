@@ -36,7 +36,7 @@ class ProductCustomer implements EventSubscriberInterface
     public function setUser(BeforeEntityPersistedEvent $event)
     {
         $entity = $event->getEntityInstance();
-        if ($entity instanceof Product || $entity instanceof Comment ||  $entity instanceof Address || $entity instanceof Purchase){
+        if ($entity instanceof Product || $entity instanceof Comment || $entity instanceof Purchase){
         $entity->setUser($this->security->getUser());
         $this->security->getUser();
         }

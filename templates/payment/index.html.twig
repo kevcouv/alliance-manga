@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Payement{% endblock %}
+{% block title %}Paiement{% endblock %}
 
 {% block body %}
     <main class="container">
-        {% if app.user %}
             <section id="addressPayement">
                 <div class=" row justify-content-center">
                     <div class="col-md-9 col-11">
@@ -14,7 +13,7 @@
                                 <div class="card-body">
                                     {{ form_start(form) }}
                                     {{ form_widget(form) }}
-                                        <button class="btn btn-info" type="submit"><span>Commander</span></button>
+                                        <button class="btn btn-outline-info" type="submit"><span>Commander</span></button>
                                     {{ form_end(form) }}
                                 </div>
                             </div>
@@ -43,6 +42,5 @@
 
                 </div>
             </section>
-        {% endif %}
     </main>
 {% endblock %}

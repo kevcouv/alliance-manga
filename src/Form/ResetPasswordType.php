@@ -33,7 +33,7 @@ class ResetPasswordType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-info text-center'
+                    'class' => 'btn btn-outline-info'
                 ),
                 'label' => 'Enregistrer'
             ));

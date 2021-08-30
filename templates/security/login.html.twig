@@ -9,14 +9,14 @@
                 <h4 class="card-header">Connectez-vous à votre compte</h4>
                 <div class="card">
                     {% if error %}
-                        <div class="alert alert-danger">Adresse E-mail ou mot de passe éronnés</div>
+                        <div class="alert alert-danger">Adresse E-mail ou mot de passe éronné</div>
                     {% endif %}
                     <div class="card-body">
                     <form  action="{{ path('login') }}" method="post" >
                         <div class="form-group">
-                            <label for="mail">Votre Email</label>
+                            <label for="mail">E-mail</label>
                             <input type="email" class="form-control" required name="_username" id="mail"
-                                   placeholder="Mail" value="{{ last_username }}">
+                                   placeholder="Mail">
                         </div>
 
                         <div class="form-group">
@@ -26,12 +26,12 @@
                         </div>
                         <div class="form-group text-center">
                             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                            <button type="submit" class="btn btn-info">Se connecter</button>
+                            <button type="submit" class="btn btn-outline-info">Se connecter</button>
                         </div>
                     </form>
                     </div>
                     <div class="card-footer">
-                        <a href="{{ path('registration') }}">Pas de compte? Créez-en un</a>
+                        <a href="{{ path('registration') }}" style="font-size: 15px">Pas de compte? Créez-en un</a>
                     </div>
                 </div>
             </div>

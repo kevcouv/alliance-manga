@@ -6,6 +6,7 @@ use App\Repository\PurchaseRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PurchaseRepository::class)
@@ -25,6 +26,16 @@ class Purchase
 
     /**
      * @ORM\Column(type="string", length=255)
+     *@Assert\Length(
+     * min = 5,
+     * max = 20,
+     * minMessage = "Le champ doit contenir au moins 5 caractères",
+     * maxMessage = "Le champ  ne peut pas dépasser 20 caractères"
+     * )
+     * @Assert\Regex(
+     * pattern="/\d/",
+     * match=false,
+     * message="Votre nom complèt ne peut pas contenir de chiffres")
      */
     private $fullName;
 
@@ -55,6 +66,12 @@ class Purchase
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min = 4,
+     * max = 50,
+     * minMessage = "Le champ doit contenir au moins 4 caractères",
+     * maxMessage = "Le champ  ne peut pas dépasser 50 caractères"
+     * )
      */
     private $city;
 
@@ -72,6 +89,11 @@ class Purchase
     {
         $this->purchaseItems = new ArrayCollection();
         $this->purchasedAt = new \DateTimeImmutable();
+    }
+
+    public function __toString()
+    {
+       return $this->fullName;
     }
 
 

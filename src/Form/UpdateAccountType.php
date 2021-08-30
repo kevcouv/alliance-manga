@@ -23,7 +23,7 @@ class UpdateAccountType extends AbstractType
             ->add('email', EmailType::class, ['label' => 'E-mail'])
             ->add('submit', SubmitType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-info'
+                    'class' => 'btn btn-outline-info'
                 ),
                 'label' => 'Enregistrer'
             ));

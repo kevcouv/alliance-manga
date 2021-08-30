@@ -22,7 +22,7 @@ class Comment
      * @ORM\Column(type="text")
      * @Assert\Length(
      * min = 10,
-     * minMessage = "Le message doit contenir au minimum 10 caractères",
+     * minMessage = "Le message doit contenir au minimum {{limit }} caractères",
      * )
      */
     private $message;

@@ -28,6 +28,7 @@ class CartController extends AbstractController
 
 
     // AJOUTER UN ARTICLE DANS LE PANIER
+
     /**
      * @Route("/add-{id}", name="panier_add")
      */
@@ -39,6 +40,7 @@ class CartController extends AbstractController
 
 
     // SUPPRIMER TOUT L'ELEMENT DANS LE PANIER
+
     /**
      * @Route("/remove-{id}", name="panier_remove"))
      */
@@ -51,6 +53,7 @@ class CartController extends AbstractController
 
 
     // SUPPRIMER UN ELEMENT DANS LE PANIER
+
     /**
      * @Route("/removeOne-{id}", name="panier_removeOne")
      */

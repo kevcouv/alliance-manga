@@ -38,10 +38,10 @@ class SecurityController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Votre inscription vient d\'être valider'
+                'Votre compte a bien été enregistré'
             );
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('login');
         }
         return $this->render('security/index.html.twig', [
             'user' => $user,

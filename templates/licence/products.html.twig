@@ -10,59 +10,68 @@
     </section>
 
     <main class="container">
-        <section id="products-home" class="border-top" style="padding-top: 1em">
-            <div class="row justify-content-center">
-                <div class=" col-lg-4 col-md-4 col-12">
-                    <div class="border-right">
-                        <h5 class="text-left">Nouveautés </h5>
-                        <div class="products-figurine">
-                            {% for product in products |sort((a, b) => b.createdat <=> a.createdat)|slice(0, 2) %}
-                                {% if product.isPublished == 1 %}
-                                    <div class=" col-lg-3 col-md-3 col-6" style="max-width: 100%">
-                                        <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
-                                            <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
-                                                 alt="{{ product.image }}">
-                                            <div class="card-body">
+        <section id="products-home" style="padding-top: 1em">
+            <div class="justify-content-center">
+                <h4 class="text-justify " style="margin-bottom: 1em; letter-spacing: -2px">{{ licence.title }} </h4>
+                <p class="text-justify">Il y a {{ products.getTotalItemCount }} produits.</p>
+                <div class="row border-top justify-content-center">
+                    <div class=" col-lg-3 col-md-4 col-12">
+                        <div class="border-right">
+                            <h5 class="text-center text-uppercase" style="letter-spacing: -2px">Nouveautés </h5>
+                            <div class="products-figurine">
+                                {% for product in products |sort((a, b) => b.createdat <=> a.createdat)|slice(0, 2) %}
+                                    {% if product.isPublished == 1 %}
+                                        <div class=" col-lg-3 col-md-3 col-6" style="max-width: 100%">
+                                            <a class="card"
+                                               href="{{ path('product', {id:product.id, slug:product.slug}) }}">
+                                                <img src="{{ asset('img/product/') ~ product.image }}"
+                                                     class="card-img-top"
+                                                     alt="{{ product.image }}">
+                                                <div class="card-body">
 
-                                                <span>{{ product.nameCharacter }}</span><br>
+                                                    <span>{{ product.nameCharacter }}</span><br>
 
-                                                <span>{{ product.manga.title }}</span><br>
+                                                    <span>{{ product.manga.title }}</span><br>
 
-                                                <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
-                                            </div>
-                                        </a>
-                                        <a href="{{ path('panier_add', {'id':product.id}) }}">
-                                            <div>Ajouter au panier</div>
-                                        </a>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+                                                    <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                </div>
+                                            </a>
+                                            <a href="{{ path('panier_add', {'id':product.id}) }}">
+                                                <div>Ajouter au panier</div>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class=" row col-lg-8 col-md-8 col-12" style="margin-left: 1%">
-                    {% for product in products %}
-                        {% if product.isPublished == 1 %}
-                            <div class="col-lg-4 col-md-5 col-6" style="max-width: 100%">
-                                <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
-                                    <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
-                                         alt="{{ product.image }}">
-                                    <div class="card-body">
+                    <div class=" row col-lg-9 col-md-8 col-12" style="margin-left: 1%">
+                        {% for product in products %}
+                            {% if product.isPublished == 1 %}
+                                <div class="col-lg-4 col-md-5 col-6" style="max-width: 100%">
+                                    <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
+                                        <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
+                                             alt="{{ product.image }}">
+                                        <div class="card-body">
 
-                                        <span>{{ product.nameCharacter }}</span><br>
+                                            <span>{{ product.nameCharacter }}</span><br>
 
-                                        <span>{{ product.manga.title }}</span><br>
+                                            <span>{{ product.manga.title }}</span><br>
 
-                                        <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
-                                    </div>
-                                </a>
-                                <a href="{{ path('panier_add', {'id':product.id}) }}">
-                                    <div>Ajouter au panier</div>
-                                </a>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                                            <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                        </div>
+                                    </a>
+                                    <a href="{{ path('panier_add', {'id':product.id}) }}">
+                                        <div>Ajouter au panier</div>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="pagination">
+                        {{ knp_pagination_render(products) }}
+                    </div>
                 </div>
             </div>
         </section>

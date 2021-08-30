@@ -6,6 +6,7 @@ use App\Entity\Manga;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use Vich\UploaderBundle\Form\Type\VichImageType;
@@ -33,6 +34,7 @@ class MangaCrudController extends AbstractCrudController
                 ->setRequired(false),
             TextField::new('title', 'Nom'),
             TextareaField::new('description', 'Description')->onlyOnForms(),
+            SlugField::new('slug')->setTargetFieldName('title')
         ];
     }
 

@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }}Votre Panier{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block body %}
 
     <main class="container">
-        {% if app.user %}
             <section id="cart">
                 <div class=" row justify-content-center">
                     <div class="col-md-9 col-11">
@@ -25,7 +24,7 @@
                                         <div class="row">
                                             <div class="col-md-4 col-6">
                                                 <img style="width: 100px;"
-                                                     src="{{ asset('img/product/')~ item.product.image }}" alt="">
+                                                     src="{{ asset('img/product/')~ item.product.image }}" alt="{{ asset('img/product/')~ item.product.image }}">
                                             </div>
                                             <div class="col-md-8 col-6 trashCart">
                                                 <a href="{{ path('product', {id:item.product.id, slug:item.product.slug}) }}">{{ item.product.title }} </a>
@@ -93,10 +92,5 @@
                     </div>
                 </div>
             </section>
-        {% else %}
-            <h2>Vous devez être connecté pour confirmer votre commande</h2>
-            <a href="{{ path('login') }}" class="btn btn-success">Connexion</a>
-            <hr>
-        {% endif %}
     </main>
 {% endblock %}

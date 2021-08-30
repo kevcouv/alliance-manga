@@ -1,5 +1,4 @@
-
-{% block title %}Email de commande{% endblock %}
+{% block title %}Mail de commande{% endblock %}
 {% block body %}
     <main class="container">
         <section id="orders">
@@ -8,10 +7,10 @@
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
-                       <th>Produit</th>
-                       <th>Quantité</th>
-                       <th>prix</th>
-                       <th>Total</th>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>prix</th>
+                        <th>Total</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -26,8 +25,8 @@
                     </tbody>
                     <tfoot>
                     <tr>
-                    <td colspan="3">Total :</td>
-                    <td colspan="3">{{ purchase.total / 100 }}&euro;</td>
+                        <td colspan="3">Total :</td>
+                        <td colspan="3">{{ purchase.total / 100 }}&euro;</td>
                     </tr>
                     </tfoot>
                 </table>

@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -26,6 +27,12 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min = 3,
+     * max = 50,
+     * minMessage = "Le titre du produit doit contenir au moins 5 caractères",
+     * maxMessage = "Le titre du produit ne peut pas dépasser 50 caractères"
+     * )
      */
     private $title;
 
@@ -119,6 +126,7 @@ class Product
         $this->updatedAt = new \DateTimeImmutable();
         $this->comments = new ArrayCollection();
         $this->purchaseItems = new ArrayCollection();
+        $this->slug = (new Slugify())->slugify($this->title);
     }
 
     public function __toString()
@@ -324,13 +332,6 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|Purchase[]
-     */
-    public function getPurchases(): Collection
-    {
-        return $this->purchases;
-    }
 
     /**
      * @return Collection|PurchaseItem[]

@@ -55,7 +55,7 @@ class User implements UserInterface, Serializable
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      * min = 4,
-     * minMessage = "Le mot de passe doit contenir au moins 4 caractères",
+     * minMessage = "Le mot de passe doit contenir au moins {{min}} caractères",
      * )
      */
     private $password;

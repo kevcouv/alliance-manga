@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=MangaRepository::class)
@@ -26,6 +27,16 @@ class Manga
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min = 4,
+     * max = 50,
+     * minMessage = "Le nom du manga doit contenir au moins 4 caractères",
+     * maxMessage = "Le nom du manga ne peut pas dépasser 60 caractères"
+     * )
+     * @Assert\Regex(
+     * pattern="/\d/",
+     * match=false,
+     * message="Votre Manga ne peut pas contenir de chiffres")
      */
     private $title;
 
@@ -83,6 +94,7 @@ class Manga
     {
         $this->products = new ArrayCollection();
         $this->updatedAt = new \DateTimeImmutable();
+        $this->slug = (new Slugify())->slugify($this->title);
     }
 
 

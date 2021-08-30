@@ -52,9 +52,9 @@ class AccountController extends AbstractController
 
 
     /**
-     * @Route("/passwordUpdate", name="passwordUpdate")
+     * @Route("/passwordUpdate-{id}", name="passwordUpdate")
      */
-    public function resetPassword(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function resetPassword($id, Request $request, UserPasswordEncoderInterface $passwordEncoder)
 
     {
         $em = $this->getDoctrine()->getManager();
@@ -70,9 +70,9 @@ class AccountController extends AbstractController
             $user->setPassword($newEncodedPassword);
 
             $em->flush();
-            $this->addFlash('success', 'Votre mot de passe a bien été changer !');
+            $this->addFlash('success', 'Votre mot de passe a bien été changé !');
 
-            return $this->redirectToRoute('account');
+            return $this->redirectToRoute('accountDetails', ['id' => $id]);
         }
         return $this->render('account/resetPassword.html.twig', array(
             'form' => $form->createView(),
@@ -92,6 +92,22 @@ class AccountController extends AbstractController
 
         return $this->render('account/adresse.html.twig', [
             'address' => $address,
+        ]);
+    }
+
+    /**
+     * @Route("/purchases-{id}", name="purchases")
+     */
+    public function orders($id): Response
+    {
+        $purchases = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->find($id)
+            ->getPurchases();
+
+        return $this->render('account/purchases/index.html.twig', [
+
+            'purchases' => $purchases,
         ]);
     }
 

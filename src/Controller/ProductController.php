@@ -2,12 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Comment;
-use App\Entity\Manga;
 use App\Entity\Product;
-use App\Entity\ProductSearch;
 use App\Form\CommentType;
-use App\Form\ProductSearchType;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,7 +29,9 @@ class ProductController extends AbstractController
             ->find($id)
             ->getComments();
 
-        //Ajout de commentaire
+        $licences =
+
+            //Ajout de commentaire
 
         $addComment = new Comment();
 
@@ -54,7 +54,7 @@ class ProductController extends AbstractController
             ->getRepository(Product::class)
             ->findBy(
                 [],
-                ['category' => 'ASC'], 4, rand(1, 57)
+                ['title' => 'DESC'], 4
             );
 
         return $this->render('product/index.html.twig', [
@@ -72,13 +72,21 @@ class ProductController extends AbstractController
 
     public function allFigurine(PaginatorInterface $paginator, Request $request): Response
     {
-        $donneesProduct = $this->getDoctrine()
+
+        // Récupérer la catégorie Figurine
+
+        $catFigurine = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findBy(['title' => 'Figurine'], []);
+
+        // Récupérer les produits de catégorie Figurine
+        $products = $this->getDoctrine()
             ->getRepository(Product::class)
-            ->findAll();
+            ->findBy(['category' => $catFigurine], []);
 
         $products = $paginator->paginate(
-            $donneesProduct,
-            $request->query->getInt('page', 1), 19
+            $products,
+            $request->query->getInt('page', 1), 6
         );
 
         $latestProducts = $this->getDoctrine()
@@ -100,13 +108,13 @@ class ProductController extends AbstractController
 
     public function derivedProduct(PaginatorInterface $paginator, Request $request): Response
     {
-        $donneesProduct = $this->getDoctrine()
+        $derivedProduct = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findAll();
 
-        $products = $paginator->paginate(
-            $donneesProduct,
-            $request->query->getInt('page', 1), 61
+        $derivedProduct = $paginator->paginate(
+            $derivedProduct,
+            $request->query->getInt('page', 1), 21
         );
 
         $latestProducts = $this->getDoctrine()
@@ -118,8 +126,34 @@ class ProductController extends AbstractController
 
 
         return $this->render('product/derived_product.html.twig', [
-            'products' => $products,
+            'products' => $derivedProduct,
             'latestProducts' => $latestProducts
         ]);
     }
+
+
+    /**
+     * @Route("/newProduct", name="newProduct")
+     */
+
+    public function newProduct(PaginatorInterface $paginator, Request $request): Response
+    {
+
+        $latestProducts = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->findBy(
+                [],
+                ['created_at' => 'DESC'], 10
+            );
+
+        $latestProducts = $paginator->paginate(
+            $latestProducts,
+            $request->query->getInt('page', 1), 21
+        );
+
+        return $this->render('product/latest_products.html.twig', [
+            'latestProducts' => $latestProducts,
+        ]);
+    }
+
 }
