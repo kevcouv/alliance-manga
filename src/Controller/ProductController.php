@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Comment;
 use App\Entity\Product;
 use App\Form\CommentType;
+use App\Repository\CommentRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +15,20 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
+    // Afficher l'évaluation des étoiles sur toutes les cartes produits
+
+    public function renderRatingStar($id): Response
+    {
+        $comment = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id)
+            ->getComments();
+
+        return $this->render('home/_ratingStar.html.twig', [
+            'comment' => $comment,
+        ]);
+    }
+
     /**
      * @Route("/product-{id}", name="product")
      */
@@ -86,13 +101,16 @@ class ProductController extends AbstractController
 
         $products = $paginator->paginate(
             $products,
-            $request->query->getInt('page', 1), 6
+            $request->query->getInt('page', 1), 9
         );
+
+
+
 
         $latestProducts = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findBy(
-                [],
+                ['category' => $catFigurine],
                 ['created_at' => 'DESC'], 2
             );
 
@@ -108,19 +126,24 @@ class ProductController extends AbstractController
 
     public function derivedProduct(PaginatorInterface $paginator, Request $request): Response
     {
+        $catDerived = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findBy(['title' => 'Mug'], []);
+
+
         $derivedProduct = $this->getDoctrine()
             ->getRepository(Product::class)
-            ->findAll();
+            ->findBy(['category' => $catDerived], []);
 
         $derivedProduct = $paginator->paginate(
             $derivedProduct,
-            $request->query->getInt('page', 1), 21
+            $request->query->getInt('page', 1),61
         );
 
         $latestProducts = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findBy(
-                [],
+                ['category' => $catDerived],
                 ['created_at' => 'DESC'], 2
             );
 

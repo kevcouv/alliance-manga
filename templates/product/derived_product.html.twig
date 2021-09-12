@@ -25,17 +25,23 @@
                                                          alt="{{ product.image }}">
                                                     <div class="card-body">
 
-                                                        <span>{{ product.nameCharacter }}</span><br>
+                                                        <span>{{ product.title }}</span><br>
 
                                                         <span>{{ product.manga.title }}</span><br>
 
-                                                        <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                        <div>
+                                        <span class="float-left">
+                                    {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
+                                        </span>
+                                                            <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                        </div>
                                                     </div>
                                                 </a>
-                                                <a href="{{ path('panier_add', {'id':product.id}) }}">
+                                                <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">
                                                     <div>Ajouter au panier</div>
                                                 </a>
                                             </div>
+                                            {{ render(controller('App\\Controller\\CartController::renderModalItemCart', {'id':product.id})) }}
                                         {% endif %}
                                     {% endif %}
                                 {% endfor %}
@@ -54,17 +60,23 @@
                                                  alt="{{ product.image }}">
                                             <div class="card-body">
 
-                                                <span>{{ product.nameCharacter }}</span><br>
+                                                <span>{{ product.title }}</span><br>
 
                                                 <span>{{ product.manga.title }}</span><br>
 
-                                                <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                <div>
+                                        <span class="float-left">
+                                    {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
+                                        </span>
+                                                    <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                </div>
                                             </div>
                                         </a>
-                                        <a href="{{ path('panier_add', {'id':product.id}) }}">
+                                        <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">
                                             <div>Ajouter au panier</div>
                                         </a>
                                     </div>
+                                    {{ render(controller('App\\Controller\\CartController::renderModalItemCart', {'id':product.id})) }}
                                 {% endif %}
                             {% endif %}
                         {% endfor %}

@@ -21,12 +21,12 @@ class PurchaseSuccessEmailSubscriber implements EventSubscriberInterface
 
     protected $security;
 
+
     public function __construct(LoggerInterface $logger, MailerInterface $mailer, Security $security)
     {
         $this->logger = $logger;
         $this->mailer = $mailer;
         $this->security = $security;
-
     }
 
     public static function getSubscribedEvents()
@@ -56,7 +56,7 @@ class PurchaseSuccessEmailSubscriber implements EventSubscriberInterface
             ->htmlTemplate('emails/purchase_success.html.twig')
             ->context([
                 'purchase' => $purchase,
-                'user' => $currentUser
+                'user' => $currentUser,
             ]);
 
         // Envoyer l'email

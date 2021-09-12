@@ -3,9 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center  text-uppercase"
          style="letter-spacing: -1px; ">
         <div class="container">
-            <a class="navbar-brand" href="{{ path('home') }}"><img style="min-width: 50px; width: 140px; "
+            <a class="navbar-brand" href="{{ path('home') }}"><img style="min-width: 50px; width: 120px; "
                                                                    src="{{ asset('img/logo/alliance_manga_logo.png') }}"
-                                                                   alt="{{ asset('img/logo/alliance_manga_logo.png') }}"></a>
+                                                                   alt="alliance_manga_logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
                     aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,9 +30,10 @@
                 <ul class="navbar-nav mr-auto">
                     {% if not app.user %}
                         <li class="nav-item">
-                        <a class="nav-link" href="{{ path('login') }}">
+                        <a class="nav-link" href="#" data-toggle="modal"  data-target="#login">
                             <span><i class="fas fa-user fa-2x"></i>Mon compte</span></a>
-
+                        {{ render(controller('App\\Controller\\SecurityController::login')) }}
+                        <!-- RENDER POPUP LOGIN -->
                     {% else %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle font-weight-bold" href="" id="navbarDropdown"
@@ -48,9 +49,15 @@
                             </div>
                         </li>
                     {% endif %}
+                </ul>
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('panier') }}">
-                            <span><i class="fas fa-shopping-cart fa-2x"></i>({{ cartService.totalQuantity }})</span>
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                            {% if cartService.totalQuantity > 0 %}
+                                <span class="badge badge-secondary text-white">{{ cartService.totalQuantity }}</span>
+                            {% else %}
+                            {% endif %}
                         </a>
                     </li>
                 </ul>

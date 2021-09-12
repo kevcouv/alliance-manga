@@ -1,0 +1,17 @@
+{% block title %}Inscription{% endblock %}
+{% block body %}
+    {% apply inline_css(source('@css/main.css')) %}
+        <main class="container">
+            <section id="mailRegistration">
+                <div class="justify-content-center">
+                    <h4 >{{ user.firstName }} {{ user.lastName }}, merci pour votre inscription</h4>
+                </div>
+                <div>
+                    <a href="{{ url('confirm_account', {'id':user.id}) }}">
+                        <div>Valider votre inscription</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    {% endapply %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{# Rating Star #}
+    {% set comNumber = "0" %}
+    {% set evalGlob = "0" %}
+    {% set total = 0 %}
+    {% for comments in comment %}
+        {% set comNumber = loop.length %}
+        {% set total = total + comments.rating %}
+        {% set evalGlob = total / loop.length %}
+    {% endfor %}
+
+        {% if comment is empty %}
+            {% else %}
+            {% for i in 1..5 %}
+            {% set starGlob = (evalGlob >= i ? "fas fa-star " : "far fa-star ") %}
+            <i class="{{ starGlob }}" style="color: gold; width: 16px"></i>
+            {% endfor %}
+            {% endif %}

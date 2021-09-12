@@ -1,40 +1,60 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}connexion{% endblock %}
-
-{% block body %}
-    <main class="container col-md-6" style="max-width: 600px">
-        <section id="login">
-            <div class="justify-content-center">
-                <h4 class="card-header">Connectez-vous à votre compte</h4>
-                <div class="card">
-                    {% if error %}
-                        <div class="alert alert-danger">Adresse E-mail ou mot de passe éronné</div>
-                    {% endif %}
-                    <div class="card-body">
-                    <form  action="{{ path('login') }}" method="post" >
-                        <div class="form-group">
-                            <label for="mail">E-mail</label>
-                            <input type="email" class="form-control" required name="_username" id="mail"
-                                   placeholder="Mail">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pass">Votre mot de passe</label>
-                            <input type="password" class="form-control" required name="_password"
-                                   placeholder="Mot de passe" id="pass">
-                        </div>
-                        <div class="form-group text-center">
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                            <button type="submit" class="btn btn-outline-info">Se connecter</button>
-                        </div>
-                    </form>
+<section id="modalCart">
+    <!-- Modal -->
+    <div class="modal fade " id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark">
+                    <div class="col-2 float-left">
+                        <img style="width: 50px; "
+                             src="{{ asset('img/logo/alliance_manga_logo.png') }}"
+                             alt="alliance_manga_logo.png">
                     </div>
-                    <div class="card-footer">
-                        <a href="{{ path('registration') }}" style="font-size: 15px">Pas de compte? Créez-en un</a>
+                    <div class="col-8" style="margin-top: 1em">
+                        <h5 class="text-white">Connectez-vous à votre compte</h5>
+                    </div>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <section id="login">
+                        <div class="justify-content-center">
+                            <div>
+                                {% if error %}
+                                    <div class="alert alert-danger">Adresse E-mail ou mot de passe éronné</div>
+                                {% endif %}
+                                <div>
+                                    <form action="{{ path('login') }}" method="post">
+                                        <div class="form-group">
+                                            <label for="mail">E-mail</label>
+                                            <input type="email" class="form-control" required name="_username" id="mail"
+                                                   placeholder="Mail">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pass">Votre mot de passe</label>
+                                            <input type="password" class="form-control" required name="_password"
+                                                   placeholder="Mot de passe" id="pass">
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <input type="hidden" name="_csrf_token"
+                                                   value="{{ csrf_token('authenticate') }}">
+                                            <button type="submit" class="btn btn-outline-info">Se connecter</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer bg-dark justify-content-center">
+                    <div>
+                        <a href="{{ path('registration') }}" class="text-white" style="font-size: 15px">Pas de compte?
+                            Créez-en un</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-{% endblock %}
+        </div>
+    </div>
+</section>

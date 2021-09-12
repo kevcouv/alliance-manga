@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
+
     /**
      * @Route("/", name="home")
      * @param MangaRepository $repository
@@ -31,7 +32,7 @@ class HomeController extends AbstractController
 
         return $this->render('home/index.html.twig', [
             'licences' => $licences,
-            'products' => $products
+            'products' => $products,
         ]);
     }
 }

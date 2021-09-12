@@ -2,15 +2,32 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class CartController extends AbstractController
 {
+    // Afficher le produit dans le modal
+
+
+    public function renderModalItemCart($id, CartService $cartService): Response
+    {
+        $product= $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->find($id);
+
+        return $this->render('cart/_modalCart.html.twig', [
+            'product' => $product,
+            'total' => $cartService->getTotal(),
+            'totalQuantity' => $cartService->getTotalQuantity(),
+        ]);
+    }
 
     //PAGE PANIER
     /**
@@ -19,10 +36,20 @@ class CartController extends AbstractController
 
     public function cart(CartService $cartService)
     {
+
+        $products = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->findBy(
+                [],
+                ['title' => 'DESC'], 4
+            );
+
+
         return $this->render('cart/index.html.twig', [
             'items' => $cartService->getFullCart(),
             'total' => $cartService->getTotal(),
             'totalQuantity' => $cartService->getTotalQuantity(),
+            'products' => $products
         ]);
     }
 

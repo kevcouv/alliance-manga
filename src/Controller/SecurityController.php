@@ -4,9 +4,13 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationType;
+use App\Repository\UserRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -14,6 +18,15 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+
+    private $mailer;
+
+    public function __construct(MailerInterface $mailer)
+    {
+        $this->mailer = $mailer;
+    }
+
+
     //S'enregistrer
 
     /**
@@ -31,17 +44,33 @@ class SecurityController extends AbstractController
                 ->getManager();
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
-            $user->setIsDisabled(1);
+            $user->setIsDisabled(true);
             $user->setRole(['ROLE_USER']);
             $em->persist($user);
             $em->flush();
 
+            $email = new TemplatedEmail();
+
+
+            $email->from("alliance-manga@hotmail.com")
+                ->to(new Address($user->getEmail()))
+                ->subject("Merci pour votre inscription")
+                ->htmlTemplate('emails/registration_success.html.twig')
+                ->context([
+                    'expiration_date' => new \DateTime('+7 days'),
+                    'user' => $user
+                ]);
+
+            // Envoyer l'email
+
+            $this->mailer->send($email);
+
             $this->addFlash(
                 'success',
-                'Votre compte a bien été enregistré'
+                'Votre inscription a bien été enregistrée. Un mail de confirmation vous a été envoyé'
             );
 
-            return $this->redirectToRoute('login');
+            return $this->redirectToRoute('home');
         }
         return $this->render('security/index.html.twig', [
             'user' => $user,
@@ -49,7 +78,38 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    // Se connecter
+
+    /**
+     * @Route("/confirm-account{id}", name="confirm_account")
+     */
+    public function confirmAccount($id, UserRepository $userRepository): Response
+    {
+        $user = $userRepository->find($id);
+
+        if ($user)
+        {
+            $user->setIsDisabled(false);
+            $em = $this->getDoctrine()
+                ->getManager();
+            $em->persist($user);
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Le compte est validé!'
+            );
+            return $this->redirectToRoute("home");
+        } else {
+            $this->addFlash(
+                'warning',
+                'Le compte n\'existe pas!'
+            );
+            return $this->redirectToRoute('home');
+
+        }
+    }
+
+
+    // Se connecter (VIA POPUP)
     /**
      * @Route ("/login", name="login")
      */

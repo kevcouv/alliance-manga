@@ -1,36 +1,83 @@
 {% block title %}Mail de commande{% endblock %}
 {% block body %}
-    <main class="container">
-        <section id="orders">
-            <div class="justify-content-center">
-                <h4>Commande n°{{ purchase.id }} de {{ user.userName }}</h4>
-                <table class="table">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th>Produit</th>
-                        <th>Quantité</th>
-                        <th>prix</th>
-                        <th>Total</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for item in purchase.purchaseItems %}
-                        <tr>
-                            <td>{{ item.productName }}</td>
-                            <td>{{ item.quantity }}</td>
-                            <td>{{ item.productPrice /100 }}&euro;</td>
-                            <td>{{ item.total / 100 }}&euro;</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="3">Total :</td>
-                        <td colspan="3">{{ purchase.total / 100 }}&euro;</td>
-                    </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </section>
-    </main>
+    {% apply inline_css(source('@css/main.css')) %}
+        <main class="container">
+            <section id="orders" style="justify-content: center;">
+                {% apply inline_css(source('@images/logo_rapport_stage.png')) %}
+                    <div>
+                        <a href="{{ url('home') }}"><img style="min-width: 60px; "
+                                                                              src="{{ asset('img/logo/logo_rapport_stage.png') }}"
+                                                                              alt="alliance_manga_logo.png"></a>
+                    </div>
+                {% endapply %}
+                <div style="margin-top: 1em; margin-bottom: 1em">
+                    <p>Bonjour, {{ user.firstName }}</p>
+                    <p>Merci pour votre commande chez Alliance Manga, nous espérons qu’elle vous plaira !</p>
+                    <div style="margin-top: 1em; margin-bottom: 1em">
+                        <p style="font-weight: bold">Adresse de livraison</p>
+                        <p>
+                            {{ user.firstName }}{{ user.lastName }}<br>
+                            {{ purchase.billingAddress }}<br>
+                            {{ purchase.postalCodeBilling }} {{ purchase.city }}
+                        </p>
+                    </div>
+
+                    <div style="margin-top: 1em; margin-bottom: 1em">
+                        {% for item in purchase.purchaseItems %}
+                            <div class="row">
+                                <div class="col-10 row">
+
+                                    <div class="col-7">
+                                        IMAGE
+                                    </div>
+                                    <div class="col-5">
+                                        {{ item.productName }}
+                                        {{ item.quantity }}
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    {{ item.product.price / 100 }}&euro;
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="col-12">
+                            <table class="table table-borderless">
+                                <thead></thead>
+                                <tbody>
+                                <tr>
+                                    <td>Méthode de paiement</td>
+                                    <td style="float: right">Carte de crédit</td>
+                                </tr>
+                                <tr>
+                                    <td>Sous-total</td>
+                                    <td style="float: right;">{{ purchase.total /100 }}&euro;</td>
+                                </tr>
+                                <tr>
+                                    <td>Livraison</td>
+                                    <td style="float: right">gratuit</td>
+                                </tr>
+                                <tr style="background-color: lightgrey; font-weight: bold">
+                                    <td>Montant total</td>
+                                    <td style="float: right">{{ purchase.total /100 }}&euro;</td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td colspan="2">
+                                        <a style=" text-decoration: none;
+    color: black;" href="{{ url('account') }}">
+                                            <span style=" padding: 0.60em;
+    color: white;
+    background-color: rgb(33, 174, 150);
+    border: none; margin-top: 1em">Voir ma Commande</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    {% endapply %}
 {% endblock %}

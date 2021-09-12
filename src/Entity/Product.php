@@ -28,7 +28,7 @@ class Product
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
-     * min = 3,
+     * min = 5,
      * max = 50,
      * minMessage = "Le titre du produit doit contenir au moins 5 caractères",
      * maxMessage = "Le titre du produit ne peut pas dépasser 50 caractères"
@@ -38,22 +38,31 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $small_description;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     private $full_description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min = 2,
+     * max = 40,
+     * minMessage = "Le titre du produit doit contenir au moins 2 caractères",
+     * maxMessage = "Le titre du produit ne peut pas dépasser 40 caractères"
+     * )
      */
     private $nameCharacter;
 
 
     /**
      * @ORM\Column(type="string", length=120)
+     * @Assert\Positive
      */
     private $price;
 

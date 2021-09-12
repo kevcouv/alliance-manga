@@ -21,8 +21,8 @@ class Comment
     /**
      * @ORM\Column(type="text")
      * @Assert\Length(
-     * min = 10,
-     * minMessage = "Le message doit contenir au minimum {{limit }} caractères",
+     * min = 5,
+     * minMessage = "Le message doit contenir au minimum 5 caractères",
      * )
      */
     private $message;

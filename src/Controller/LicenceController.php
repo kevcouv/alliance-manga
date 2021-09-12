@@ -12,14 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class LicenceController extends AbstractController
 {
-
-    protected $mangaRepository;
-
-    public function __construct(MangaRepository $mangaRepository)
-    {
-        $this->mangaRepository = $mangaRepository;
-    }
-
+   // Afficher la liste des manga dans la navbar
 
     public function renderMenuList(): Response
     {
@@ -52,7 +45,6 @@ class LicenceController extends AbstractController
 
     public function licence($id, Request $request, PaginatorInterface $paginator): Response
     {
-
 
         $licence = $this->getDoctrine()
             ->getRepository(Manga::class)
