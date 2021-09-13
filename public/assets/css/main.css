@@ -57,11 +57,6 @@ main {
     letter-spacing: -1px;
 }
 
-#details-home, #product-detail {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 #details-home div {
     font-size: 15px;
 }
@@ -79,19 +74,19 @@ main {
     text-transform: uppercase;
 }
 
-#univers-home a, #products-home div div a, #product-detail a, #cart table:last-child tfoot:last-child tr a, #account-page a, #login a, #account-registration a, #account-details a, .modal-footer a, #mailRegistration a{
+#univers-home a, #products-home div div a, #product-detail a, #cart table:last-child tfoot:last-child tr a, #account-page a, #login a, #account-registration a, #account-details a, .modal-footer a, #mailRegistration a, #mail-order a{
     text-decoration: none;
     color: black;
 }
 
-#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr td, .modal-footer a div, #mailRegistration a div{
+#univers-home button, #products-home div div a:last-child div, #product-detail a div, #cart table:last-child tfoot:last-child tr td, .modal-footer a div, #mailRegistration a div, #mail-order a div{
     padding: 0.60em;
     color: white;
     background-color: rgb(33, 174, 150);
     border: none;
 }
 
-#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover, #cart table:last-child tfoot:last-child tr td:hover, .modal-footer a div:hover #mailRegistration a div:hover{
+#univers-home button:hover, #products-home div div a:last-child div:hover, #product-detail a div:hover, #cart table:last-child tfoot:last-child tr td:hover, .modal-footer a div:hover #mailRegistration a div:hover, #mail-order a div:hover{
     background-color: rgb(21, 122, 109);
 }
 
@@ -219,6 +214,16 @@ main {
 
 #login a:hover, #account-registration a:hover, #account-details a:hover {
     color: rgb(28, 75, 95);
+}
+
+/* ACCOUNT */
+
+#mail-order, #mailRegistration {
+    margin: 2% 3%;
+}
+
+.products-mail div div, .products-mail div div:first-child div, .products-mail div div:first-child div:first-child div {
+    display: flex;
 }
 
 

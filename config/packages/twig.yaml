@@ -3,7 +3,6 @@ twig:
     form_themes: ['bootstrap_4_layout.html.twig']
     paths:
         "%kernel.project_dir%/public/assets/css": css
-        "%kernel.project_dir%/public/img/logo": images
 
     globals:
         cartService: "@App\\Service\\Cart\\CartService"

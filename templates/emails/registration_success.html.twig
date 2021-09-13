@@ -1,14 +1,17 @@
-{% block title %}Inscription{% endblock %}
+
 {% block body %}
     {% apply inline_css(source('@css/main.css')) %}
         <main class="container">
-            <section id="mailRegistration">
+            <section id="mailRegistration" style="justify-content: center; text-align: center">
+                <a  href="{{ url('home') }}"><img style="width:130px; "
+                                                  src="{{ absolute_url(asset('img/logo/logo_form.png')) }}"
+                                                  alt="alliance_manga_logo.png"></a>
                 <div class="justify-content-center">
-                    <h4 >{{ user.firstName }} {{ user.lastName }}, merci pour votre inscription</h4>
+                    <p><span style="font-weight: bold; text-transform: uppercase">{{  user.firstName }}</span>, merci pour votre inscription</p>
                 </div>
-                <div>
+                <div style="width: 60%; margin: auto">
                     <a href="{{ url('confirm_account', {'id':user.id}) }}">
-                        <div>Valider votre inscription</div>
+                        <div>Confirmer votre inscription</div>
                     </a>
                 </div>
             </section>

@@ -1,47 +1,44 @@
-{% block title %}Mail de commande{% endblock %}
 {% block body %}
     {% apply inline_css(source('@css/main.css')) %}
         <main class="container">
-            <section id="orders" style="justify-content: center;">
-                {% apply inline_css(source('@images/logo_rapport_stage.png')) %}
-                    <div>
-                        <a href="{{ url('home') }}"><img style="min-width: 60px; "
-                                                                              src="{{ asset('img/logo/logo_rapport_stage.png') }}"
-                                                                              alt="alliance_manga_logo.png"></a>
-                    </div>
-                {% endapply %}
-                <div style="margin-top: 1em; margin-bottom: 1em">
-                    <p>Bonjour, {{ user.firstName }}</p>
-                    <p>Merci pour votre commande chez Alliance Manga, nous espérons qu’elle vous plaira !</p>
+            <section id="mail-order">
+                <a  href="{{ url('home') }}"><img style="width:130px; "
+                                                 src="{{ absolute_url(asset('img/logo/logo_form.png')) }}"
+                                                 alt="alliance_manga_logo.png"></a>
+
+                <div style="margin-top: 2em; margin-bottom: 2em;">
+                    <p>Bonjour, {{ user.firstName }}<br>
+                        Merci pour votre commande chez Alliance Manga, nous espérons qu’elle vous plaira !</p>
                     <div style="margin-top: 1em; margin-bottom: 1em">
                         <p style="font-weight: bold">Adresse de livraison</p>
-                        <p>
-                            {{ user.firstName }}{{ user.lastName }}<br>
-                            {{ purchase.billingAddress }}<br>
-                            {{ purchase.postalCodeBilling }} {{ purchase.city }}
-                        </p>
+                        {{ user.firstName }}{{ user.lastName }}<br>
+                        {{ purchase.billingAddress }}<br>
+                        {{ purchase.postalCodeBilling }} {{ purchase.city }}
                     </div>
+                </div>
 
-                    <div style="margin-top: 1em; margin-bottom: 1em">
+                <div class="products-mail">
+                    <div class="row" >
                         {% for item in purchase.purchaseItems %}
-                            <div class="row">
-                                <div class="col-10 row">
+                            <div class="col-12 row">
+                                <div class="col-10">
 
                                     <div class="col-7">
-                                        IMAGE
+                                        <p style="text-align: center">IMAGE</p>
                                     </div>
-                                    <div class="col-5">
-                                        {{ item.productName }}
-                                        {{ item.quantity }}
+                                    <div class="col-5" >
+                                        <p style="text-align: center">{{ item.productName }} <br>
+                                            {{ item.quantity }}</p>
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    {{ item.product.price / 100 }}&euro;
+                                    <p style="text-align: center">{{ item.product.price / 100 }}&euro; </p>
                                 </div>
                             </div>
                         {% endfor %}
                         <div class="col-12">
-                            <table class="table table-borderless">
+                            <hr>
+                            <table class="table table-borderless" style="width: 60%">
                                 <thead></thead>
                                 <tbody>
                                 <tr>
@@ -56,27 +53,25 @@
                                     <td>Livraison</td>
                                     <td style="float: right">gratuit</td>
                                 </tr>
-                                <tr style="background-color: lightgrey; font-weight: bold">
+                                <tr style=" font-weight: bold">
                                     <td>Montant total</td>
                                     <td style="float: right">{{ purchase.total /100 }}&euro;</td>
                                 </tr>
-                                <tr style="text-align: center;">
+                                </tbody>
+                                <tfoot>
+                                <tr style="justify-content: center">
                                     <td colspan="2">
-                                        <a style=" text-decoration: none;
-    color: black;" href="{{ url('account') }}">
-                                            <span style=" padding: 0.60em;
-    color: white;
-    background-color: rgb(33, 174, 150);
-    border: none; margin-top: 1em">Voir ma Commande</span>
+                                        <a style="justify-content: center" href="{{ url('account') }}">
+                                            <div>Voir ma commande</div>
                                         </a>
                                     </td>
                                 </tr>
-                                </tbody>
-                                <tfoot></tfoot>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
                 </div>
+
             </section>
         </main>
     {% endapply %}

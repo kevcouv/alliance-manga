@@ -121,7 +121,7 @@ class PaymentController extends AbstractController
         $dispatcher->dispatch($purchaseEvent, 'purchase.success');
 
         // Je redirige avec un flash du succès du paiement
-        $this->addFlash('success', "Votre commande a bien été payée !");
+        $this->addFlash('success', "Votre commande a bien été payée! Un mail de confirmation de la commande vous a été envoyé.");
         return $this->redirectToRoute("account");
     }
 

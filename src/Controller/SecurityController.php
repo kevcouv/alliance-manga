@@ -95,7 +95,7 @@ class SecurityController extends AbstractController
             $em->flush();
             $this->addFlash(
                 'success',
-                'Le compte est validé!'
+                'Votre inscription est validée. Bienvenue chez Alliance Manga!'
             );
             return $this->redirectToRoute("home");
         } else {
