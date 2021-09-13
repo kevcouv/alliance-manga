@@ -31,6 +31,7 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/registration", name="registration")
+     * @throws \Exception
      */
     public function registration(Request $request, UserPasswordEncoderInterface $encoder): Response
     {
@@ -44,8 +45,7 @@ class SecurityController extends AbstractController
                 ->getManager();
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
-            $user->setIsDisabled(true);
-            $user->setRole(['ROLE_USER']);
+            $user->setToken($this->generateToken());
             $em->persist($user);
             $em->flush();
 
@@ -53,7 +53,7 @@ class SecurityController extends AbstractController
 
 
             $email->from("alliance-manga@hotmail.com")
-                ->to(new Address($user->getEmail()))
+                ->to(new Address($user->getEmail(), $user->getToken()))
                 ->subject("Merci pour votre inscription")
                 ->htmlTemplate('emails/registration_success.html.twig')
                 ->context([
@@ -81,6 +81,7 @@ class SecurityController extends AbstractController
 
     /**
      * @Route("/confirm-account{id}", name="confirm_account")
+     * @param string $token
      */
     public function confirmAccount($id, UserRepository $userRepository): Response
     {
@@ -88,6 +89,7 @@ class SecurityController extends AbstractController
 
         if ($user)
         {
+            $user->setToken(null);
             $user->setIsDisabled(false);
             $em = $this->getDoctrine()
                 ->getManager();
@@ -107,6 +109,17 @@ class SecurityController extends AbstractController
 
         }
     }
+
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function generateToken()
+    {
+        return rtrim(strtr(base64_encode(random_bytes(32)), '+/', '-_'), '=');
+    }
+
 
 
     // Se connecter (VIA POPUP)

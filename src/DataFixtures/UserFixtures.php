@@ -18,6 +18,10 @@ class UserFixtures extends Fixture
     }
 
 
+    /**
+     * @throws \Exception
+     */
+
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
@@ -33,6 +37,7 @@ class UserFixtures extends Fixture
                 ->setCreatedAt($faker->dateTimeBetween('-5 months', 'now'))
                 ->setUpdatedAt($faker->dateTimeBetween('now'))
                 ->setIsDisabled($faker->boolean)
+                ->setToken($this->generateToken())
                 ->setRole(['ROLE_USER'])
             ;
             $password = $this->encoder->encodePassword($user, 'password');
@@ -41,4 +46,17 @@ class UserFixtures extends Fixture
         }
         $manager->flush();
     }
+
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function generateToken()
+    {
+        return rtrim(strtr(base64_encode(random_bytes(32)), '+/', '-_'), '=');
+    }
+
+
+
 }

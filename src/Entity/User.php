@@ -101,6 +101,11 @@ class User implements UserInterface, Serializable
      */
     private $purchases;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $token;
+
 
     public function __construct()
     {
@@ -109,6 +114,8 @@ class User implements UserInterface, Serializable
         $this->createdAt = new \DateTimeImmutable('now');
         $this->updatedAt = new \DateTimeImmutable('now');
         $this->purchases = new ArrayCollection();
+        $this->role = ['ROLE_USER'];
+        $this->isDisabled = true;
     }
 
     public function __toString()
@@ -396,5 +403,17 @@ class User implements UserInterface, Serializable
             $this->email,
             $this->password,
             ) = unserialize($serialized, array('allowed_classes' => false));
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
+
+        return $this;
     }
 }
