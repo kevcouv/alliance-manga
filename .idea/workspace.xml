@@ -4,60 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" description="&#10;&#10;    public function configureFilters(Filters $fi..." line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/medium-zoom.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/video/anime.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/Mailer/ContactService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/emails/mailContact.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/homeVideo.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/partials/legalMention.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/_searchModal.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/searchProducts.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210913163101.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.filterizr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/manga/logo/Attack On Titan.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/manga/logo/Attack On Titan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/manga/logo/Berserk.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/manga/logo/Berserk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/manga/logo/Bleach.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/manga/logo/Bleach.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/manga/logo/Fate Series.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/manga/logo/Fate Series.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CategoryCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CommentCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/MangaCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/PurchaseCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/PurchaseCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Purchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Purchase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductsRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Cart/CartService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Cart/CartService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/adresse.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/adresse.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/_modalCart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/_modalCart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/purchase_success.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/purchase_success.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/registration_success.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/registration_success.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/licence/_menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/_menu.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/licence/products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/partials/header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/partials/header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payment/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/all_figurine.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/all_figurine.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/derived_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/derived_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/latest_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/latest_products.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,29 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Purchase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/product/derived_product.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
+        <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="869">
-              <caret line="171" column="49" selection-start-line="171" selection-start-column="49" selection-end-line="171" selection-end-column="49" />
+            <state relative-caret-position="189">
+              <caret line="143" column="33" selection-start-line="143" selection-start-column="33" selection-end-line="143" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -163,7 +92,6 @@
         <option value="$PROJECT_DIR$/templates/home/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/product/derived_product.html.twig" />
         <option value="$PROJECT_DIR$/templates/product/all_figurine.html.twig" />
-        <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/product/latest_products.html.twig" />
         <option value="$PROJECT_DIR$/templates/search/searchProducts.html.twig" />
         <option value="$PROJECT_DIR$/templates/partials/legalMention.html.twig" />
@@ -189,6 +117,7 @@
         <option value="$PROJECT_DIR$/src/Controller/HomeController.php" />
         <option value="$PROJECT_DIR$/src/Repository/ProductRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/templates/product/index.html.twig" />
       </list>
     </option>
   </component>
@@ -317,8 +246,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="595" />
-    <option name="y" value="24" />
+    <option name="x" value="653" />
+    <option name="y" value="45" />
     <option name="width" value="1106" />
     <option name="height" value="999" />
   </component>
@@ -333,28 +262,6 @@
             <path>
               <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
               <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="alliance_manga" type="b2602c69:ProjectViewProjectNode" />
-              <item name="alliance_manga" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -658,7 +565,7 @@
       <workItem from="1631888585090" duration="34000" />
       <workItem from="1631888747850" duration="160000" />
       <workItem from="1631888944582" duration="587000" />
-      <workItem from="1631889552869" duration="8744000" />
+      <workItem from="1631889552869" duration="9400000" />
     </task>
     <servers />
   </component>
@@ -668,7 +575,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="904949000" />
+    <option name="totallyTimeSpent" value="905605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,10 +587,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="715" y="38" width="1106" height="999" extended-state="0" />
-    <editor active="true" />
+    <frame x="832" y="21" width="1106" height="999" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43421054" visible="true" weight="0.18451242" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.43421054" visible="true" weight="0.33460802" />
       <window_info id="Version Control" order="1" sideWeight="0.56578946" side_tool="true" weight="0.21779549" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.52496433" side_tool="true" weight="0.39625585" />
@@ -696,7 +602,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49840087" weight="0.24972376" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49840087" visible="true" weight="0.27713627" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50159913" side_tool="true" weight="0.33125648" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32917964" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -705,7 +611,7 @@
       <window_info anchor="right" id="Database" order="3" weight="0.22255912" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43421054" visible="true" weight="0.13752665" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.43421054" visible="true" weight="0.18451242" />
       <window_info id="Version Control" order="1" sideWeight="0.56578946" side_tool="true" weight="0.21779549" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.52496433" side_tool="true" weight="0.39625585" />
@@ -1014,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DataFixtures/MangaFixtures.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1067,24 +966,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Purchase.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="274">
+          <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/product/derived_product.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="76" column="22" lean-forward="true" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
+        <state relative-caret-position="1549">
+          <caret line="76" column="22" selection-start-line="76" selection-start-column="22" selection-end-line="76" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProductController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Purchase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="171" column="49" selection-start-line="171" selection-start-column="49" selection-end-line="171" selection-end-column="49" />
+        <state relative-caret-position="153">
+          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="143" column="33" selection-start-line="143" selection-start-column="33" selection-end-line="143" selection-end-column="33" />
         </state>
       </provider>
     </entry>
