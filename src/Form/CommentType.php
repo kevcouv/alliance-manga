@@ -4,6 +4,7 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -16,13 +17,21 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('message', TextareaType::class, ['label' => 'Votre commentaire'])
-            ->add('rating', IntegerType::class, ['label' => 'Note'])
+            ->add('rating', ChoiceType::class,  [
+                'choices' => [
+                    1 => 1,
+                    2 => 2,
+                    3 => 3,
+                    4 => 4,
+                    5 => 5,
+                ], 'label' => 'Evaluation'])
             ->add('submit', SubmitType::class, array(
                 'attr' => array(
                     'class' => 'btn btn-outline-dark'
                 ),
                 'label' => 'Commenter'
             ));
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -32,3 +41,4 @@ class CommentType extends AbstractType
         ]);
     }
 }
+

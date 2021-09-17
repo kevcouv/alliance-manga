@@ -24,6 +24,7 @@ class CartController extends AbstractController
 
         return $this->render('cart/_modalCart.html.twig', [
             'product' => $product,
+            'items'=> $cartService->getFullCart(),
             'total' => $cartService->getTotal(),
             'totalQuantity' => $cartService->getTotalQuantity(),
             'totalTTC' => $cartService->getTotalTTC(),

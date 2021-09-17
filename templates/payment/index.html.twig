@@ -25,7 +25,7 @@
                             <tbody>
                             <tr>
                                 <td>{{ totalQuantity }} article(s)</td>
-                                <td class="float-right">{{ total /100 }}&euro;</td>
+                                <td class="float-right">{{ total /10000 }}&euro;</td>
                             </tr>
                             <tr>
                                 <td>Livraison</td>
@@ -33,7 +33,7 @@
                             </tr>
                             <tr style="background-color: lightgrey" class="font-weight-bold">
                                 <td>TOTAL TTC</td>
-                                <td class="float-right">{{ (totalTTC /100)|round(2,'floor') }}&euro;</td>
+                                <td class="float-right">{{ (totalTTC /10000)|round(2,'floor') }}&euro;</td>
                             </tr>
                             </tbody>
                             <tfoot></tfoot>

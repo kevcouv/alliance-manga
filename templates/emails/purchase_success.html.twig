@@ -22,17 +22,11 @@
                         {% for item in purchase.purchaseItems %}
                             <div class="col-12 row">
                                 <div class="col-10">
-
-                                    <div class="col-7">
-                                        <p style="text-align: center">IMAGE</p>
-                                    </div>
-                                    <div class="col-5" >
                                         <p style="text-align: center">{{ item.productName }} <br>
                                             {{ item.quantity }}</p>
-                                    </div>
                                 </div>
                                 <div class="col-2">
-                                    <p style="text-align: center">{{ item.product.price / 100 }}&euro; </p>
+                                    <p style="text-align: center">{{ item.product.price / 10000 }}&euro; </p>
                                 </div>
                             </div>
                         {% endfor %}
@@ -43,10 +37,6 @@
                                 <tr>
                                     <td>Méthode de paiement</td>
                                     <td style="float: right">Carte de crédit</td>
-                                </tr>
-                                <tr>
-                                    <td>Sous-total</td>
-                                    <td style="float: right;">{{ purchase.total /100 }}&euro;</td>
                                 </tr>
                                 <tr>
                                     <td>Livraison</td>

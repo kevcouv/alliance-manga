@@ -29,21 +29,30 @@ class Product
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      * min = 5,
-     * max = 50,
+     * max = 80,
      * minMessage = "Le titre du produit doit contenir au moins 5 caractères",
-     * maxMessage = "Le titre du produit ne peut pas dépasser 50 caractères"
+     * maxMessage = "Le titre du produit ne peut pas dépasser 80 caractères"
      * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     * min = 4,
+     * minMessage = "La description doit contenir au moins 5 caractères",
+
+     * )
      * @Assert\NotBlank()
      */
     private $small_description;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\Length(
+     * min = 5,
+     * minMessage = "La description doit contenir au moins 5 caractères",
+     * )
      * @Assert\NotBlank()
      */
     private $full_description;
@@ -52,9 +61,9 @@ class Product
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      * min = 2,
-     * max = 40,
-     * minMessage = "Le titre du produit doit contenir au moins 2 caractères",
-     * maxMessage = "Le titre du produit ne peut pas dépasser 40 caractères"
+     * max = 80,
+     * minMessage = "Le nom du personnage doit contenir au moins 2 caractères",
+     * maxMessage = "Le nom du personnage ne peut pas dépasser 40 caractères"
      * )
      */
     private $nameCharacter;
@@ -68,6 +77,7 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $image;
 
@@ -205,7 +215,7 @@ class Product
 
     public function setPrice(string $price): self
     {
-        $this->price = $price;
+        $this->price = $price *100;
 
         return $this;
     }

@@ -29,9 +29,9 @@ class Manga
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(
      * min = 4,
-     * max = 50,
+     * max = 80,
      * minMessage = "Le nom du manga doit contenir au moins 4 caractères",
-     * maxMessage = "Le nom du manga ne peut pas dépasser 60 caractères"
+     * maxMessage = "Le nom du manga ne peut pas dépasser 80 caractères"
      * )
      * @Assert\Regex(
      * pattern="/\d/",
@@ -47,6 +47,7 @@ class Manga
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $image;
 
@@ -58,6 +59,7 @@ class Manga
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $logo;
 

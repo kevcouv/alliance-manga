@@ -29,7 +29,7 @@
                                         <span class="float-left">
                                     {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
                                         </span>
-                                                            <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                            <span class="float-right font-weight-bold">{{ product.price / 10000 }} &euro;</span>
                                                     </div>
                                                 </a>
                                                 <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">
@@ -59,7 +59,7 @@
                                         <span class="float-left">
                                     {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
                                         </span>
-                                                    <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                                    <span class="float-right font-weight-bold">{{ product.price / 10000 }} &euro;</span>
                                             </div>
                                         </a>
                                         <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">

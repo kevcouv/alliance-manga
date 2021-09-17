@@ -88,7 +88,6 @@ class SecurityController extends AbstractController
 
         if ($user)
         {
-            $user->setToken(null);
             $user->setIsDisabled(false);
             $em = $this->getDoctrine()
                 ->getManager();
@@ -105,7 +104,6 @@ class SecurityController extends AbstractController
                 'Le compte n\'existe pas!'
             );
             return $this->redirectToRoute('home');
-
         }
     }
 
@@ -144,7 +142,6 @@ class SecurityController extends AbstractController
 
     public function logout()
     {
-
     }
 
 }

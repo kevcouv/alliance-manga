@@ -14,7 +14,12 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=2)
+     * @Assert\Length(
+     * min = 3,
+     * max = 30,
+     * minMessage = "Le titre du produit doit contenir au moins 3 caractères",
+     * maxMessage = "Le titre du produit ne peut pas dépasser 30 caractères"
+     * )
      */
     private $fullName;
 
@@ -22,7 +27,12 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=5)
+     * @Assert\Length(
+     * min = 5,
+     * max = 50,
+     * minMessage = "Le titre du produit doit contenir au moins 5 caractères",
+     * maxMessage = "Le titre du produit ne peut pas dépasser 50 caractères"
+     * )
      */
     private $subject;
 
@@ -36,7 +46,10 @@ class Contact
     /**
      * @var string|null
      * @Assert\NotBlank()
-     * @Assert\Length(min=10)
+     * @Assert\Length(
+     * min = 10,
+     * minMessage = "Le titre du produit doit contenir au moins 10 caractères"
+     * )
      */
     private $message;
 

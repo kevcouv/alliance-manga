@@ -34,19 +34,19 @@
                                             <a href="#comment"><i class="{{ starGlob }}" style="color: gold"></i>
                                         {% endfor %}{{ comNumber }} avis</a>
                                     {% endif %}
-                                    <h3>{{ product.price / 100 }}&euro;</h3>
+                                    <h3>{{ product.price / 10000 }}&euro;</h3>
                                     <p>{{ product.smallDescription }}</p>
                                 </div>
                                 <div>
-                                    <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">
+                                    <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal"
+                                       data-target="#addProduct-{{ product.id }}">
                                         <div>Ajouter au panier</div>
                                     </a>
                                 </div>
                                 <div>
-                                    <p>En achetant ce produit vous gagnerez 0.80 € grâce à notre programme de fidélité.
-                                        Votre panier totalisera 2.80 € qui pourront être convertis en bon de réduction
-                                        pour
-                                        un prochain achat.</p>
+                                    <p>Avec l'expérience, Alliance Manga.be vous offre la garantie d’avoir votre produit
+                                        dès sa sortie. Vous bénéficiez également de prix avantageux et d'une livraison
+                                        gratuite offerte par nos soins.</p>
                                 </div>
                                 {% if comment is empty %}
                                 {% else %}
@@ -158,10 +158,11 @@
                                         <span class="float-left">
                                     {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
                                         </span>
-                                            <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
+                                        <span class="float-right font-weight-bold">{{ product.price / 10000 }} &euro;</span>
                                     </div>
                                 </a>
-                                <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal" data-target="#addProduct-{{ product.id }}">
+                                <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal"
+                                   data-target="#addProduct-{{ product.id }}">
                                     <div>Ajouter au panier</div>
                                 </a>
                             </div>
