@@ -2,17 +2,22 @@
 {% block body %}
     {% apply inline_css(source('@css/main.css')) %}
         <main class="container">
-            <section id="mailRegistration" style="justify-content: center; text-align: center">
+            <section id="mailRegistration" style="justify-content: center; text-align: center; border: 2px solid rgb(33, 174, 150);">
+                <div style="margin: 2% 3%">
                 <a  href="{{ url('home') }}"><img style="width:130px; "
                                                   src="{{ absolute_url(asset('img/logo/logo_form.png')) }}"
                                                   alt="alliance_manga_logo.png"></a>
                 <div class="justify-content-center">
-                    <p><span style="font-weight: bold; text-transform: uppercase">{{  user.firstName }}</span>, merci pour votre inscription</p>
+                    <p><span style="font-weight: bold; text-transform: uppercase">{{  user.firstName }} {{ user.lastName }}</span>, Alliance Manga vous souhaite la bienvenue et vous remercie pour votre inscription.
+                        <br>
+                        <br>
+                    Pour confirmer votre inscription, veuillez confirmer votre compte ci-dessous.</p>
                 </div>
-                <div style="width: 60%; margin: auto">
+                <div style="width: 60%; margin: auto;">
                     <a href="{{ url('confirm_account', {'id':user.id}) }}">
                         <div>Confirmer votre inscription</div>
                     </a>
+                </div>
                 </div>
             </section>
         </main>

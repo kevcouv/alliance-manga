@@ -94,7 +94,7 @@
                         </tr>
                         <tr style="background-color: lightgrey" class="font-weight-bold">
                             <td>TOTAL TTC</td>
-                            <td class="float-right">{{ total /100 }}&euro;</td>
+                            <td class="float-right">{{ (totalTTC /100)|round(2,'floor')}}&euro;</td>
                         </tr>
                         </tbody>
                         <tfoot>
@@ -112,7 +112,7 @@
         </section>
         {% if items|length == 0 %}
             <div class="text-center cart-product" style="padding-top: 2em;">
-                <h4 class="font-weight-bold text-uppercase">Produits populaires </h4>
+                <h4 class="font-weight-bold text-uppercase">Autres nouveautés </h4>
             </div>
             <section id="products-home">
                 <div class="container">
@@ -123,18 +123,13 @@
                                     <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
                                         <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                              alt="{{ product.image }}">
-                                        <div class="card-body">
-
-                                            <span>{{ product.title }}</span><br>
-
-                                            <span>{{ product.manga.title }}</span><br>
-
-                                            <div>
+                                        <div class="card-body text-justify">
+                                            <span class="font-weight-bold">{{ product.title[:20] ~(product.title|length > 20 ? '...') }}</span><br>
+                                            <span class="title-product">{{ product.manga.title }}</span><br>
                                         <span class="float-left">
                                     {{ render(controller('App\\Controller\\ProductController::renderRatingStar', {id:product.id})) }}
                                         </span>
                                                 <span class="float-right font-weight-bold">{{ product.price / 100 }} &euro;</span>
-                                            </div>
                                         </div>
                                     </a>
                                     <a href="{{ path('panier_add', {'id':product.id}) }}" data-toggle="modal"

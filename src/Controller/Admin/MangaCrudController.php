@@ -36,7 +36,7 @@ class MangaCrudController extends AbstractCrudController
                 ->setUploadDir('public/img/manga')
                 ->setRequired(false),
             TextField::new('title', 'Nom'),
-            TextareaField::new('description', 'Description')->onlyOnForms(),
+            TextareaField::new('description', 'Description')->hideOnIndex(),
             SlugField::new('slug')->setTargetFieldName('title')
         ];
     }
@@ -62,10 +62,10 @@ class MangaCrudController extends AbstractCrudController
                 return $action->setLabel('Modifier');
             })
             ->update(Crud::PAGE_NEW, Action::SAVE_AND_ADD_ANOTHER, function (Action $action) {
-                return $action->setLabel('Modifier et ajouter un nouveau manga');
+                return $action->setLabel('Créer et ajouter un nouveau manga');
             })
             ->update(Crud::PAGE_NEW, Action::SAVE_AND_RETURN, function (Action $action) {
-                return $action->setLabel('Modifier et retourner');
+                return $action->setLabel('Créer et retourner');
             })
             ->update(Crud::PAGE_EDIT, Action::SAVE_AND_CONTINUE, function (Action $action) {
                 return $action->setLabel('Modifier et continuer');

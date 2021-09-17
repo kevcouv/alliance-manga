@@ -80,8 +80,7 @@ class SecurityController extends AbstractController
 
 
     /**
-     * @Route("/confirm-account{id}", name="confirm_account")
-     * @param string $token
+     * @Route("/confirm-account-{id}", name="confirm_account")
      */
     public function confirmAccount($id, UserRepository $userRepository): Response
     {

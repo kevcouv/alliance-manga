@@ -1,0 +1,24 @@
+{% block body %}
+    {% apply inline_css(source('@css/main.css')) %}
+        <main class="container" style="margin: 2% 3%">
+            <section id="mail-contact" style="width: 50%; margin: auto">
+                <a href="{{ url('home') }}"><img style="width:130px; margin-bottom: 2em; text-align: center "
+                                                 src="{{ absolute_url(asset('img/logo/logo_form.png')) }}"
+                                                 alt="alliance_manga_logo.png"></a>
+                <div style="; text-align: justify; width: 100%; margin: auto; border: 2px solid black">
+                    <div style="padding: 2em">
+                        <p>
+                            <span style="font-weight: bold ;text-transform: uppercase">Nom :</span> {{ contact.fullName }}
+                        </p>
+                        <p>
+                            <span style="font-weight: bold; text-transform: uppercase">Requête :</span> {{ contact.subject }}
+                        </p>
+                        <p>
+                            <span style="font-weight: bold; text-transform: uppercase">Message :</span> {{ contact.message }}
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    {% endapply %}
+{% endblock %}

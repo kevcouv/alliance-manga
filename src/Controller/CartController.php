@@ -26,6 +26,7 @@ class CartController extends AbstractController
             'product' => $product,
             'total' => $cartService->getTotal(),
             'totalQuantity' => $cartService->getTotalQuantity(),
+            'totalTTC' => $cartService->getTotalTTC(),
         ]);
     }
 
@@ -49,6 +50,7 @@ class CartController extends AbstractController
             'items' => $cartService->getFullCart(),
             'total' => $cartService->getTotal(),
             'totalQuantity' => $cartService->getTotalQuantity(),
+            'totalTTC' => $cartService->getTotalTTC(),
             'products' => $products
         ]);
     }

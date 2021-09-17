@@ -121,7 +121,7 @@ class Purchase
 
     public function setTotal(int $total): self
     {
-        $this->total = $total;
+        $this->total = $total*1.21;
 
         return $this;
     }

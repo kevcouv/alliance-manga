@@ -25,7 +25,7 @@ class PurchaseCrudController extends AbstractCrudController
      public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add(EntityFilter::new('user', 'Client')) ;
+            ->add(EntityFilter::new('user', 'Client'));
     }
 
     public function configureFields(string $pageName): iterable

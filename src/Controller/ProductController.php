@@ -44,8 +44,6 @@ class ProductController extends AbstractController
             ->find($id)
             ->getComments();
 
-        $licences =
-
             //Ajout de commentaire
 
         $addComment = new Comment();
@@ -137,7 +135,7 @@ class ProductController extends AbstractController
 
         $derivedProduct = $paginator->paginate(
             $derivedProduct,
-            $request->query->getInt('page', 1),61
+            $request->query->getInt('page', 1),9
         );
 
         $latestProducts = $this->getDoctrine()
@@ -171,7 +169,7 @@ class ProductController extends AbstractController
 
         $latestProducts = $paginator->paginate(
             $latestProducts,
-            $request->query->getInt('page', 1), 21
+            $request->query->getInt('page', 1), 9
         );
 
         return $this->render('product/latest_products.html.twig', [

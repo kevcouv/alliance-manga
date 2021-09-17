@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Manga;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,6 +19,29 @@ class ProductRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Product::class);
     }
+
+    /**
+     * @param string $query
+     * @return mixed
+     */
+    public function findProductsByName(string $query)
+    {
+        $qb = $this->createQueryBuilder('p');
+        $qb->where(
+
+            $qb->expr()->orX(
+                $qb->expr()->like('p.title', ':query'),
+                $qb->expr()->like('p.nameCharacter', ':query')
+            )
+        )
+            ->setParameter('query', '%' . $query . '%')
+            ->setMaxResults(4);
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
+
 
     // /**
     //  * @return Product[] Returns an array of Product objects

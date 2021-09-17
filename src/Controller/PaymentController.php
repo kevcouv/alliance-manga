@@ -62,6 +62,7 @@ class PaymentController extends AbstractController
             'items' => $cartService->getFullCart(),
             'total' => $cartService->getTotal(),
             'totalQuantity' => $cartService->getTotalQuantity(),
+            'totalTTC' => $cartService->getTotalTTC()
         ]);
     }
 

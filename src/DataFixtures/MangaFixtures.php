@@ -22,7 +22,7 @@ class MangaFixtures extends Fixture
             $anime = new Manga();
             $anime->setTitle($licence);
             $anime->setSlug($slugify->slugify($anime->getTitle()));
-            $anime->setDescription($faker->text(300));
+            $anime->setDescription($faker->text(500));
             $anime->setImage($licence.'.png');
             $anime->setLogo($licence.'.png');
             $manager->persist($anime);

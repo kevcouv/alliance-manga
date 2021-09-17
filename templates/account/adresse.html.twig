@@ -8,28 +8,25 @@
             <h4 class="text-uppercase card-header">Vos adresses</h4>
             <div class="justify-content-center row">
                 {% for addresses in address %}
-                    {% if app.user.purchases(addresses.billingAddress) !=  app.user.purchases(addresses.billingAddress) %}
-                        <div class="card col-md-5 col-10" style="max-width: 100%;">
-                            <div class="card-body">
-                                <h5 class="card-title border-bottom  font-weight-bold ">Mon adresse</h5>
-                                <p class="card-text">
-                                    {{ addresses.fullName }}<br>
-                                    {{ addresses.billingAddress }}<br>
-                                    {{ addresses.postalCodeBilling }}<br>
-                                    {{ addresses.city }}</p>
-                            </div>
+                    <div class="card col-md-5 col-10" style="max-width: 100%;">
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom  font-weight-bold ">Mon adresse</h5>
+                            <p class="card-text">
+                                {{ addresses.fullName }}<br>
+                                {{ addresses.billingAddress }}<br>
+                                {{ addresses.postalCodeBilling }}<br>
+                                {{ addresses.city }}</p>
                         </div>
-                    {% else %}
-
-                    {% endif %}
+                    </div>
                 {% endfor %}
             </div>
-        </section>
-        <div class="card-footer">
+            <div class="card-footer">
             <span>
-                <a href="{{ path('account') }}"><i class="fas fa-chevron-left"></i>Retour à votre compte </a> <a href="{{ path('home') }}"> <i
+                <a href="{{ path('account') }}"><i class="fas fa-chevron-left"></i>Retour à votre compte </a> <a
+                        href="{{ path('home') }}"> <i
                             style="font-size: 17px" class="fas fa-home"></i> Accueil</a>
             </span>
-        </div>
+            </div>
+        </section>
     </main>
 {% endblock %}

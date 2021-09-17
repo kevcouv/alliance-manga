@@ -1,12 +1,12 @@
 {% block body %}
     {% apply inline_css(source('@css/main.css')) %}
-        <main class="container">
+        <main class="container" style="margin-left: 25%">
             <section id="mail-order">
                 <a  href="{{ url('home') }}"><img style="width:130px; "
                                                  src="{{ absolute_url(asset('img/logo/logo_form.png')) }}"
                                                  alt="alliance_manga_logo.png"></a>
 
-                <div style="margin-top: 2em; margin-bottom: 2em;">
+                <div style="margin-top: 2em; margin-bottom: 2em; width: 45%">
                     <p>Bonjour, {{ user.firstName }}<br>
                         Merci pour votre commande chez Alliance Manga, nous espérons qu’elle vous plaira !</p>
                     <div style="margin-top: 1em; margin-bottom: 1em">
@@ -37,7 +37,6 @@
                             </div>
                         {% endfor %}
                         <div class="col-12">
-                            <hr>
                             <table class="table table-borderless" style="width: 60%">
                                 <thead></thead>
                                 <tbody>

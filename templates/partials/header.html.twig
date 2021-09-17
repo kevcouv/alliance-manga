@@ -13,9 +13,6 @@
             <div class="collapse navbar-collapse" id="navbarColor03">
                 <ul class="navbar-nav mr-auto">
                     {{ render(controller('App\\Controller\\LicenceController::RenderMenuList')) }}
-                </ul>
-
-                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('figurines') }}">Figurines</a>
                     </li>
@@ -26,12 +23,12 @@
                         <a class="nav-link" href="{{ path('newProduct') }}">Nouveautés</a>
                     </li>
                 </ul>
-
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-sm-2">
                     {% if not app.user %}
                         <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal"  data-target="#login">
-                            <span><i class="fas fa-user fa-2x"></i>Mon compte</span></a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#login">
+                            <span><i style="font-size: 20px" class="fas fa-user"></i></span><span class="text-lowercase"
+                                                                          style="font-size: 14px; margin: 0.3em">Se connecter</span></a>
                         {{ render(controller('App\\Controller\\SecurityController::login')) }}
                         <!-- RENDER POPUP LOGIN -->
                     {% else %}
@@ -49,23 +46,20 @@
                             </div>
                         </li>
                     {% endif %}
-                </ul>
-                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('panier') }}">
-                            <i class="fas fa-shopping-cart fa-2x"></i>
-                            {% if cartService.totalQuantity > 0 %}
-                                <span class="badge badge-secondary text-white">{{ cartService.totalQuantity }}</span>
-                            {% else %}
-                            {% endif %}
+                            <i style="font-size: 20px" class="fas fa-shopping-cart"></i>
+                            <span style="font-size: 10px"
+                                  class="badge badge-secondary text-white">{{ cartService.totalQuantity }}</span>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal"
+                           data-target="#searchModal"><i style="font-size: 20px" class="fa fa-search"></i></a>
+                        {{ render(controller('App\\Controller\\HomeController::renderSearch')) }}
+                    </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search">
-                    <button class=" my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>
-                    </button>
-                </form>
+
             </div>
         </div>
     </nav>

@@ -117,6 +117,23 @@ class CartService
         return $total;
     }
 
+    public function getTotalTTC(): float
+    {
+
+        $totalTVA = 0;
+        $total = 0;
+        $tva = 1.21;
+
+        foreach ($this->getCart() as $id => $quantity) {
+            $product = $this->productRepository->find($id);
+
+            $total += $product->getPrice() * $quantity;
+            $totalTVA = $total * $tva;
+        }
+
+        return $totalTVA;
+    }
+
     // TOTAL QUANTITE
 
     public function getTotalQuantity(): float
