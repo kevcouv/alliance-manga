@@ -5,34 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_02_11_2021_13_47.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/alliance_manga.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/alliance_manga.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/45363235-731a-4e37-af95-a7d042470848.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210914132335.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210914174315.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210914182028.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Manga.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Manga.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Purchase.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Purchase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CommentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CommentType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/purchases/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/purchases/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/_modalCart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/_modalCart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/purchase_success.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/purchase_success.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/licence/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/licence/products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payment/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/all_figurine.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/all_figurine.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/derived_product.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/derived_product.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/latest_products.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/latest_products.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search/searchProducts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search/searchProducts.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +25,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <executablePath>composer</executablePath>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -75,21 +62,16 @@
   <component name="FavoritesManager">
     <favorites_list name="alliance_manga" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="13096698-1981-42df-a62b-008927325336" />
+        <option name="url" value="https://github.com/kevcouv/alliance-manga.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -278,6 +260,7 @@
     <option name="width" value="1106" />
     <option name="height" value="977" />
   </component>
+  <component name="ProjectId" id="20MaH0t2xpQ84LIyfBQGpjwknIn" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -318,16 +301,21 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../projetweb2019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -345,24 +333,13 @@
       <recent name="C:\wamp64\www\Symfony\alliance_manga\public\img\logo" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -616,6 +593,8 @@
       <workItem from="1631889552869" duration="16747000" />
       <workItem from="1631907712184" duration="2730000" />
       <workItem from="1631910870940" duration="4595000" />
+      <workItem from="1635856833062" duration="3689000" />
+      <workItem from="1635861669035" duration="440000" />
     </task>
     <servers />
   </component>
@@ -685,7 +664,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Controller/Admin/PurchaseCrudController.php">
