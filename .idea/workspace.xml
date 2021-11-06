@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/Controller/Admin/ProductCrudController.php" description="&#10;&#10;    public function configureFilters(Filters $fi..." line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="" />
+    <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -595,7 +598,7 @@
       <workItem from="1636042095517" duration="8121000" />
       <workItem from="1636200527863" duration="902000" />
       <workItem from="1636203646458" duration="5211000" />
-      <workItem from="1636209233474" duration="1603000" />
+      <workItem from="1636209233474" duration="1942000" />
     </task>
     <servers />
   </component>
