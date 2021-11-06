@@ -38,15 +38,15 @@
     <main class="container">
         <!-- Details-->
         <section id="details-home" class="row" style="padding-top: 3em">
-            <div class="col-md-4">
+            <div class="col-md-12 col-lg-4">
                 <i class="fa fa-truck fa-2x"></i>
                 <p>Livraison en 48h et offerte à tous nos clients</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-12 col-lg-4">
                 <i class="fa fa-star fa-2x"></i>
                 <p>Produits sous licence 100% officiels</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-12 col-lg-4">
                 <i class="fa fa-credit-card fa-2x"></i>
                 <p>Infrastructure de paiement sécurisée pour vos achats</p>
             </div>
@@ -59,7 +59,7 @@
             <h2 class="my-5">Univers Manga</h2>
             <div class="row justify-content-center">
                 {% for licence in licences %}
-                    <div class="col-lg-4 col-md-5 col-6" style="max-width: 100%;">
+                    <div class="col-lg-4 col-md-6 col-6" style="max-width: 100%;">
                         <a href="{{ path('licence', {id:licence.id, slug:licence.slug}) }}">
                             <img src="{{ asset('img/manga/') ~ licence.image }}" class="card-img-top"
                                  alt="{{ licence.image }}">
@@ -87,7 +87,7 @@
             <div class="row justify-content-center">
                 {% for product in products %}
                     {% if product.isPublished == 1 %}
-                        <div class=" col-lg-3 col-md-4 col-6" style="max-width: 100%">
+                        <div class=" col-lg-3 col-md-6 col-6" style="max-width: 100%">
                             <a class="card" href="{{ path('product', {id:product.id, slug:product.slug}) }}">
                                 <img src="{{ asset('img/product/') ~ product.image }}" class="card-img-top"
                                      alt="{{ product.image }}">
