@@ -3,8 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Karser\Recaptcha3Bundle\Form\Recaptcha3Type;
-use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -30,10 +28,6 @@ class RegistrationType extends AbstractType
                 ),
                 'label' => 'S\'enregistrer'
             ))
-            ->add('captcha', Recaptcha3Type::class, [
-                'constraints' => new Recaptcha3(),
-                'action_name' => 'homepage',
-                ])
         ;
     }
 
