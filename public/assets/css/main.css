@@ -53,10 +53,6 @@ html {
     font-weight: bold;
 }
 
-.section div {
-    padding: 0.4em;
-}
-
 .section img {
     width: 125px;
 }
@@ -95,7 +91,10 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-
+}
+video {
+    width: 100%;
+    height: auto;
 }
 
 .color-overlay {
