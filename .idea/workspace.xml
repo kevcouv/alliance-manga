@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -610,7 +609,12 @@
       <workItem from="1636454023649" duration="4306000" />
       <workItem from="1636459608237" duration="3159000" />
       <workItem from="1636638494574" duration="3916000" />
-      <workItem from="1637246314013" duration="1373000" />
+      <workItem from="1637246314013" duration="2209000" />
+      <workItem from="1637657783079" duration="546000" />
+      <workItem from="1637659597304" duration="70000" />
+      <workItem from="1643142551673" duration="46000" />
+      <workItem from="1643143031828" duration="549000" />
+      <workItem from="1643144505790" duration="338000" />
     </task>
     <servers />
   </component>
