@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="809b0d67-9e29-454d-8eac-42a036a83e17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/karser_recaptcha3.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/licence/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/licence/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -614,7 +614,26 @@
       <workItem from="1637659597304" duration="70000" />
       <workItem from="1643142551673" duration="46000" />
       <workItem from="1643143031828" duration="549000" />
-      <workItem from="1643144505790" duration="338000" />
+      <workItem from="1643144505790" duration="7781000" />
+      <workItem from="1645969316184" duration="611000" />
+      <workItem from="1647177505824" duration="149000" />
+      <workItem from="1647177715974" duration="53000" />
+      <workItem from="1650284158316" duration="672000" />
+      <workItem from="1650305443705" duration="1507000" />
+      <workItem from="1650457249771" duration="55000" />
+      <workItem from="1650465530139" duration="54000" />
+      <workItem from="1651148024153" duration="194000" />
+      <workItem from="1651161412288" duration="2111000" />
+      <workItem from="1655976527572" duration="649000" />
+      <workItem from="1656268274112" duration="173000" />
+      <workItem from="1656504643611" duration="599000" />
+      <workItem from="1656595793789" duration="622000" />
+      <workItem from="1656676500818" duration="597000" />
+      <workItem from="1656685336504" duration="1591000" />
+      <workItem from="1661335800485" duration="508000" />
+      <workItem from="1661343279434" duration="1901000" />
+      <workItem from="1661365296681" duration="133000" />
+      <workItem from="1661374478308" duration="743000" />
     </task>
     <servers />
   </component>
