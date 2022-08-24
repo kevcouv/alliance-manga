@@ -38,7 +38,7 @@ class UserFixtures extends Fixture
                 ->setUpdatedAt($faker->dateTimeBetween('now'))
                 ->setIsDisabled($faker->boolean)
                 ->setToken($this->generateToken())
-                ->setRole(['ROLE_ADMIN'])
+                ->setRole(['ROLE_USER'])
             ;
             $password = $this->encoder->encodePassword($user, 'password');
             $user->setPassword($password);
